@@ -3,37 +3,66 @@
 import Image from "next/image";
 import styled from "styled-components";
 import Link from "next/link";
+// interface LogoProps {
+//   context?: string;
+//   isEven: boolean;
+// }
 
 export default function Logo() {
   return (
     <LogoWrapper href="/">
-      <LogoImage
-        src="/ShoppingCart.jpg"
+      <Image
+        src="/MainLogo.png"
         alt="Website Logo"
-        width={40}
-        height={40}
+        width={64}
+        height={64}
         priority
       />
-      <LogoText>Shopping Website</LogoText>
+      <LogoText isEven={true}>Shopping</LogoText>
+      <LogoText special isEven={false}>
+        Website
+      </LogoText>
     </LogoWrapper>
   );
 }
 
 const LogoWrapper = styled(Link)`
-  display: flex;
   align-items: center;
+  display: flex;
+  flex-grow: 1;
   height: 62px;
-  padding: 4px;
-  flex-grow: 2;
   &:hover {
     opacity: 0.85;
   }
 `;
-const LogoImage = styled(Image)`
-  width: 10%;
-`;
-const LogoText = styled.span`
-  text-align: center;
-  font-size: small;
+
+const LogoText = styled.h1<{ special?: boolean }>`
+  color: ${(props) => (props.special ? "#C71D5B" : "#010101")};
+  font-size: 32px;
   font-weight: bold;
+  text-align: center;
+  ${({ isEven }) =>
+    isEven
+      ? `
+        background-color: #ffffff0;
+      `
+      : `
+        background-color: #ffffff0;
+        margin-left: 8px;
+      `}
 `;
+// const LogoText2 = styled.span`
+//   text-align: center;
+//   font-size: 24px;
+//   font-weight: bold;
+//   color: #30aa3a;
+// `;
+
+// // [] {} "false" "0"
+// // "" 0 null
+// const a = null
+// if(a) {
+//     console.log('a is true')
+// } else {
+//     console.log('a is false')
+// }

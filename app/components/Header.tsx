@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Logo from "./headerComponents/Logo";
 import SearchBar from "./headerComponents/SearchBar";
 import Icons from "./headerComponents/Icons";
+import Navbar from "./headerComponents/Navbar";
 export default function Header() {
   return (
     <HeaderWrapper>
@@ -12,22 +13,35 @@ export default function Header() {
         <SearchBar />
         <Icons />
       </HeaderUpperLine>
-      <div>{/* <Navbar /> */}</div>
+      <HeaderDownerLine>
+        <Navbar />
+      </HeaderDownerLine>
+      <Divider></Divider>
     </HeaderWrapper>
   );
 }
 
 const HeaderWrapper = styled.header`
-  height: 124px;
   display: flex;
-  margin-left: 80px;
-  margin-right: 80px;
-  border: 0.5 px black solid;
+  flex-direction: column;
+  padding-left: 80px;
+  padding-right: 80px;
 `;
 const HeaderUpperLine = styled.div`
-  height: 62px;
-  width: 100%;
-  display: flex;
-  margin-top: 16px;
   align-items: center;
+  display: flex;
+  height: 104px;
+`;
+const HeaderDownerLine = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 56px;
+`;
+const Divider = styled.div`
+  width: 1200px;
+  height: 2px;
+  border: none;
+  margin-right: 80px;
+  background-color: #f2f0ea;
 `;

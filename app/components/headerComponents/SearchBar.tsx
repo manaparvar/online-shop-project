@@ -7,12 +7,7 @@ export default function SearchBar() {
   return (
     <SearchWrapper>
       <SearchIconWrapper>
-        <SearchImage
-          src="/searchSymbol.png"
-          alt="Search"
-          width={16}
-          height={16}
-        />
+        <Image src="/searchSymbol.png" alt="Search" width={16} height={16} />
       </SearchIconWrapper>
       <SearchBars type="search" placeholder="Search..." />
     </SearchWrapper>
@@ -27,7 +22,7 @@ const SearchWrapper = styled.div`
 `;
 const SearchBars = styled.input`
   height: 40px;
-  width: 304px;
+  width: 256px;
   background-color: #f2f0ea;
   padding-left: 8px;
   border: none;
@@ -42,7 +37,6 @@ const SearchBars = styled.input`
     outline: none;
   }
 `;
-const SearchImage = styled(Image)``;
 const SearchIconWrapper = styled.button`
   background-color: #f2f0ea;
   border-radius: 5px 0 0 5px;

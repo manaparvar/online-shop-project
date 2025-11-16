@@ -32,22 +32,28 @@ export default function Icons() {
 }
 
 const IconsWrapper = styled.div`
+  align-items: center;
   display: flex;
   flex-direction: row;
-  align-items: center;
   flex-grow: 1;
   justify-content: center;
 `;
 
 const ShoppingCartIcon = styled(Link)`
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   margin-left: 24px;
+  &:hover {
+    opacity: 0.75;
+  }
 `;
 
 const IconText = styled.span`
   font-size: 12px;
   margin-top: 8px;
+  &:hover {
+    opacity: 0.7;
+  }
 `;
