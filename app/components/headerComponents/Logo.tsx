@@ -3,6 +3,7 @@
 import Image from "next/image";
 import styled from "styled-components";
 import Link from "next/link";
+import TitleH2 from "../Atoms/TitleH1";
 // interface LogoProps {
 //   context?: string;
 //   isEven: boolean;
@@ -18,6 +19,7 @@ export default function Logo() {
         height={64}
         priority
       />
+      <TitleH2 />
       <LogoText isEven={true}>Shopping</LogoText>
       <LogoText special isEven={false}>
         Website
@@ -34,6 +36,9 @@ const LogoWrapper = styled(Link)`
   &:hover {
     opacity: 0.85;
   }
+`;
+const LogoImage = styled(Image)`
+  width: 10%;
 `;
 
 const LogoText = styled.h1<{ special?: boolean }>`
