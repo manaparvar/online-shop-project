@@ -6,12 +6,13 @@ type Titleprops = {
   text: string;
 };
 
-export default function TitleH1({ text }: Titleprops) {
+export default function TitleH2({ text }: Titleprops) {
   return <LogoText>{text}</LogoText>;
 }
 
-const LogoText = styled.h1`
-  text-align: center;
+const LogoText = styled.h2`
   font-size: 24px;
   font-weight: bold;
+  line-height: 20px;
+  text-align: center;
 `;
