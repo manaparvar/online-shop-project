@@ -1,21 +1,38 @@
 "use client";
-import { theme } from "../../style/theme";
+
 import styled from "styled-components";
+import { theme } from "../../style/theme";
+import { textVariants } from "./typography/variants";
+
+// Clean type names
+type Variant = keyof typeof textVariants;
+type ColorKey = keyof typeof theme.colors;
+
+// convert string weight → numeric weight
+const weightMap = {
+  light: 300,
+  normal: 400,
+  bold: 700,
+} as const;
 
 type TextProps = {
-  size?: keyof typeof theme.fontSizes;
-  weight?: keyof typeof theme.fontWeights;
-  color?: keyof typeof theme.colors;
-  as?: React.ElementType; // برای تغییر تگ HTML
+  variant?: Variant;
+  color?: ColorKey;
+  as?: React.ElementType;
 };
 
 export const Text = styled.p<TextProps>`
-  font-size: ${({ theme, size }) =>
-    size ? theme.fontSizes[size] : theme.fontSizes.base};
+  font-size: ${({ variant }) => {
+    const v = variant ?? "desktopBody";
+    return textVariants[v].size;
+  }};
 
-  font-weight: ${({ theme, weight }) =>
-    weight ? theme.fontWeights[weight] : theme.fontWeights.normal};
+  font-weight: ${({ variant }) => {
+    const v = variant ?? "desktopBody";
+    const weightKey = textVariants[v].weight; // "normal" | "bold" | ...
+    return weightMap[weightKey];
+  }};
 
   color: ${({ theme, color }) =>
-    color ? theme.colors[color] : theme.colors.yellow};
+    color ? theme.colors[color] : theme.colors.black};
 `;

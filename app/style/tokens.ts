@@ -12,19 +12,3 @@ export const colors = {
   blue: "#3B82F6",
   darkGrey: "#333333",
 };
-
-export const fontSizes = {
-  Dh1: "32px",
-  Dh2: "24px",
-  Dh3: "20px",
-  Dbutton: "16px",
-  Dbody: "16px",
-  Dcaption: "14px",
-};
-
-export const fontWeights = {
-  lighter: "lighter",
-  normal: "normal",
-  bold: "bold",
-  bolder: "bolder",
-} as const;
