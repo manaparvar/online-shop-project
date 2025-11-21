@@ -7,13 +7,7 @@ import Link from "next/link";
 export default function Logo() {
   return (
     <LogoWrapper href="/">
-      <LogoImage
-        src="/ShoppingCart.jpg"
-        alt="Website Logo"
-        width={40}
-        height={40}
-        priority
-      />
+      <LogoImage src="/ShoppingCart.jpg" alt="Website Logo" priority />
       <LogoText>Shopping Website</LogoText>
     </LogoWrapper>
   );
@@ -29,9 +23,7 @@ const LogoWrapper = styled(Link)`
     opacity: 0.85;
   }
 `;
-const LogoImage = styled(Image)`
-  width: 10%;
-`;
+const LogoImage = styled(Image)``;
 const LogoText = styled.span`
   text-align: center;
   font-size: small;
