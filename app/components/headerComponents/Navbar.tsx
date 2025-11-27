@@ -1,26 +1,27 @@
 import link from "next/link";
 import styled from "styled-components";
+import { Text } from "../Atoms/Text";
 
 export default function Navbar() {
   return (
     <LinksWrapper>
       <NavLinks href="/Women">
-        <h3>Women</h3>
+        <Text>Women</Text>
       </NavLinks>
       <NavLinks href="/Men">
-        <h3>Men</h3>
+        <Text>Men</Text>
       </NavLinks>
       <NavLinks href="/Kids">
-        <h3>Kids</h3>
+        <Text>Kids</Text>
       </NavLinks>
       <NavLinks href="/Brands">
-        <h3>Brands</h3>
+        <Text>Brands</Text>
       </NavLinks>
       <NavLinks href="/New">
-        <h3>New</h3>
+        <Text>New</Text>
       </NavLinks>
       <NavLinks special href="/Sale">
-        <h3>Sale</h3>
+        <Text>Sale</Text>
       </NavLinks>
     </LinksWrapper>
   );

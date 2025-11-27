@@ -3,7 +3,7 @@
 import Image from "next/image";
 import styled from "styled-components";
 import Link from "next/link";
-import TitleH2 from "../Atoms/TitleH1";
+import { Text } from "../Atoms/Text";
 // interface LogoProps {
 //   context?: string;
 //   isEven: boolean;
@@ -12,14 +12,14 @@ import TitleH2 from "../Atoms/TitleH1";
 export default function Logo() {
   return (
     <LogoWrapper href="/">
-      <Image
+      <LogoImage
         src="/MainLogo.png"
         alt="Website Logo"
         width={64}
         height={64}
         priority
       />
-      <TitleH2 />
+      <Text />
       <LogoText isEven={true}>Shopping</LogoText>
       <LogoText special isEven={false}>
         Website
