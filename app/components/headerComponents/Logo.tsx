@@ -7,7 +7,13 @@ import Link from "next/link";
 export default function Logo() {
   return (
     <LogoWrapper href="/">
-      <LogoImage src="/ShoppingCart.jpg" alt="Website Logo" priority />
+      <LogoImage
+        src="/ShoppingCart.jpg"
+        alt="Website Logo"
+        priority
+        width={100}
+        height={100}
+      />
       <LogoText>Shopping Website</LogoText>
     </LogoWrapper>
   );
