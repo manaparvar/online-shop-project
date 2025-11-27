@@ -6,7 +6,9 @@ export default function Navbar() {
   return (
     <LinksWrapper>
       <NavLinks href="/Women">
-        <Text variant="desktopH3">Women</Text>
+        <Text variant="desktopH3" color="green">
+          Women
+        </Text>
       </NavLinks>
       <NavLinks href="/Men">
         <Text variant="desktopH3">Men</Text>
