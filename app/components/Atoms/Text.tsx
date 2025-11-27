@@ -33,6 +33,5 @@ export const Text = styled.p<TextProps>`
     return weightMap[weightKey];
   }};
 
-  color: ${({ theme, color }) =>
-    color ? theme.colors[color] : theme.colors.black};
+  color: ${({ theme, color }) => (color ? theme.colors[color] : "#010101")};
 `;
