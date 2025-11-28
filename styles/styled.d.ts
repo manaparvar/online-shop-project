@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-object-type */
-
 import "styled-components";
 import { theme } from "./theme";
 

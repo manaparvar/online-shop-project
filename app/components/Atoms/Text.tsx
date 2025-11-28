@@ -1,7 +1,7 @@
 "use client";
 
 import styled from "styled-components";
-import { theme } from "../../style/theme";
+import { theme } from "../../../styles/theme";
 import { textVariants } from "./typography/variants";
 
 // Clean type names
