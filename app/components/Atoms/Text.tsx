@@ -33,5 +33,6 @@ export const Text = styled.p<TextProps>`
     return weightMap[weightKey];
   }};
 
-  color: ${({ theme, color }) => (color ? theme.colors[color] : "#010101")};
+  /* color: ${({ theme, color }) => (color ? theme.green : "#010101")}; */
+  color: ${(props) => console.log("this is color props ", props)};
 `;
