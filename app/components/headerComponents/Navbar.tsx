@@ -6,24 +6,22 @@ export default function Navbar() {
   return (
     <LinksWrapper>
       <NavLinks href="/Women">
-        <Text variant="desktopH3" color="green">
-          Women
-        </Text>
+        <Text variant="h3">Women</Text>
       </NavLinks>
       <NavLinks href="/Men">
-        <Text variant="desktopH3">Men</Text>
+        <Text variant="h3">Men</Text>
       </NavLinks>
       <NavLinks href="/Kids">
-        <Text variant="desktopH3">Kids</Text>
+        <Text variant="h3">Kids</Text>
       </NavLinks>
       <NavLinks href="/Brands">
-        <Text variant="desktopH3">Brands</Text>
+        <Text variant="h3">Brands</Text>
       </NavLinks>
       <NavLinks href="/New">
-        <Text variant="desktopH3">New</Text>
+        <Text variant="h3">New</Text>
       </NavLinks>
-      <NavLinks $special={true} href="/Sale">
-        <Text variant="desktopH3" color="pink">
+      <NavLinks href="/Sale">
+        <Text variant="h3" color="pink">
           Sale
         </Text>
       </NavLinks>

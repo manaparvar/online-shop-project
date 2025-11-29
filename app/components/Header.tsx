@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Logo from "./headerComponents/Logo";
 import SearchBar from "./headerComponents/SearchBar";
 import Icons from "./headerComponents/Icons";
+import { Button } from "./Atoms/Button.tsx";
 import Navbar from "./headerComponents/Navbar";
 export default function Header() {
   return (
@@ -13,7 +14,10 @@ export default function Header() {
         <SearchBar />
         <Icons />
       </HeaderUpperLine>
-      <Navbar />
+      <HeaderDownerLine>
+        <Navbar />
+      </HeaderDownerLine>
+      <Button color="green" variant="addToCart" />
     </HeaderWrapper>
   );
 }
@@ -24,6 +28,7 @@ const HeaderWrapper = styled.header`
   margin-left: 80px;
   margin-right: 80px;
   border: 0.5 px black solid;
+  flex-direction: column;
 `;
 const HeaderUpperLine = styled.div`
   height: 62px;
@@ -31,4 +36,10 @@ const HeaderUpperLine = styled.div`
   display: flex;
   margin-top: 16px;
   align-items: center;
+`;
+const HeaderDownerLine = styled.div`
+  height: 500px;
+  display: flex;
+  align-items: left;
+  background-color: #b3d7f6;
 `;

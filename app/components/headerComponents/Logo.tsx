@@ -11,8 +11,8 @@ export default function Logo() {
         src="/ShoppingCart.jpg"
         alt="Website Logo"
         priority
-        width={100}
-        height={100}
+        width={144}
+        height={144}
       />
       <LogoText>Shopping Website</LogoText>
     </LogoWrapper>
@@ -22,7 +22,6 @@ export default function Logo() {
 const LogoWrapper = styled(Link)`
   display: flex;
   align-items: center;
-  height: 62px;
   padding: 4px;
   flex-grow: 2;
   &:hover {
