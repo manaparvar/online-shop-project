@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Text } from "../Atoms/Text";
+import { Text } from "../Atoms/text";
 import NavLinks from "../Atoms/link";
 
 export default function Navbar() {

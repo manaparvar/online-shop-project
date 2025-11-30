@@ -1,11 +1,11 @@
 "use client";
 
 import styled from "styled-components";
-import Logo from "./headerComponents/Logo";
-import SearchBar from "./headerComponents/SearchBar";
-import Icons from "./headerComponents/Icons";
-import { Button } from "./Atoms/Button.tsx";
-import Navbar from "./headerComponents/Navbar";
+import Logo from "./headerComponents/logo";
+import SearchBar from "./headerComponents/searchBar";
+import Icons from "./headerComponents/icons";
+// import { Button } from "./Atoms/Button.tsx";
+import Navbar from "./headerComponents/navbar";
 export default function Header() {
   return (
     <HeaderWrapper>
@@ -17,7 +17,7 @@ export default function Header() {
       <HeaderDownerLine>
         <Navbar />
       </HeaderDownerLine>
-      <Button color="green" variant="addToCart" />
+      {/* <Button color="green" variant="addToCart" /> */}
     </HeaderWrapper>
   );
 }

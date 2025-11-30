@@ -13,6 +13,11 @@ export const theme = {
     blue: "#3B82F6",
     darkGrey: "#333333",
   },
+  breakpoints: {
+    mobile: "0px",
+    tablet: "768px",
+    desktop: "1024px",
+  },
 } as const;
 
 export type ThemeType = typeof theme;
