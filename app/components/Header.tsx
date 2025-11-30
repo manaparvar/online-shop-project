@@ -2,9 +2,8 @@
 
 import styled from "styled-components";
 import Logo from "./headerComponents/Logo";
-import SearchBar from "./headerComponents/SearchBar";
-import Icons from "./headerComponents/Icons";
-import Navbar from "./headerComponents/Navbar";
+import SearchBar from "./headerComponents/searchBar";
+import Icons from "./headerComponents/icons";
 export default function Header() {
   return (
     <HeaderWrapper>
