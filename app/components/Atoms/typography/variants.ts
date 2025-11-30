@@ -1,74 +1,42 @@
 export const textVariants = {
-  desktopH1: {
-    size: "32px",
-    weight: "bold",
+  h1: {
+    fontSize: {
+      mobile: "24px",
+      tablet: "28px",
+      desktop: "32px",
+    },
+    fontWeight: 700,
   },
-  desktopH2: {
-    size: "24px",
-    weight: "bold",
+  h2: {
+    fontSize: {
+      mobile: "20px",
+      tablet: "24px",
+      desktop: "28px",
+    },
+    fontWeight: 700,
   },
-  desktopH3: {
-    size: "20px",
-    weight: "bold",
+  h3: {
+    fontSize: {
+      mobile: "20px",
+      tablet: "20px",
+      desktop: "18px",
+    },
+    fontWeight: 700,
   },
-  desktopBody: {
-    size: "16px",
-    weight: "normal",
+  body: {
+    fontSize: {
+      mobile: "14px",
+      tablet: "16px",
+      desktop: "16px",
+    },
+    fontWeight: 400,
   },
-  desktopButton: {
-    size: "16px",
-    weight: "normal",
-  },
-  desktopCaption: {
-    size: "14px",
-    weight: "light",
-  },
-  tabletH1: {
-    size: "28px",
-    weight: "bold",
-  },
-  tabletH2: {
-    size: "24px",
-    weight: "bold",
-  },
-  tabletH3: {
-    size: "20px",
-    weight: "bold",
-  },
-  tabletBody: {
-    size: "16px",
-    weight: "normal",
-  },
-  tabletButton: {
-    size: "16px",
-    weight: "normal",
-  },
-  tabletCaption: {
-    size: "14px",
-    weight: "light",
-  },
-  mobileH1: {
-    size: "24px",
-    weight: "bold",
-  },
-  mobileH2: {
-    size: "20px",
-    weight: "bold",
-  },
-  mobileH3: {
-    size: "18px",
-    weight: "bold",
-  },
-  mobileBody: {
-    size: "14px",
-    weight: "normal",
-  },
-  mobileButton: {
-    size: "14px",
-    weight: "normal",
-  },
-  mobileCaption: {
-    size: "12px",
-    weight: "light",
+  caption: {
+    fontSize: {
+      mobile: "12px",
+      tablet: "14px",
+      desktop: "14px",
+    },
+    fontWeight: 300,
   },
 } as const;

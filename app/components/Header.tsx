@@ -1,9 +1,11 @@
 "use client";
 
 import styled from "styled-components";
-import Logo from "./headerComponents/Logo";
+import Logo from "./headerComponents/logo";
 import SearchBar from "./headerComponents/searchBar";
 import Icons from "./headerComponents/icons";
+// import { Button } from "./Atoms/Button.tsx";
+import Navbar from "./headerComponents/navbar";
 export default function Header() {
   return (
     <HeaderWrapper>
@@ -43,4 +45,10 @@ const Divider = styled.div`
   border: none;
   margin-right: 80px;
   background-color: #f2f0ea;
+`;
+const HeaderDownerLine = styled.div`
+  height: 500px;
+  display: flex;
+  align-items: left;
+  background-color: #b3d7f6;
 `;
