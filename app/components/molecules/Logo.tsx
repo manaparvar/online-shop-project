@@ -3,11 +3,7 @@
 import Image from "next/image";
 import styled from "styled-components";
 import Link from "next/link";
-import { Text } from "../Atoms/Text";
-// interface LogoProps {
-//   context?: string;
-//   isEven: boolean;
-// }
+import { Text } from "../Atoms/text/text";
 
 export default function Logo() {
   return (
@@ -19,11 +15,8 @@ export default function Logo() {
         height={64}
         priority
       />
-      <Text />
-      <LogoText isEven={true}>Shopping</LogoText>
-      <LogoText special isEven={false}>
-        Website
-      </LogoText>
+      <Text>Shopping</Text>
+      <Text color="pink">Website</Text>
     </LogoWrapper>
   );
 }
@@ -41,22 +34,7 @@ const LogoImage = styled(Image)`
   width: 10%;
 `;
 
-const LogoText = styled.h1<{ special?: boolean }>`
-  color: ${(props) => (props.special ? "#C71D5B" : "#010101")};
-  font-size: 32px;
-  font-weight: bold;
-  text-align: center;
-  ${({ isEven }) =>
-    isEven
-      ? `
-        background-color: #ffffff0;
-      `
-      : `
-        background-color: #ffffff0;
-        margin-left: 8px;
-      `}
-`;
-// const LogoText2 = styled.span`
+// const LogoText2 = styled.span`;
 //   text-align: center;
 //   font-size: 24px;
 //   font-weight: bold;

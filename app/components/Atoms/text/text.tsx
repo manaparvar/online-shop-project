@@ -1,8 +1,8 @@
 "use client";
 
 import styled from "styled-components";
-import { theme } from "../../../styles/theme";
-import { textVariants } from "./typography/variants";
+import { theme } from "../../../../styles/theme";
+import { textVariants } from "./variants";
 
 // Clean type names
 type TextType = keyof typeof textVariants;

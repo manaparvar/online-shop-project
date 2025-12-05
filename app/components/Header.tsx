@@ -1,22 +1,34 @@
 "use client";
 
 import styled from "styled-components";
-import Logo from "./headerComponents/logo";
-import SearchBar from "./headerComponents/searchBar";
-import Icons from "./headerComponents/icons";
+import Logo from "./molecules/logo";
+import SearchBar from "./forms/searchBar";
 // import { Button } from "./Atoms/Button.tsx";
-import Navbar from "./headerComponents/navbar";
+import Icon from "./headerComponents/icon";
+import Profile from "./molecules/profile";
+import Navbar from "./organisms/navbar/navbar";
+
 export default function Header() {
   return (
     <HeaderWrapper>
       <HeaderUpperLine>
         <Logo />
         <SearchBar />
-        <Icons />
+        <RightSideWrapper>
+          <Icon label="Cart" icon="shoppingBag" size="md" color="darkGrey" />
+          <Icon
+            label="Favorite"
+            icon="heart"
+            size="md"
+            color="darkGrey"
+            fontVariant="button"
+          />
+          <Profile size="xxxlg" />
+        </RightSideWrapper>
       </HeaderUpperLine>
-      <HeaderDownerLine>
+      <HeaderDownerPart>
         <Navbar />
-      </HeaderDownerLine>
+      </HeaderDownerPart>
       <Divider></Divider>
     </HeaderWrapper>
   );
@@ -32,8 +44,15 @@ const HeaderUpperLine = styled.div`
   align-items: center;
   display: flex;
   height: 104px;
+  padding-top: 40px;
 `;
-const HeaderDownerLine = styled.div`
+const RightSideWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  gap: 40px;
+`;
+const HeaderDownerPart = styled.div`
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -45,10 +64,4 @@ const Divider = styled.div`
   border: none;
   margin-right: 80px;
   background-color: #f2f0ea;
-`;
-const HeaderDownerLine = styled.div`
-  height: 500px;
-  display: flex;
-  align-items: left;
-  background-color: #b3d7f6;
 `;
