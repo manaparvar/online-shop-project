@@ -4,9 +4,10 @@ import styled from "styled-components";
 import Logo from "./molecules/logo";
 import SearchBar from "./forms/searchBar";
 // import { Button } from "./Atoms/Button.tsx";
-import Icon from "./headerComponents/icon";
 import Profile from "./molecules/profile";
 import Navbar from "./organisms/navbar/navbar";
+import { iconData } from "./headerComponents/iconData";
+import Icon from "./headerComponents/icon";
 
 export default function Header() {
   return (
@@ -15,14 +16,16 @@ export default function Header() {
         <Logo />
         <SearchBar />
         <RightSideWrapper>
-          <Icon label="Cart" icon="shoppingBag" size="md" color="darkGrey" />
-          <Icon
-            label="Favorite"
-            icon="heart"
-            size="md"
-            color="darkGrey"
-            fontVariant="button"
-          />
+          {iconData.map((item, index) => (
+            <Icon
+              key={index}
+              item={item}
+              size="md"
+              color="darkGrey"
+              className=""
+            />
+          ))}
+
           <Profile size="xxxlg" />
         </RightSideWrapper>
       </HeaderUpperLine>
@@ -50,7 +53,8 @@ const RightSideWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: end;
-  gap: 40px;
+  justify-content: center;
+  gap: 24px;
 `;
 const HeaderDownerPart = styled.div`
   align-items: center;

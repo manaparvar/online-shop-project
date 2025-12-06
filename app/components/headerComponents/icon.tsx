@@ -2,37 +2,26 @@
 
 import { FC } from "react";
 import styled from "styled-components";
-import { iconsNames } from "./icons";
-import { iconSize } from "./icons";
-import { theme } from "./../../../styles/theme";
 import { Text } from "./../Atoms/text/text";
-import { textVariants } from "../Atoms/text/variants";
+import { iconData, iconsNames, IconItem } from "./iconData";
+import { sizes, SizeKey } from "../../../styles/sizes";
+import { theme } from "@/styles/theme";
 
-type iconProps = {
-  label: string;
-  icon: keyof typeof iconsNames;
-  size?: keyof typeof iconSize;
-  color?: keyof typeof theme.colors;
-  className?: string;
-  fontVariant?: keyof typeof textVariants.mobile;
+type IconProps = {
+  size: SizeKey;
+  item: IconItem;
+  color: keyof typeof theme.colors;
+  className: string;
 };
 
-export default function Icon({
-  icon,
-  label,
-  size = "sm",
-  color = "black",
-  className,
-  fontVariant,
-}: iconProps) {
+export default function Icon({ item, className, color, size }: IconProps) {
+  const { icon, label, fontVariant } = item;
   const SelectedIcon = iconsNames[icon];
-  const variant = fontVariant ?? "body";
+
   return (
-    <IconWrapper>
-      <SelectedIcon size={iconSize[size]} color={color} className={className} />
-      <Label variant={variant} color={color}>
-        {label}
-      </Label>
+    <IconWrapper className={className}>
+      <SelectedIcon size={sizes[size]} color={color} />
+      <Label variant={fontVariant}>{label}</Label>
     </IconWrapper>
   );
 }

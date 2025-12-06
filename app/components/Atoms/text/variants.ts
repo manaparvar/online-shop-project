@@ -39,4 +39,12 @@ export const textVariants = {
     },
     fontWeight: 300,
   },
+  button: {
+    fontSize: {
+      mobile: "14px",
+      tablet: "16px",
+      desktop: "16px",
+    },
+    fontWeight: 300,
+  },
 } as const;

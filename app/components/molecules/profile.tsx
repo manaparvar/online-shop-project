@@ -2,14 +2,14 @@
 
 import styled from "styled-components";
 import Image from "next/image";
-import { iconSize } from "../headerComponents/icons";
+import { sizes, SizeKey } from "@/styles/sizes";
 
 type props = {
-  size: keyof typeof iconSize;
+  size: SizeKey;
 };
 
-export default function Profile({ size = "md" }: props) {
-  const imageSize = iconSize[size];
+export default function Profile({ size }: props) {
+  const imageSize = sizes[size];
   return (
     <ProfileWrapper>
       <Image
@@ -30,4 +30,5 @@ const ProfileWrapper = styled.div`
   border-radius: 50%;
   overflow: hidden;
   background-color: grey;
+  margin-bottom: 5px;
 `;
