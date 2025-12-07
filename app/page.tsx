@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
-import Header from "./components/Header";
+// import Header from "./components/Header";
+import MobileHeader from "./components/mobileHeader";
 // import Footer from "./components/Footer";
 // import Content from "./components/Content";
 
@@ -13,7 +14,8 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <Header />
+      <MobileHeader />
+      {/* <Header /> */}
       {/* <Content /> */}
       {/* <Footer /> */}
     </>

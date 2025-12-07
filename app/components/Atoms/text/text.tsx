@@ -2,28 +2,19 @@
 
 import styled from "styled-components";
 import { theme } from "../../../../styles/theme";
-import { textVariants } from "./variants";
+import { TextVariant, textVariants } from "./variants";
 
-// Clean type names
-type TextType = keyof typeof textVariants;
 type ColorKey = keyof typeof theme.colors;
 
-// convert string weight → numeric weight
-// const weightMap = {
-//   light: 300,
-//   normal: 400,
-//   bold: 700,
-// } as const;
-
 type TextProps = {
-  variant?: TextType;
+  variant?: TextVariant;
   color?: ColorKey;
   as?: React.ElementType;
 };
 
 export const Text = styled.p<TextProps>`
   ${({ variant }) => {
-    const v: TextType = variant ?? "body";
+    const v: TextVariant = variant ?? "body";
     return `
   font-size: ${textVariants[v].fontSize.mobile};
   font-weight: ${textVariants[v].fontWeight};

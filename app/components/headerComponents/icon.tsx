@@ -3,25 +3,35 @@
 import { FC } from "react";
 import styled from "styled-components";
 import { Text } from "./../Atoms/text/text";
-import { iconData, iconsNames, IconItem } from "./iconData";
+import { iconsNames, IconItem } from "./iconData";
 import { sizes, SizeKey } from "../../../styles/sizes";
 import { theme } from "@/styles/theme";
+import { TextVariant } from "../Atoms/text/variants";
 
 type IconProps = {
   size: SizeKey;
   item: IconItem;
   color: keyof typeof theme.colors;
   className: string;
+  fontVariant?: TextVariant;
 };
 
-export default function Icon({ item, className, color, size }: IconProps) {
-  const { icon, label, fontVariant } = item;
+export default function Icon({
+  item,
+  className,
+  color,
+  size,
+  fontVariant,
+}: IconProps) {
+  const { icon, label } = item;
   const SelectedIcon = iconsNames[icon];
 
   return (
     <IconWrapper className={className}>
       <SelectedIcon size={sizes[size]} color={color} />
-      <Label variant={fontVariant}>{label}</Label>
+      <Label variant={fontVariant} color="black">
+        {label}
+      </Label>
     </IconWrapper>
   );
 }

@@ -45,6 +45,7 @@ export const textVariants = {
       tablet: "16px",
       desktop: "16px",
     },
-    fontWeight: 300,
+    fontWeight: 400,
   },
 } as const;
+export type TextVariant = keyof typeof textVariants;

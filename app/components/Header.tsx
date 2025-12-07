@@ -21,7 +21,7 @@ export default function Header() {
               key={index}
               item={item}
               size="md"
-              color="darkGrey"
+              color="black"
               className=""
             />
           ))}
@@ -37,11 +37,12 @@ export default function Header() {
   );
 }
 
-const HeaderWrapper = styled.header`
+const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 80px;
   padding-right: 80px;
+  position: fixed;
 `;
 const HeaderUpperLine = styled.div`
   align-items: center;

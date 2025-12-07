@@ -4,6 +4,7 @@ export const theme = {
     blue: "rgba(59, 130, 246, 1)",
     brightBlue: "rgba(239, 243, 244, 1)",
     brightGrey: "rgba(242, 240, 234, 1)",
+    darkerGrey: "rgba(40, 40, 40, 1)",
     darkGrey: "rgba(51, 51, 51, 1)",
     green: "rgba(16, 185, 129, 1)",
     mediumGrey: "rgba(164, 164, 164, 1)",

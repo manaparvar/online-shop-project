@@ -16,7 +16,7 @@ export const iconData: iconProps[] = [
   {
     fontVariant: "button",
     icon: "heart",
-    label: "Favorite",
+    label: "Favorites",
   },
 ] as const;
 
