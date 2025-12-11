@@ -1,17 +1,28 @@
 import styled from "styled-components";
 import { LineVariants } from "./variants";
-import { theme } from "./../../../style/theme";
-import { ReactElement } from "react";
-
-type Variant = keyof typeof LineVariants;
+import { theme } from "@/styles/theme";
+import { useDevice } from "./useDevice";
 type ColorKey = keyof typeof theme.colors;
-
-type LineProps = {
-  variant?: Variant;
+type lineProps = {
+  width?: string;
+  height?: string;
   color?: ColorKey;
-  as?: React.ElementType;
+  lineType: keyof typeof LineVariants.mobile;
 };
+export default function DividerLine({ lineType, color }: lineProps) {
+  const device = useDevice();
+  const style = LineVariants[device][lineType];
 
-export const DividerLine = styled.hr<LineProps>`
-  ${variant}
+  return <Line width={style.width} height={style.height} color={color} />;
+}
+
+export const Line = styled.div<{
+  width: string;
+  height: string;
+  color?: ColorKey;
+}>`
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
+  background-color: ${({ color }) =>
+    color ? theme.colors[color] : theme.colors.brightGrey};
 `;

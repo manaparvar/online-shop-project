@@ -24,9 +24,9 @@ export const LineVariants = {
       width: "343px",
       height: "1.5px",
     },
-  },
-  reviewdivider: {
-    width: "343px",
-    height: "1.5px",
+    reviewdivider: {
+      width: "343px",
+      height: "1.5px",
+    },
   },
 } as const;

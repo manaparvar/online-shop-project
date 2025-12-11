@@ -5,10 +5,10 @@ import Image from "next/image";
 import { sizes, SizeKey } from "@/styles/sizes";
 
 type props = {
-  size: SizeKey;
+  size?: SizeKey;
 };
 
-export default function Profile({ size }: props) {
+export default function Profile({ size = "lg" }: props) {
   const imageSize = sizes[size];
   return (
     <ProfileWrapper>
@@ -22,7 +22,9 @@ export default function Profile({ size }: props) {
   );
 }
 
-const ProfileWrapper = styled.div`
+const ProfileWrapper = styled.div<props>`
+  height: ${({ size }) => (size ? sizes[size] : sizes.xlg)};
+  width: ${({ size }) => (size ? sizes[size] : sizes.xlg)};
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -30,5 +32,4 @@ const ProfileWrapper = styled.div`
   border-radius: 50%;
   overflow: hidden;
   background-color: grey;
-  margin-bottom: 5px;
 `;

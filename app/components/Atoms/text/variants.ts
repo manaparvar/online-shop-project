@@ -41,11 +41,11 @@ export const textVariants = {
   },
   button: {
     fontSize: {
-      mobile: "14px",
+      mobile: "16px",
       tablet: "16px",
       desktop: "16px",
     },
-    fontWeight: 400,
+    fontWeight: 500,
   },
 } as const;
 export type TextVariant = keyof typeof textVariants;

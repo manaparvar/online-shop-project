@@ -4,19 +4,26 @@ import Image from "next/image";
 import styled from "styled-components";
 import Link from "next/link";
 import { Text } from "../Atoms/text/text";
+import { sizes, SizeKey } from "@/styles/sizes";
 
-export default function Logo() {
+type props = {
+  size: SizeKey;
+};
+
+export default function Logo({ size }: props) {
   return (
     <LogoWrapper href="/">
-      <LogoImage
+      <Image
         src="/MainLogo.png"
         alt="Website Logo"
-        width={64}
-        height={64}
+        width={sizes[size]}
+        height={sizes[size]}
         priority
       />
-      <Text>Shopping</Text>
-      <Text color="pink">Website</Text>
+      <Text variant="button">Shopping</Text>
+      <Text variant="button" color="pink">
+        Website
+      </Text>
     </LogoWrapper>
   );
 }
@@ -24,14 +31,10 @@ export default function Logo() {
 const LogoWrapper = styled(Link)`
   align-items: center;
   display: flex;
-  flex-grow: 1;
   height: 62px;
   &:hover {
     opacity: 0.85;
   }
-`;
-const LogoImage = styled(Image)`
-  width: 10%;
 `;
 
 // const LogoText2 = styled.span`;
