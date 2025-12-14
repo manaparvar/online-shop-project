@@ -1,9 +1,17 @@
-"use client";
 import "./globals.css";
 import localFont from "next/font/local";
-import { ThemeProvider } from "styled-components";
-import { theme } from "../styles/theme";
+import ThemeWrapper from "@/styles/themeWrapper";
 import Script from "next/script";
+import type { Metadata, Viewport } from "next";
+
+export const metadata: Metadata = {
+  title: "My App",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 const Satoshi = localFont({
   src: "../public/fonts/Satoshi-Variable.ttf",
@@ -22,7 +30,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
-        <ThemeProvider theme={theme}>{children}</ThemeProvider>
+        <ThemeWrapper>{children}</ThemeWrapper>
       </body>
     </html>
   );
