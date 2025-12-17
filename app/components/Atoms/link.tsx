@@ -1,15 +1,11 @@
 import link from "next/link";
 import styled from "styled-components";
 
-const NavLinks = styled(link)<{ $special?: boolean }>`
-  color: ${(props) => (props.$special ? "#C71D5B" : "#010101")};
-  font-size: 20px;
-  font-weight: bold;
-  margin-right: 64px;
-
+const NavLink = styled(link)`
+  width: auto;
   &:hover {
-    opacity: 0.7;
+    opacity: 0.5;
   }
 `;
 
-export default NavLinks;
+export default NavLink;

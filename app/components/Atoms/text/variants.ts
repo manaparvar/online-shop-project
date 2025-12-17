@@ -11,15 +11,15 @@ export const textVariants = {
     fontSize: {
       mobile: "20px",
       tablet: "24px",
-      desktop: "28px",
+      desktop: "24px",
     },
     fontWeight: 700,
   },
   h3: {
     fontSize: {
-      mobile: "20px",
+      mobile: "18px",
       tablet: "20px",
-      desktop: "18px",
+      desktop: "20px",
     },
     fontWeight: 700,
   },
@@ -41,11 +41,10 @@ export const textVariants = {
   },
   button: {
     fontSize: {
-      mobile: "16px",
+      mobile: "14px",
       tablet: "16px",
       desktop: "16px",
     },
     fontWeight: 500,
   },
 } as const;
-export type TextVariant = keyof typeof textVariants;

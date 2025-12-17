@@ -1,4 +1,11 @@
-import { Heart, ShoppingCart, ShoppingBag, User, Search } from "lucide-react";
+import {
+  Heart,
+  ShoppingCart,
+  ShoppingBag,
+  User,
+  Search,
+  X,
+} from "lucide-react";
 import { textVariants } from "../Atoms/text/variants";
 
 type iconProps = {
@@ -24,6 +31,7 @@ export const iconsNames = {
   heart: Heart,
   cart: ShoppingCart,
   shoppingBag: ShoppingBag,
+  close: X,
 } as const;
 
 export type IconItem = (typeof iconData)[number];
