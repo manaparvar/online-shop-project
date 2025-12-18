@@ -1,26 +1,41 @@
 "use client";
 import styled from "styled-components";
-import HamburgerNavbar from "./organisms/navbar/hamburgerNavbar/hamburgerNavbar";
+import MyHamburgerButton from "./organisms/navbar/mobileNavbar/hamburgerButton";
 import Icon from "./headerComponents/icon";
-import { iconData } from "./headerComponents/iconData";
+import { icons } from "./headerComponents/iconData";
 import Profile from "./molecules/profile";
 import Logo from "./molecules/logo";
 import DividerLine from "./Atoms/divider/index";
+import CurtainMenu from "./organisms/navbar/mobileNavbar/mobileNavbar";
+import { useState } from "react";
 
 export default function MobileHeader() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openMenu = () => {
+    setIsOpen(!isOpen);
+  };
+  const closeMenu = () => setIsOpen(false);
+
+  const filteredIcons = icons.filter(
+    (item) => item.icon === "shoppingBag" || item.icon === "heart"
+  );
+
   return (
     <>
       <HeaderWrapper>
-        <MyHamburgerNavbar />
+        <MyHamburgerButton size="lg" isOpen={isOpen} onToggle={openMenu} />
+        <CurtainMenu isOpen={isOpen} onToggle={closeMenu} />
         <MobileLogo size="lg" />
         <RightSideWrapper>
-          {iconData.map((item, index) => (
+          {filteredIcons.map((item, index) => (
             <Icon
               key={index}
-              item={item}
               size="sm"
               color="black"
-              className="mobile-icon"
+              label={item.label}
+              icon={item.icon}
+              fontVariant={item.fontVariant}
             />
           ))}
           <Profile size="xlg" />
@@ -43,7 +58,7 @@ const HeaderWrapper = styled.div`
   position: relative;
   top: 16px;
 `;
-const MyHamburgerNavbar = styled(HamburgerNavbar)``;
+
 const MobileLogo = styled(Logo)`
   left: 50%;
   position: absolute;

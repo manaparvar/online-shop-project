@@ -3,20 +3,17 @@
 import styled from "styled-components";
 import { theme } from "@/styles/theme";
 import { sizes, SizeKey } from "@/styles/sizes";
-import { useState } from "react";
 
 type props = {
   size: SizeKey;
+  isOpen: boolean;
+  onToggle: () => void;
 };
-export default function MyHamburgerButton({ size }: props) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function MyHamburgerButton({ isOpen, onToggle, size }: props) {
+  // const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <HamburgerButton
-      size={size}
-      $isOpen={isOpen}
-      onClick={() => setIsOpen(!isOpen)}
-    >
+    <HamburgerButton size={size} $isOpen={isOpen} onClick={onToggle}>
       <HamburgerUpperLine $isOpen={isOpen}></HamburgerUpperLine>
       <HamburgerMiddleLine $isOpen={isOpen}></HamburgerMiddleLine>
       <HamburgerDownerLine $isOpen={isOpen}></HamburgerDownerLine>

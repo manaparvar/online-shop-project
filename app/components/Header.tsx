@@ -2,7 +2,7 @@
 
 import styled from "styled-components";
 import Logo from "./molecules/logo";
-import SearchBar from "./forms/searchBar";
+import SearchBar from "./forms/searchBar/searchBar";
 // import { Button } from "./Atoms/Button.tsx";
 import Profile from "./molecules/profile";
 import Navbar from "./organisms/navbar/navbar";
