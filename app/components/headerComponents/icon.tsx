@@ -13,7 +13,6 @@ type TextVariant = keyof typeof textVariants;
 
 type IconProps = {
   icon: IconName;
-  size: SizeKey;
   color: keyof typeof theme.colors;
   className?: string;
   fontVariant?: TextVariant;
@@ -23,7 +22,6 @@ type IconProps = {
 export default function Icon({
   className,
   color,
-  size,
   fontVariant,
   icon,
   label,
@@ -37,7 +35,7 @@ export default function Icon({
 
   return (
     <IconWrapper className={className}>
-      <SelectedIcon size={sizes[size]} color={theme.colors[color]} />
+      <StyledIcon as={SelectedIcon} color={theme.colors[color]} />
       {label && (
         <Label variant={fontVariant} color="black">
           {label}
@@ -54,6 +52,15 @@ const IconWrapper = styled.div`
   flex-grow: 1;
   justify-content: center;
 `;
+const StyledIcon = styled.svg<{ size: SizeKey }>`
+  width: ${({ size }) => size ?? sizes.xs};
+  @media (min-width: 376px) {
+    width: ${({ size }) => size ?? sizes.sm};
+  }
+  @media (min-width: 1024px) {
+    width: ${({ size }) => size ?? sizes.md};
+  }
+`;
 
 const Label = styled(Text)`
   margin-top: 8px;
@@ -61,13 +68,3 @@ const Label = styled(Text)`
     opacity: 0.7;
   }
 `;
-// const className = {
-//   align-items: "center",
-//   display: "flex",
-//   flex-direction: "column",
-//   justify-content: center,
-//   margin-left: "24px"
-//   &:hover {
-//     opacity: 0.75;
-//   }
-// };
