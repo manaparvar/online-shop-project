@@ -11,26 +11,25 @@ export default function Profile() {
         src="/profile.jpg"
         alt="User Profile"
         fill
-        style={{ objectFit: "contain" }}
+        style={{ objectFit: "cover" }}
       />
     </ProfileWrapper>
   );
 }
 
-const ProfileWrapper = styled.div<{ size?: SizeKey }>`
-  width: ${({ size }) => (size ? sizes.lg : sizes.lg)};
-  height: ${({ size }) => (size ? sizes.lg : sizes.lg)};
+const ProfileWrapper = styled.div`
+  width: ${sizes.lg}px;
+  height: ${sizes.lg}px;
   @media (min-width: 376px) {
-    width: ${({ size }) => (size ? sizes.xlg : sizes.lg)};
-    height: ${({ size }) => (size ? sizes.xlg : sizes.lg)};
+    width: ${sizes.xlg}px;
+    height: ${sizes.xlg}px;
   }
   @media (min-width: 1024px) {
-    width: ${({ size }) => (size ? sizes.xl : sizes.lg)};
-    height: ${({ size }) => (size ? sizes.xl : sizes.lg)};
+    width: ${sizes.xl}px;
+    height: ${sizes.xl}px;
   }
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-self: flex-start;
   border-radius: 50%;
   overflow: hidden;
+  position: relative;
 `;

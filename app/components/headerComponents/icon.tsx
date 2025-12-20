@@ -52,18 +52,20 @@ const IconWrapper = styled.div`
   flex-grow: 1;
   justify-content: center;
 `;
-const StyledIcon = styled.svg<{ size: SizeKey }>`
-  width: ${({ size }) => size ?? sizes.xs};
+const StyledIcon = styled.svg`
+  width: ${sizes.sm}px;
+
   @media (min-width: 376px) {
-    width: ${({ size }) => size ?? sizes.sm};
+    width: ${sizes.md}px;
   }
+
   @media (min-width: 1024px) {
-    width: ${({ size }) => size ?? sizes.md};
+    width: ${sizes.lg}px;
   }
 `;
 
 const Label = styled(Text)`
-  margin-top: 8px;
+  margin-top: 5px;
   &:hover {
     opacity: 0.7;
   }

@@ -31,14 +31,13 @@ export default function MobileHeader() {
           {filteredIcons.map((item, index) => (
             <Icon
               key={index}
-              size="sm"
               color="black"
               label={item.label}
               icon={item.icon}
               fontVariant={item.fontVariant}
             />
           ))}
-          <Profile size="xlg" />
+          <Profile />
         </RightSideWrapper>
       </HeaderWrapper>
       <DividerWrapper>

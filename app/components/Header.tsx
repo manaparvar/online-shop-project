@@ -6,27 +6,30 @@ import SearchBar from "./forms/searchBar/searchBar";
 // import { Button } from "./Atoms/Button.tsx";
 import Profile from "./molecules/profile";
 import Navbar from "./organisms/navbar/navbar";
-import { iconData } from "./headerComponents/iconData";
 import Icon from "./headerComponents/icon";
+import { icons } from "./headerComponents/iconData";
 
 export default function Header() {
+  const filteredIcons = icons.filter(
+    (item) => item.icon === "shoppingBag" || item.icon === "heart"
+  );
   return (
     <HeaderWrapper>
       <HeaderUpperLine>
         <Logo />
         <SearchBar />
         <RightSideWrapper>
-          {iconData.map((item, index) => (
+          {filteredIcons.map((item, index) => (
             <Icon
               key={index}
-              item={item}
-              size="md"
+              icon={item.icon}
               color="black"
-              className=""
+              label={item.label}
+              fontVariant={item.fontVariant}
             />
           ))}
 
-          <Profile size="xxxlg" />
+          <Profile />
         </RightSideWrapper>
       </HeaderUpperLine>
       <HeaderDownerPart>
