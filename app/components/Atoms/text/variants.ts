@@ -5,7 +5,7 @@ export const textVariants = {
       tablet: "28px",
       desktop: "32px",
     },
-    fontWeight: 700,
+    fontWeight: 600,
   },
   h2: {
     fontSize: {
@@ -13,15 +13,15 @@ export const textVariants = {
       tablet: "24px",
       desktop: "24px",
     },
-    fontWeight: 700,
+    fontWeight: 500,
   },
   h3: {
     fontSize: {
       mobile: "18px",
-      tablet: "20px",
-      desktop: "20px",
+      tablet: "19px",
+      desktop: "19px",
     },
-    fontWeight: 700,
+    fontWeight: 500,
   },
   body: {
     fontSize: {

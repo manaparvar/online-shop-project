@@ -1,7 +1,7 @@
 export const LineVariants = {
   desktop: {
     headerDivider: {
-      width: "864px",
+      width: "91.5%",
       height: "1.5px",
     },
     reviewdivider: {
@@ -11,7 +11,7 @@ export const LineVariants = {
   },
   tablet: {
     headerDivider: {
-      width: "608px",
+      width: "91.5%",
       height: "1.5px",
     },
     reviewdivider: {
@@ -21,7 +21,7 @@ export const LineVariants = {
   },
   mobile: {
     headerDivider: {
-      width: "343px",
+      width: "91.5%",
       height: "1.5px",
     },
     reviewdivider: {

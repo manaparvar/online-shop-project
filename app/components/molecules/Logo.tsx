@@ -10,45 +10,50 @@ type props = {
   size: SizeKey;
 };
 
-export default function Logo({ size }: props) {
+export default function Logo() {
   return (
     <LogoWrapper href="/">
-      <Image
+      <LogoImage
         src="/MainLogo.png"
         alt="Website Logo"
-        width={sizes[size]}
-        height={sizes[size]}
-        priority
+        width={sizes["2xl"]}
+        height={sizes["2xl"]}
       />
-      <Text variant="button">Shopping</Text>
-      <Text variant="button" color="pink">
-        Website
-      </Text>
+      <TextWrapper>
+        <Text variant="button">Shopping</Text>
+        <Text variant="button" color="pink">
+          Website
+        </Text>
+      </TextWrapper>
     </LogoWrapper>
   );
 }
 
 const LogoWrapper = styled(Link)`
   align-items: center;
+  position: relative;
   display: flex;
-  height: 62px;
   &:hover {
     opacity: 0.85;
   }
 `;
-
-// const LogoText2 = styled.span`;
-//   text-align: center;
-//   font-size: 24px;
-//   font-weight: bold;
-//   color: #30aa3a;
-// `;
-
-// // [] {} "false" "0"
-// // "" 0 null
-// const a = null
-// if(a) {
-//     console.log('a is true')
-// } else {
-//     console.log('a is false')
-// }
+const LogoImage = styled(Image)`
+  @media (max-width: 375px) {
+    width: ${sizes.lg}px;
+    height: ${sizes.lg}px;
+  }
+  @media (min-width: 376px) {
+    width: ${sizes.xlg}px;
+    height: ${sizes.xlg}px;
+  }
+  @media (min-width: 1024px) {
+    width: ${sizes["2xl"]}px;
+    height: ${sizes["2xl"]}px;
+  }
+`;
+const TextWrapper = styled.div`
+  /* display: none;
+  @media (min-width: 376px) {
+    display: block;
+  } */
+`;

@@ -35,7 +35,11 @@ export default function Icon({
 
   return (
     <IconWrapper className={className}>
-      <StyledIcon as={SelectedIcon} color={theme.colors[color]} />
+      <StyledIcon
+        as={SelectedIcon}
+        color={theme.colors[color]}
+        strokeWidth={1.25}
+      />
       {label && (
         <Label variant={fontVariant} color="black">
           {label}
@@ -58,10 +62,10 @@ const StyledIcon = styled.svg`
   @media (min-width: 376px) {
     width: ${sizes.md}px;
   }
-
   @media (min-width: 1024px) {
     width: ${sizes.lg}px;
   }
+  stroke: ${({ theme }) => theme.colors.mediumGrey};
 `;
 
 const Label = styled(Text)`
