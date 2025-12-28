@@ -4,11 +4,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import Link from "next/link";
 import { Text } from "../Atoms/text/text";
-import { sizes, SizeKey } from "@/styles/sizes";
-
-type props = {
-  size: SizeKey;
-};
+import { sizes } from "@/styles/sizes";
 
 export default function Logo() {
   return (
@@ -33,14 +29,16 @@ const LogoWrapper = styled(Link)`
   align-items: center;
   position: relative;
   display: flex;
+  flex-direction: row;
+  gap: 3px;
   &:hover {
     opacity: 0.85;
   }
 `;
 const LogoImage = styled(Image)`
   @media (max-width: 375px) {
-    width: ${sizes.lg}px;
-    height: ${sizes.lg}px;
+    width: ${sizes.md}px;
+    height: ${sizes.md}px;
   }
   @media (min-width: 376px) {
     width: ${sizes.xlg}px;
@@ -52,8 +50,5 @@ const LogoImage = styled(Image)`
   }
 `;
 const TextWrapper = styled.div`
-  /* display: none;
-  @media (min-width: 376px) {
-    display: block;
-  } */
+  /* gap: 8px; */
 `;

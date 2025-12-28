@@ -41,7 +41,7 @@ export const textVariants = {
   },
   button: {
     fontSize: {
-      mobile: "14px",
+      mobile: "12px",
       tablet: "16px",
       desktop: "16px",
     },

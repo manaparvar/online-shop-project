@@ -6,7 +6,7 @@ import { icons } from "./headerComponents/iconData";
 import Profile from "./molecules/profile";
 import Logo from "./molecules/logo";
 import DividerLine from "./Atoms/divider/index";
-import CurtainMenu from "./organisms/navbar/mobileNavbar/mobileNavbar";
+import CurtainMenu from "./organisms/navbar/mobileNavbar/curtainMenu";
 import { useState } from "react";
 
 export default function MobileHeader() {
@@ -22,11 +22,11 @@ export default function MobileHeader() {
   );
 
   return (
-    <>
+    <Wrapper>
       <HeaderWrapper>
         <MyHamburgerButton size="lg" isOpen={isOpen} onToggle={openMenu} />
         <CurtainMenu isOpen={isOpen} onToggle={closeMenu} />
-        <MobileLogo size="lg" />
+        <MobileLogo />
         <RightSideWrapper>
           {filteredIcons.map((item, index) => (
             <Icon
@@ -34,7 +34,8 @@ export default function MobileHeader() {
               color="black"
               label={item.label}
               icon={item.icon}
-              fontVariant={item.fontVariant}
+              fontVariant="caption"
+              className="mobile-icon"
             />
           ))}
           <Profile />
@@ -43,18 +44,25 @@ export default function MobileHeader() {
       <DividerWrapper>
         <DividerLine color="brightGrey" lineType="headerDivider" />
       </DividerWrapper>
-    </>
+    </Wrapper>
   );
 }
-
+const Wrapper = styled.div`
+  padding: 0 clamp(16px, 6vw, 80px);
+  display: flex;
+  flex-direction: column;
+`;
 const HeaderWrapper = styled.div`
   align-items: center;
   display: flex;
   flex-direction: row;
-  height: 80px;
+  height: 56px;
+  @media (min-width: 376px) {
+    height: 72px;
+  }
   justify-content: space-between;
-  padding: 0 16px;
   position: relative;
+  margin: 8px 0;
   top: 16px;
 `;
 
@@ -65,7 +73,10 @@ const MobileLogo = styled(Logo)`
 `;
 const RightSideWrapper = styled.div`
   display: flex;
-  gap: 16px;
+  gap: 8px;
+  @media (min-width: 376px) {
+    gap: 16px;
+  }
 
   .mobile-icon p {
     display: none;
@@ -77,7 +88,6 @@ const RightSideWrapper = styled.div`
   }
 `;
 const DividerWrapper = styled.div`
-  align-items: center;
+  justify-content: center;
   display: flex;
-  padding: 16px;
 `;

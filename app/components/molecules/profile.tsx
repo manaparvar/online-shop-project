@@ -18,15 +18,15 @@ export default function Profile() {
 }
 
 const ProfileWrapper = styled.div`
-  width: ${sizes.lg}px;
-  height: ${sizes.lg}px;
+  width: ${sizes.md}px;
+  height: ${sizes.md}px;
   @media (min-width: 376px) {
-    width: ${sizes.xlg}px;
-    height: ${sizes.xlg}px;
+    width: ${sizes.lg}px;
+    height: ${sizes.lg}px;
   }
   @media (min-width: 1024px) {
-    width: ${sizes.xl}px;
-    height: ${sizes.xl}px;
+    width: ${sizes.xlg}px;
+    height: ${sizes.xlg}px;
   }
   align-self: flex-start;
   border-radius: 50%;

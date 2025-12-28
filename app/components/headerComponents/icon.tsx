@@ -60,7 +60,7 @@ const StyledIcon = styled.svg`
   width: ${sizes.sm}px;
 
   @media (min-width: 376px) {
-    width: ${sizes.md}px;
+    width: 20px;
   }
   @media (min-width: 1024px) {
     width: ${sizes.lg}px;
@@ -69,7 +69,7 @@ const StyledIcon = styled.svg`
 `;
 
 const Label = styled(Text)`
-  margin-top: 5px;
+  margin-top: 4px;
   &:hover {
     opacity: 0.7;
   }
