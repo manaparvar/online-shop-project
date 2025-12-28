@@ -1,12 +1,12 @@
 "use client";
 import styled from "styled-components";
-import MyHamburgerButton from "./organisms/navbar/mobileNavbar/hamburgerButton";
-import Icon from "./headerComponents/icon";
-import { icons } from "./headerComponents/iconData";
-import Profile from "./molecules/profile";
-import Logo from "./molecules/logo";
+import MyHamburgerButton from "./organisms/navbar/mobileNavbar/hamburgerButton/hamburgerButton";
+import Icon from "./molecules/icon/icon";
+import { icons } from "./molecules/icon/component/iconData";
+import Profile from "./molecules/profile/profile";
+import Logo from "./molecules/logo/logo";
 import DividerLine from "./Atoms/divider/index";
-import CurtainMenu from "./organisms/navbar/mobileNavbar/curtainMenu";
+import CurtainMenu from "./organisms/navbar/mobileNavbar/curtainMenu/curtainMenu";
 import { useState } from "react";
 
 export default function MobileHeader() {

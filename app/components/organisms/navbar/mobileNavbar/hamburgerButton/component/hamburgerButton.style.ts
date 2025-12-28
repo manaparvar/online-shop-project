@@ -1,31 +1,18 @@
-"use client";
-
 import styled from "styled-components";
 import { theme } from "@/styles/theme";
 import { sizes, SizeKey } from "@/styles/sizes";
 
-type props = {
+export const HamburgerButton = styled.button<{
   size: SizeKey;
-  isOpen: boolean;
-  onToggle: () => void;
-};
-export default function MyHamburgerButton({ isOpen, onToggle, size }: props) {
-  // const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <HamburgerButton size={size} $isOpen={isOpen} onClick={onToggle}>
-      <HamburgerUpperLine $isOpen={isOpen}></HamburgerUpperLine>
-      <HamburgerMiddleLine $isOpen={isOpen}></HamburgerMiddleLine>
-      <HamburgerDownerLine $isOpen={isOpen}></HamburgerDownerLine>
-    </HamburgerButton>
-  );
-}
-
-const HamburgerButton = styled.button<{ size: SizeKey; $isOpen: boolean }>`
+  $isOpen: boolean;
+}>`
   height: ${({ size }) => (size ? sizes[size] : sizes.lg)};
   width: ${({ size }) => (size ? sizes[size] : sizes.lg)};
 `;
-const HamburgerUpperLine = styled.span<{ $isOpen: boolean; color?: string }>`
+export const HamburgerUpperLine = styled.span<{
+  $isOpen: boolean;
+  color?: string;
+}>`
   background-color: ${({ color }) => color ?? theme.colors.black};
   border-radius: 3px;
   display: block;
@@ -36,7 +23,10 @@ const HamburgerUpperLine = styled.span<{ $isOpen: boolean; color?: string }>`
   transition: 0.4s;
   width: 24px;
 `;
-const HamburgerMiddleLine = styled.span<{ $isOpen: boolean; color?: string }>`
+export const HamburgerMiddleLine = styled.span<{
+  $isOpen: boolean;
+  color?: string;
+}>`
   background-color: ${({ color }) => color ?? theme.colors.black};
   opacity: ${({ $isOpen }) => ($isOpen ? "0" : "1")};
   border-radius: 3px;
@@ -45,7 +35,10 @@ const HamburgerMiddleLine = styled.span<{ $isOpen: boolean; color?: string }>`
   margin: 5px 0;
   width: 24px;
 `;
-const HamburgerDownerLine = styled.span<{ $isOpen: boolean; color?: string }>`
+export const HamburgerDownerLine = styled.span<{
+  $isOpen: boolean;
+  color?: string;
+}>`
   background-color: ${({ color }) => color ?? theme.colors.black};
   border-radius: 3px;
   display: block;

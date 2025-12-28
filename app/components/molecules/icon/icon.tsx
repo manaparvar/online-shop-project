@@ -1,13 +1,10 @@
 "use client";
 
 import { FC } from "react";
-import styled from "styled-components";
-import { Text } from "./../Atoms/text/text";
-// import { iconsNames, IconItem } from "./iconData";
-import { sizes, SizeKey } from "../../../styles/sizes";
 import { theme } from "@/styles/theme";
-import { textVariants } from "../Atoms/text/variants";
-import { IconName, iconsMap } from "./iconData";
+import { textVariants } from "../../Atoms/text/variants";
+import { IconName, iconsMap } from "./component/iconData";
+import { IconWrapper, StyledIcon, Label } from "./component/icon.style";
 
 type TextVariant = keyof typeof textVariants;
 
@@ -48,29 +45,3 @@ export default function Icon({
     </IconWrapper>
   );
 }
-
-const IconWrapper = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  justify-content: center;
-`;
-const StyledIcon = styled.svg`
-  width: ${sizes.sm}px;
-
-  @media (min-width: 376px) {
-    width: 20px;
-  }
-  @media (min-width: 1024px) {
-    width: ${sizes.lg}px;
-  }
-  stroke: ${({ theme }) => theme.colors.mediumGrey};
-`;
-
-const Label = styled(Text)`
-  margin-top: 4px;
-  &:hover {
-    opacity: 0.7;
-  }
-`;

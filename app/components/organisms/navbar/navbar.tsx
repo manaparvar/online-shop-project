@@ -2,9 +2,9 @@
 
 import styled from "styled-components";
 import { Text } from "../../Atoms/text/text";
-import NavLink from "../../Atoms/link";
+import NavLink from "../../Atoms/link/link";
 import { theme } from "../../../../styles/theme";
-import { navLinks } from "./navData";
+import { navLinks } from "./component/navData";
 import { sizes } from "@/styles/sizes";
 
 const TagText = styled(Text)<{ isPink: boolean }>`

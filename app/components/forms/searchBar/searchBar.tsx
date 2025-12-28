@@ -1,12 +1,12 @@
 "use client";
 
-import { icons } from "../../../headerComponents/iconData";
-import Icon from "../../../headerComponents/icon";
+import { icons } from "../../molecules/icon/component/iconData";
+import Icon from "../../molecules/icon/icon";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { SearchWrapper } from "./searchBar.style";
-import { SearchInput } from "./searchBar.style";
-import { SearchButton } from "./searchBar.style";
+import { SearchWrapper } from "./components/searchBar.style";
+import { SearchInput } from "./components/searchBar.style";
+import { SearchButton } from "./components/searchBar.style";
 
 const filteredIcons = icons.filter((item) => item.icon === "search");
 

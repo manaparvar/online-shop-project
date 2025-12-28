@@ -1,23 +1,7 @@
-"use client";
-
 import styled from "styled-components";
-import Image from "next/image";
-import { sizes, SizeKey } from "@/styles/sizes";
+import { sizes } from "@/styles/sizes";
 
-export default function Profile() {
-  return (
-    <ProfileWrapper>
-      <Image
-        src="/profile.jpg"
-        alt="User Profile"
-        fill
-        style={{ objectFit: "cover" }}
-      />
-    </ProfileWrapper>
-  );
-}
-
-const ProfileWrapper = styled.div`
+export const ProfileWrapper = styled.div`
   width: ${sizes.md}px;
   height: ${sizes.md}px;
   @media (min-width: 376px) {

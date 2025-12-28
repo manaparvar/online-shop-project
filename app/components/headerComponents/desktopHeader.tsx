@@ -1,13 +1,13 @@
 "use client";
 
 import styled from "styled-components";
-import Logo from "./molecules/logo";
-import SearchBar from "./forms/searchBar/components/searchBar";
+import Logo from "./molecules/logo/logo";
+import SearchBar from "./forms/searchBar/searchBar";
 // import { Button } from "./Atoms/Button.tsx";
-import Profile from "./molecules/profile";
+import Profile from "./molecules/profile/profile";
 import Navbar from "./organisms/navbar/navbar";
-import Icon from "./headerComponents/icon";
-import { icons } from "./headerComponents/iconData";
+import Icon from "./molecules/icon/icon";
+import { icons } from "./molecules/icon/component/iconData";
 import DividerLine from "./Atoms/divider";
 
 export default function DesktopHeader() {
