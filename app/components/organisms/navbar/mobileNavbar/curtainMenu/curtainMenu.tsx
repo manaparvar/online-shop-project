@@ -3,7 +3,6 @@
 import NavLinks from "@/app/components/Atoms/link/link";
 import SearchBar from "@/app/components/forms/searchBar/searchBar";
 import { mobileNavLinks } from "../../component/navData";
-import Icon from "@/app/components/molecules/icon/icon";
 import {
   MenuWrapper,
   SearchBarWrapper,
@@ -12,6 +11,7 @@ import {
   NavbarWrapper,
   NavLinkButton,
   TagText,
+  StyledIcon,
 } from "./components/curtainMenu.style";
 
 type props = {
@@ -24,7 +24,7 @@ export default function CurtainMenu({ isOpen, onToggle }: props) {
   return (
     <MenuWrapper $isOpen={isOpen}>
       <IconWrapper onClick={onToggle}>
-        <Icon
+        <StyledIcon
           icon="close"
           label="Close"
           color="mediumGrey"
@@ -41,7 +41,7 @@ export default function CurtainMenu({ isOpen, onToggle }: props) {
               <NavLinkButton>
                 <TagText
                   color="black"
-                  isPink={item.label === "Summer Sale"}
+                  $isPink={item.label === "Summer Sale"}
                   variant="caption"
                 >
                   {item.label}

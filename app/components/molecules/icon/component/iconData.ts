@@ -1,14 +1,20 @@
-import { Heart, ShoppingBag, X, SearchIcon } from "lucide-react";
+import { Heart, ShoppingBag, X, SearchIcon, ChevronDown } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 import { textVariants } from "../../../Atoms/text/variants";
 
-export type IconName = "heart" | "shoppingBag" | "close" | "search";
+export type IconName =
+  | "heart"
+  | "shoppingBag"
+  | "close"
+  | "search"
+  | "dropDown";
 
 export const iconsMap: Record<IconName, LucideIcon> = {
   heart: Heart,
   shoppingBag: ShoppingBag,
   close: X,
   search: SearchIcon,
+  dropDown: ChevronDown,
 } as const;
 
 type IconItem = {
@@ -37,5 +43,10 @@ export const icons: IconItem[] = [
     fontVariant: "caption",
     icon: "search",
     label: "Search",
+  },
+  {
+    fontVariant: "caption",
+    icon: "dropDown",
+    label: "DropDown",
   },
 ] as const;

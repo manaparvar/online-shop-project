@@ -25,10 +25,10 @@ export default function Icon({
 }: IconProps) {
   const SelectedIcon = iconsMap[icon];
 
-  if (!SelectedIcon) {
-    console.warn(`Icon "${icon}" not found!`);
-    return null;
-  }
+  // if (!SelectedIcon) {
+  //   console.warn(`Icon "${icon}" not found!`);
+  //   return null;
+  // }
 
   return (
     <IconWrapper className={className}>
