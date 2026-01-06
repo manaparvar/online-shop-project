@@ -1,7 +1,7 @@
 "use client";
 
 import {
-  HamburgerButton,
+  HamburgerWrapper,
   HamburgerUpperLine,
   HamburgerMiddleLine,
   HamburgerDownerLine,
@@ -13,14 +13,14 @@ type props = {
   isOpen: boolean;
   onToggle: () => void;
 };
-export default function MyHamburgerButton({ isOpen, onToggle, size }: props) {
+export default function HamburgerButton({ isOpen, onToggle, size }: props) {
   // const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <HamburgerButton size={size} $isOpen={isOpen} onClick={onToggle}>
+    <HamburgerWrapper size={size} $isOpen={isOpen} onClick={onToggle}>
       <HamburgerUpperLine $isOpen={isOpen}></HamburgerUpperLine>
       <HamburgerMiddleLine $isOpen={isOpen}></HamburgerMiddleLine>
       <HamburgerDownerLine $isOpen={isOpen}></HamburgerDownerLine>
-    </HamburgerButton>
+    </HamburgerWrapper>
   );
 }

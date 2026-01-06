@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { theme } from "@/styles/theme";
 import { sizes, SizeKey } from "@/styles/sizes";
 
-export const HamburgerButton = styled.button<{
+export const HamburgerWrapper = styled.button<{
   size: SizeKey;
   $isOpen: boolean;
 }>`

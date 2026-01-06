@@ -10,6 +10,8 @@ export const sizes = {
   "4xl": 128,
   "5xl": 192,
   "6xl": 256,
+  "7xl": 336,
+  "8xl": 384,
 } as const;
 
 export type SizeKey = keyof typeof sizes;

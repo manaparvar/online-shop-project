@@ -33,8 +33,8 @@ export const textVariants = {
   },
   caption: {
     fontSize: {
-      mobile: "12px",
-      tablet: "14px",
+      mobile: "10px",
+      tablet: "12px",
       desktop: "14px",
     },
     fontWeight: 300,
@@ -42,7 +42,7 @@ export const textVariants = {
   button: {
     fontSize: {
       mobile: "12px",
-      tablet: "16px",
+      tablet: "14px",
       desktop: "16px",
     },
     fontWeight: 500,

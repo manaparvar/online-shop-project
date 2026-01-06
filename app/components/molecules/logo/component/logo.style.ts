@@ -14,17 +14,13 @@ export const LogoWrapper = styled(Link)`
   }
 `;
 export const LogoImage = styled(Image)`
-  @media (max-width: 375px) {
-    width: ${sizes.md}px;
-    height: ${sizes.md}px;
-  }
   @media (min-width: 376px) {
     width: ${sizes.xlg}px;
     height: ${sizes.xlg}px;
   }
   @media (min-width: 1024px) {
-    width: ${sizes["2xl"]}px;
-    height: ${sizes["2xl"]}px;
+    width: ${sizes.xl}px;
+    height: ${sizes.xl}px;
   }
 `;
 export const TextWrapper = styled.div`
