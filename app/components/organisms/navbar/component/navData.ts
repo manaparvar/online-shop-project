@@ -73,6 +73,10 @@ export const womenData: { href: string; label: string }[] = [
     label: "Dresses",
   },
   {
+    href: "/women-underwear",
+    label: "Underwear",
+  },
+  {
     href: "/women-accessories",
     label: "Accessories",
   },
@@ -95,5 +99,101 @@ export const womenData: { href: string; label: string }[] = [
   {
     href: "/women-coats&outerwear",
     label: "Coats & Outerwear",
+  },
+] as const;
+
+export const menData: { href: string; label: string }[] = [
+  {
+    href: "/men-suits",
+    label: "Suits",
+  },
+  {
+    href: "/men-pants",
+    label: "Pants",
+  },
+
+  {
+    href: "/men-shoes",
+    label: "Shoes",
+  },
+  {
+    href: "/women-underwear",
+    label: "Underwear",
+  },
+  {
+    href: "/men-accessories",
+    label: "Accessories",
+  },
+  {
+    href: "/women-shirts&tshirts",
+    label: "Shirts & T-shirts",
+  },
+  {
+    href: "/women-sets&jumpsuits",
+    label: "Sets & Jumpsuits",
+  },
+  {
+    href: "/women-jackets&outerwear",
+    label: "Jackets & Outerwear",
+  },
+] as const;
+export const kidsData: { href: string; label: string }[] = [
+  {
+    href: "/kids-pants",
+    label: "Pants",
+  },
+  {
+    href: "/kids-shoes",
+    label: "Shoes",
+  },
+  {
+    href: "/women-underwear",
+    label: "Underwear",
+  },
+  {
+    href: "/kids-accessories",
+    label: "Accessories",
+  },
+  {
+    href: "/women-shirts&tshirts",
+    label: "Shirts & T-shirts",
+  },
+  {
+    href: "/women-sets&jumpsuits",
+    label: "Sets & Jumpsuits",
+  },
+  {
+    href: "/women-jackets&outerwear",
+    label: "Jackets & Outerwear",
+  },
+] as const;
+export const brandsData: { href: string; label: string }[] = [
+  {
+    href: "/brands-d&g",
+    label: "D&G",
+  },
+  {
+    href: "/brands-zara",
+    label: "Zara",
+  },
+  {
+    href: "/brands-nike",
+    label: "Nike",
+  },
+  {
+    href: "/brands-gucci",
+    label: "Gucci",
+  },
+  {
+    href: "/brands-adidas",
+    label: "Adidas",
+  },
+  {
+    href: "/brands-channel",
+    label: "Channel",
+  },
+  {
+    href: "/brands-ralflauren",
+    label: "Ralf Lauren",
   },
 ] as const;
