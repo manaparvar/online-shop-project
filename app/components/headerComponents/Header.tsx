@@ -9,10 +9,10 @@ import Navbar from "../organisms/navbar/navbar";
 import Icon from "../molecules/icon/icon";
 import { icons } from "../molecules/icon/component/iconData";
 import DividerLine from "../Atoms/divider";
-import HamburgerButton from "../organisms/navbar/mobileNavbar/hamburgerButton/hamburgerButton";
 import {
   HeaderWrapper,
   HeaderUpperLine,
+  MyHamburgerButton,
   MobileMenuWrapper,
   SearchBarWrapper,
   RightSideWrapper,
@@ -36,7 +36,7 @@ export default function DesktopHeader() {
     <HeaderWrapper>
       <HeaderUpperLine>
         <MobileMenuWrapper>
-          <HamburgerButton size="lg" isOpen={isOpen} onToggle={openMenu} />
+          <MyHamburgerButton size="lg" isOpen={isOpen} onToggle={openMenu} />
           <CurtainMenu isOpen={isOpen} onToggle={closeMenu} />
         </MobileMenuWrapper>
         <Logo />

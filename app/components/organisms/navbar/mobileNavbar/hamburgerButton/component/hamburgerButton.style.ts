@@ -8,6 +8,7 @@ export const HamburgerWrapper = styled.button<{
 }>`
   height: ${({ size }) => (size ? sizes[size] : sizes.lg)};
   width: ${({ size }) => (size ? sizes[size] : sizes.lg)};
+  z-index: 20;
 `;
 export const HamburgerUpperLine = styled.span<{
   $isOpen: boolean;

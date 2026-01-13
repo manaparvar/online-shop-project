@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { sizes } from "@/styles/sizes";
-import { textVariants } from "@/app/components/Atoms/text/variants";
+import { textVariants } from "@/styles/variants";
 type fontKey = keyof typeof textVariants;
 
 export const SearchWrapper = styled.div`
   height: ${sizes.md}px;
-  width: min(80%, 320px);
+  width: 100%;
   /* width: clamp(264px, 84vw, 312px); */
   @media (min-width: 376px) {
     height: ${sizes.lg}px;

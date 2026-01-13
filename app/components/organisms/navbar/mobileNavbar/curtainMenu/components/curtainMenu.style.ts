@@ -2,15 +2,15 @@ import styled from "styled-components";
 import { theme } from "@/styles/theme";
 import { Text } from "@/app/components/Atoms/text/text";
 import { sizes } from "@/styles/sizes";
-import Icon from "@/app/components/molecules/icon/icon";
+import HamburgerButton from "../../hamburgerButton/hamburgerButton";
 
-interface StyledIconProps {
-  sizeMobile?: number;
-  sizeTablet?: number;
-  sizeDesktop?: number;
-}
+// interface StyledIconProps {
+//   sizeMobile?: number;
+//   sizeTablet?: number;
+//   sizeDesktop?: number;
+// }
 
-export const MenuWrapper = styled.div<{
+export const MenuWrapper = styled.nav<{
   $isOpen: boolean;
 }>`
   transform: ${({ $isOpen }) =>
@@ -24,7 +24,18 @@ export const MenuWrapper = styled.div<{
   position: fixed;
   top: 0;
   transition: transform 0.3s ease;
-  width: clamp(200px, 50vw, 400px);
+  width: clamp(200px, 60vw, 800px);
+  padding: ${sizes.sm}px ${sizes.md}px;
+  @media (min-width: 376px) {
+    padding: ${sizes.sm}px ${sizes.md}px;
+  }
+  @media (min-width: 500px) {
+    padding: ${sizes.sm}px ${sizes.xlg}px;
+  }
+  @media (min-width: 700px) {
+    padding: ${sizes.sm}px ${sizes.xl}px;
+  }
+
   z-index: 10;
 `;
 // const InnerWrapper = styled.div`
@@ -34,15 +45,20 @@ export const MenuWrapper = styled.div<{
 //   align-self: center;
 // `;
 export const ContentWrapper = styled.div`
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: ${sizes.sm}px;
+  @media (min-width: 376px) {
+    gap: ${sizes.md}px;
+  }
+`;
+export const MyHamburgerButton = styled(HamburgerButton)`
+  z-index: 20;
 `;
 export const SearchBarWrapper = styled.div`
   width: 100%;
-  padding: 0 16px;
   box-sizing: border-box;
   @media (min-width: 1024px) {
     display: none;
@@ -52,35 +68,29 @@ export const NavbarWrapper = styled.nav`
   display: flex;
   flex-direction: column;
   gap: ${sizes.xs}px;
-  margin-top: ${sizes.sm}px;
   @media (min-width: 376px) {
-    margin-top: ${sizes.md}px;
+    margin-top: ${sizes.lg}px;
   }
 `;
 
-export const NavLinkButton = styled.div`
-  width: 100%;
-  text-align: left;
-`;
+// export const NavLinkcontainer = styled.div`
+//   width: 100%;
+//   text-align: left;
+// `;
 export const TagText = styled(Text)<{ $isPink: boolean }>`
   color: ${({ $isPink }) => ($isPink ? theme.colors.pink : theme.colors.black)};
 `;
-export const StyledIcon = styled(Icon)<StyledIconProps>`
-  width: ${({ sizeMobile = 16 }) => sizeMobile}px;
-  height: ${({ sizeMobile = 16 }) => sizeMobile}px;
+// export const StyledIcon = styled(Icon)<StyledIconProps>`
+//   width: ${({ sizeMobile = 16 }) => sizeMobile}px;
+//   height: ${({ sizeMobile = 16 }) => sizeMobile}px;
 
-  @media (min-width: 768px) {
-    width: ${({ sizeTablet = 16 }) => sizeTablet}px;
-    height: ${({ sizeTablet = 16 }) => sizeTablet}px;
-  }
+//   @media (min-width: 768px) {
+//     width: ${({ sizeTablet = 16 }) => sizeTablet}px;
+//     height: ${({ sizeTablet = 16 }) => sizeTablet}px;
+//   }
 
-  @media (min-width: 1024px) {
-    width: ${({ sizeDesktop = 16 }) => sizeDesktop}px;
-    height: ${({ sizeDesktop = 16 }) => sizeDesktop}px;
-  }
-`;
-export const IconWrapper = styled.div`
-  width: 32px;
-  align-self: flex-end;
-  margin: 16px;
-`;
+//   @media (min-width: 1024px) {
+//     width: ${({ sizeDesktop = 16 }) => sizeDesktop}px;
+//     height: ${({ sizeDesktop = 16 }) => sizeDesktop}px;
+//   }
+// `;

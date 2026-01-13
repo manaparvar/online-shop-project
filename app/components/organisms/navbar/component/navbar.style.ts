@@ -39,17 +39,17 @@ export const MyNavLinks = styled(NavLink)`
 `;
 export const StyledIcon = styled(Icon)<StyledIconProps>`
   align-self: center;
-  width: ${({ sizeMobile = 16 }) => sizeMobile}px;
-  height: ${({ sizeMobile = 16 }) => sizeMobile}px;
+  width: ${({ sizeMobile = 8 }) => sizeMobile}px;
+  height: ${({ sizeMobile = 8 }) => sizeMobile}px;
 
   @media (min-width: 768px) {
-    width: ${({ sizeTablet = 16 }) => sizeTablet}px;
-    height: ${({ sizeTablet = 16 }) => sizeTablet}px;
+    width: ${({ sizeTablet = 8 }) => sizeTablet}px;
+    height: ${({ sizeTablet = 8 }) => sizeTablet}px;
   }
 
   @media (min-width: 1024px) {
-    width: ${({ sizeDesktop = 16 }) => sizeDesktop}px;
-    height: ${({ sizeDesktop = 16 }) => sizeDesktop}px;
+    width: ${({ sizeDesktop = 8 }) => sizeDesktop}px;
+    height: ${({ sizeDesktop = 8 }) => sizeDesktop}px;
     margin-left: 5px;
   }
 `;

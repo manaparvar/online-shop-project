@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { sizes } from "@/styles/sizes";
+import HamburgerButton from "@/app/components/organisms/navbar/mobileNavbar/hamburgerButton/hamburgerButton";
 
 export const HeaderWrapper = styled.div`
   display: flex;
@@ -12,11 +14,14 @@ export const HeaderUpperLine = styled.div`
   height: 56px;
   justify-content: space-between;
   @media (min-width: 376px) {
-    height: 72px;
+    height: ${sizes["2.5xl"]}px;
   }
   @media (min-width: 1024px) {
-    height: 96px;
+    height: ${sizes["3xl"]}px;
   }
+`;
+export const MyHamburgerButton = styled(HamburgerButton)`
+  z-index: 20;
 `;
 export const MobileMenuWrapper = styled.div`
   @media (min-width: 1024px) {

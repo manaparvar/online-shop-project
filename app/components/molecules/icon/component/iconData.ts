@@ -1,6 +1,6 @@
 import { Heart, ShoppingBag, X, SearchIcon, ChevronDown } from "lucide-react";
 import { LucideIcon } from "lucide-react";
-import { textVariants } from "../../../Atoms/text/variants";
+import { textVariants } from "../../../../../styles/variants";
 
 export type IconName =
   | "heart"

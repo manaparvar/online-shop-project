@@ -6,6 +6,7 @@ export const sizes = {
   xlg: 40,
   xl: 48,
   "2xl": 64,
+  "2.5xl": 72,
   "3xl": 96,
   "4xl": 128,
   "5xl": 192,

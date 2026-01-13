@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 import { theme } from "@/styles/theme";
-import { textVariants } from "../../Atoms/text/variants";
+import { textVariants } from "../../../../styles/variants";
 import { IconName, iconsMap } from "./component/iconData";
 import { IconWrapper, StyledIcon, Label } from "./component/icon.style";
 
