@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import NavLinks from "@/app/components/Atoms/link/link";
 import SearchBar from "@/app/components/forms/searchBar/searchBar";
 import { mobileNavLinks } from "../../component/navData";
@@ -16,6 +17,8 @@ import {
   ContentWrapper,
   NavbarWrapper,
   TagText,
+  Submenu,
+  DropdownWrapper,
 } from "./components/curtainMenu.style";
 
 const dropdownMap: Record<string, React.FC> = {
@@ -31,6 +34,11 @@ type props = {
 };
 
 export default function CurtainMenu({ isOpen, onToggle }: props) {
+  const [openDropdown, setOpenDropdown] = useState<boolean>(false);
+  const openMenu = () => {
+    if (openDropdown === false) setOpenDropdown(!openDropdown);
+    else setOpenDropdown(false);
+  };
   return (
     <MenuWrapper $isOpen={isOpen}>
       <ContentWrapper>
@@ -44,7 +52,11 @@ export default function CurtainMenu({ isOpen, onToggle }: props) {
         </SearchBarWrapper>
         <NavbarWrapper>
           {mobileNavLinks.map((item, index) => (
-            <NavLinks key={index} href={item.href}>
+            <NavLinks
+              key={index}
+              href={item.href}
+              onClick={() => item.dropdown && openMenu}
+            >
               <TagText
                 color="black"
                 $isPink={item.label === "Summer Sale"}
@@ -55,6 +67,16 @@ export default function CurtainMenu({ isOpen, onToggle }: props) {
               {item.dropdown && <Icon icon="dropDown" color="mediumGrey" />}
             </NavLinks>
           ))}
+          <Submenu>
+            {!openDropdown && (
+              <DropdownWrapper>
+                {(() => {
+                  const DropdownComponent = dropdownMap[!openDropdown];
+                  return DropdownComponent ? <DropdownComponent /> : null;
+                })()}
+              </DropdownWrapper>
+            )}
+          </Submenu>
         </NavbarWrapper>
       </ContentWrapper>
     </MenuWrapper>

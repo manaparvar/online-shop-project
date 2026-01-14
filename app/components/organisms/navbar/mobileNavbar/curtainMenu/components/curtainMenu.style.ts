@@ -3,6 +3,7 @@ import { theme } from "@/styles/theme";
 import { Text } from "@/app/components/Atoms/text/text";
 import { sizes } from "@/styles/sizes";
 import HamburgerButton from "../../hamburgerButton/hamburgerButton";
+import Icon from "@/app/components/molecules/icon/icon";
 
 // interface StyledIconProps {
 //   sizeMobile?: number;
@@ -73,13 +74,21 @@ export const NavbarWrapper = styled.nav`
   }
 `;
 
-// export const NavLinkcontainer = styled.div`
-//   width: 100%;
-//   text-align: left;
-// `;
+export const Submenu = styled.div`
+  color: ${({ theme }) => theme.colors.brightBlue};
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition: ease-in-out 1;
+  width: 100%;
+`;
+
 export const TagText = styled(Text)<{ $isPink: boolean }>`
   color: ${({ $isPink }) => ($isPink ? theme.colors.pink : theme.colors.black)};
 `;
+
+export const DropdownWrapper = styled.div``;
+
 // export const StyledIcon = styled(Icon)<StyledIconProps>`
 //   width: ${({ sizeMobile = 16 }) => sizeMobile}px;
 //   height: ${({ sizeMobile = 16 }) => sizeMobile}px;

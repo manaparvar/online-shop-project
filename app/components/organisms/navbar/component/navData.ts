@@ -33,7 +33,11 @@ export const navLinks: {
     label: "Sale",
   },
 ] as const;
-export const mobileNavLinks: { href: string; label: string }[] = [
+export const mobileNavLinks: {
+  href: string;
+  label: string;
+  dropdown?: DropdownKey;
+}[] = [
   {
     href: "/summerSale",
     label: "Summer Sale",
@@ -45,14 +49,22 @@ export const mobileNavLinks: { href: string; label: string }[] = [
   {
     href: "/women",
     label: "Women",
+    dropdown: "women",
   },
   {
     href: "/men",
     label: "Men",
+    dropdown: "men",
   },
   {
     href: "/kids",
     label: "Kids",
+    dropdown: "kids",
+  },
+  {
+    href: "/brands",
+    label: "Brands",
+    dropdown: "brands",
   },
   {
     href: "/aboutus",

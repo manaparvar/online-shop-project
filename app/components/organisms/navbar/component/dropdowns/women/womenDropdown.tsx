@@ -10,7 +10,7 @@ export default function WomenDropdown() {
       <Title>Categories</Title>
       {womenData.map((item, index) => (
         <StyledNavLink key={index} href={item.href}>
-          <Text variant="button" color="black">
+          <Text variant="caption" color="black">
             {item.label}
           </Text>
         </StyledNavLink>

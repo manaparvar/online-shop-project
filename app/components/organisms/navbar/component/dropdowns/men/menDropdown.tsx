@@ -10,7 +10,7 @@ export default function MenDropdown() {
       <Title>Categories</Title>
       {menData.map((item, index) => (
         <StyledNavLink key={index} href={item.href}>
-          <Text variant="button" color="black">
+          <Text variant="caption" color="black">
             {item.label}
           </Text>
         </StyledNavLink>

@@ -2,7 +2,7 @@
 
 import styled from "styled-components";
 import { theme } from "../../../../styles/theme";
-import { textVariants } from "./variants";
+import { textVariants } from "../../../../styles/variants";
 
 type TextVariant = keyof typeof textVariants;
 
