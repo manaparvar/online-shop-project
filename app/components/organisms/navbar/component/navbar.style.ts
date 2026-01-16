@@ -24,24 +24,23 @@ export const SubMenu = styled.div`
 export const DropdownWrapper = styled.ul``;
 export const NavbarWrapper = styled.ul`
   display: flex;
-  position: relative;
-  justify-content: center;
   flex-direction: row;
   gap: ${sizes.xs}px;
+  justify-content: center;
+  position: relative;
   @media (min-width: 1024px) {
     gap: ${sizes.xl}px;
   }
 `;
 export const MyNavLinks = styled(NavLink)`
-  width: 100%;
   display: flex;
   flex-direction: row;
+  width: 100%;
 `;
 export const StyledIcon = styled(Icon)<StyledIconProps>`
   align-self: center;
-  width: ${({ sizeMobile = 8 }) => sizeMobile}px;
   height: ${({ sizeMobile = 8 }) => sizeMobile}px;
-
+  width: ${({ sizeMobile = 8 }) => sizeMobile}px;
   @media (min-width: 768px) {
     width: ${({ sizeTablet = 8 }) => sizeTablet}px;
     height: ${({ sizeTablet = 8 }) => sizeTablet}px;

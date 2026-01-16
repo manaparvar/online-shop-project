@@ -34,11 +34,14 @@ type props = {
 };
 
 export default function CurtainMenu({ isOpen, onToggle }: props) {
-  const [openDropdown, setOpenDropdown] = useState<boolean>(false);
-  const openMenu = () => {
-    if (openDropdown === false) setOpenDropdown(!openDropdown);
-    else setOpenDropdown(false);
-  };
+  // const [openDropdown, setOpenDropdown] = useState<boolean>(false);
+  // const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  // const openMenu = () => {
+  //   if (openDropdown === false) {
+  //     setOpenDropdown(!openDropdown);
+  //     setActiveDropdown(item.dropdown);
+  //   } else setOpenDropdown(false);
+  // };
   return (
     <MenuWrapper $isOpen={isOpen}>
       <ContentWrapper>
@@ -55,7 +58,12 @@ export default function CurtainMenu({ isOpen, onToggle }: props) {
             <NavLinks
               key={index}
               href={item.href}
-              onClick={() => item.dropdown && openMenu}
+              // onClick={item.dropdown && () => {
+              //     !openDropdown &&
+              //      setActiveDropdown(item.dropdown);
+              //      setOpenDropdown(!openDropdown);
+
+              // };}
             >
               <TagText
                 color="black"
@@ -67,7 +75,7 @@ export default function CurtainMenu({ isOpen, onToggle }: props) {
               {item.dropdown && <Icon icon="dropDown" color="mediumGrey" />}
             </NavLinks>
           ))}
-          <Submenu>
+          {/* <Submenu>
             {!openDropdown && (
               <DropdownWrapper>
                 {(() => {
@@ -76,7 +84,7 @@ export default function CurtainMenu({ isOpen, onToggle }: props) {
                 })()}
               </DropdownWrapper>
             )}
-          </Submenu>
+          </Submenu> */}
         </NavbarWrapper>
       </ContentWrapper>
     </MenuWrapper>

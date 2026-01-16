@@ -29,11 +29,11 @@ export const HamburgerMiddleLine = styled.span<{
   color?: string;
 }>`
   background-color: ${({ color }) => color ?? theme.colors.black};
-  opacity: ${({ $isOpen }) => ($isOpen ? "0" : "1")};
   border-radius: 3px;
   display: block;
   height: 3px;
   margin: 5px 0;
+  opacity: ${({ $isOpen }) => ($isOpen ? "0" : "1")};
   width: 24px;
 `;
 export const HamburgerDownerLine = styled.span<{

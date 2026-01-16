@@ -5,10 +5,10 @@ import Link from "next/link";
 
 export const LogoWrapper = styled(Link)`
   align-items: center;
-  position: relative;
   display: flex;
   flex-direction: row;
   gap: 3px;
+  position: relative;
   &:hover {
     opacity: 0.85;
   }

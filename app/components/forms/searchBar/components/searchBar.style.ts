@@ -23,10 +23,10 @@ export const SearchWrapper = styled.div`
   justify-content: center;
 `;
 export const SearchInput = styled.input<{ fontSize?: fontKey }>`
-  flex: 1;
-  width: 100%;
-  height: 100%;
   box-sizing: border-box;
+  flex: 1;
+  height: 100%;
+  width: 100%;
 
   @media (min-width: 376px) {
     height: 32px;
@@ -52,8 +52,8 @@ export const SearchInput = styled.input<{ fontSize?: fontKey }>`
   background-color: ${({ theme }) => theme.colors.brightGrey};
   border-radius: 0 5px 5px 0;
   border: none;
-  padding-left: 8px;
   flex: 1;
+  padding-left: 8px;
 
   &:focus {
     border: #e4e4e4 solid 1px;
@@ -61,14 +61,13 @@ export const SearchInput = styled.input<{ fontSize?: fontKey }>`
   }
 `;
 export const SearchButton = styled.button`
-  height: 100٪;
-  flex: 0 0 40px;
-
   background-color: ${({ theme }) => theme.colors.midBrightGrey};
   border-radius: 5px 0 0 5px;
+  border: #d5d5d5 solid 0.1px;
+  flex: 0 0 40px;
+  height: 100٪;
   padding-left: 4%;
   padding-right: 4%;
-  border: #d5d5d5 solid 0.1px;
 
   .mobile-icon p {
     display: block;
