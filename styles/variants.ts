@@ -5,23 +5,23 @@ export const textVariants = {
       tablet: "28px",
       desktop: "32px",
     },
-    fontWeight: 700,
+    fontWeight: 600,
   },
   h2: {
     fontSize: {
       mobile: "20px",
       tablet: "24px",
-      desktop: "28px",
+      desktop: "24px",
     },
-    fontWeight: 700,
+    fontWeight: 500,
   },
   h3: {
     fontSize: {
-      mobile: "20px",
-      tablet: "20px",
-      desktop: "18px",
+      mobile: "18px",
+      tablet: "19px",
+      desktop: "19px",
     },
-    fontWeight: 700,
+    fontWeight: 500,
   },
   body: {
     fontSize: {
@@ -33,10 +33,18 @@ export const textVariants = {
   },
   caption: {
     fontSize: {
-      mobile: "12px",
-      tablet: "14px",
+      mobile: "10px",
+      tablet: "12px",
       desktop: "14px",
     },
-    fontWeight: 300,
+    fontWeight: 400,
+  },
+  button: {
+    fontSize: {
+      mobile: "12px",
+      tablet: "14px",
+      desktop: "16px",
+    },
+    fontWeight: 500,
   },
 } as const;

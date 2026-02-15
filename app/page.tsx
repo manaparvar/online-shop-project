@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import Header from "./components/header";
+import Header from "./components/headerComponents/Header";
 // import Footer from "./components/Footer";
 // import Content from "./components/Content";
 

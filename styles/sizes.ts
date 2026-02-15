@@ -1,0 +1,18 @@
+export const sizes = {
+  xs: 8,
+  sm: 16,
+  md: 24,
+  lg: 32,
+  xlg: 40,
+  xl: 48,
+  "2xl": 64,
+  "2.5xl": 72,
+  "3xl": 96,
+  "4xl": 128,
+  "5xl": 192,
+  "6xl": 256,
+  "7xl": 336,
+  "8xl": 384,
+} as const;
+
+export type SizeKey = keyof typeof sizes;
