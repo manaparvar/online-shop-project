@@ -22,10 +22,10 @@ import {
 } from "./components/curtainMenu.style";
 
 const dropdownMap: Record<string, React.FC> = {
-  women: WomenDropdown,
-  men: MenDropdown,
-  kids: KidsDropdown,
-  brands: BrandsDropdown,
+  Women: WomenDropdown,
+  Men: MenDropdown,
+  Kids: KidsDropdown,
+  Brands: BrandsDropdown,
 };
 
 type props = {
@@ -34,14 +34,9 @@ type props = {
 };
 
 export default function CurtainMenu({ isOpen, onToggle }: props) {
-  // const [openDropdown, setOpenDropdown] = useState<boolean>(false);
-  // const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  // const openMenu = () => {
-  //   if (openDropdown === false) {
-  //     setOpenDropdown(!openDropdown);
-  //     setActiveDropdown(item.dropdown);
-  //   } else setOpenDropdown(false);
-  // };
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const DropdownComponent = openDropdown ? dropdownMap[openDropdown] : null;
+
   return (
     <MenuWrapper $isOpen={isOpen}>
       <ContentWrapper>
@@ -54,37 +49,34 @@ export default function CurtainMenu({ isOpen, onToggle }: props) {
           <SearchBar />
         </SearchBarWrapper>
         <NavbarWrapper>
-          {mobileNavLinks.map((item, index) => (
-            <NavLinks
-              key={index}
-              href={item.href}
-              // onClick={item.dropdown && () => {
-              //     !openDropdown &&
-              //      setActiveDropdown(item.dropdown);
-              //      setOpenDropdown(!openDropdown);
-
-              // };}
-            >
-              <TagText
-                color="black"
-                $isPink={item.label === "Summer Sale"}
-                variant="caption"
+          {mobileNavLinks.map((item) => (
+            <div key={item.label}>
+              <NavLinks
+                href={item.href}
+                onClick={() =>
+                  setOpenDropdown(
+                    openDropdown === item.label ? null : item.label,
+                  )
+                }
               >
-                {item.label}
-              </TagText>
-              {item.dropdown && <Icon icon="dropDown" color="mediumGrey" />}
-            </NavLinks>
+                <TagText
+                  color="black"
+                  $isPink={item.label === "Summer Sale"}
+                  variant="caption"
+                >
+                  {item.label}
+                </TagText>
+                {item.dropdown && <Icon icon="dropDown" color="mediumGrey" />}
+              </NavLinks>
+              <Submenu>
+                {DropdownComponent && (
+                  <DropdownWrapper>
+                    <DropdownComponent />
+                  </DropdownWrapper>
+                )}
+              </Submenu>
+            </div>
           ))}
-          {/* <Submenu>
-            {!openDropdown && (
-              <DropdownWrapper>
-                {(() => {
-                  const DropdownComponent = dropdownMap[!openDropdown];
-                  return DropdownComponent ? <DropdownComponent /> : null;
-                })()}
-              </DropdownWrapper>
-            )}
-          </Submenu> */}
         </NavbarWrapper>
       </ContentWrapper>
     </MenuWrapper>

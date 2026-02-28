@@ -29,7 +29,7 @@ export default function DesktopHeader() {
   const closeMenu = () => setIsOpen(false);
 
   const filteredIcons = icons.filter(
-    (item) => item.icon === "shoppingBag" || item.icon === "heart"
+    (item) => item.icon === "shoppingBag" || item.icon === "heart",
   );
 
   return (

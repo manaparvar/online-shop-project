@@ -1,4 +1,4 @@
-export type DropdownKey = "women" | "men" | "kids" | "brands";
+export type DropdownKey = "Women" | "Men" | "Kids" | "Brands";
 export const navLinks: {
   href: string;
   label: string;
@@ -7,22 +7,22 @@ export const navLinks: {
   {
     href: "/women",
     label: "Women",
-    dropdown: "women",
+    dropdown: "Women",
   },
   {
     href: "/men",
     label: "Men",
-    dropdown: "men",
+    dropdown: "Men",
   },
   {
     href: "/kids",
     label: "Kids",
-    dropdown: "kids",
+    dropdown: "Kids",
   },
   {
     href: "/brands",
     label: "Brands",
-    dropdown: "brands",
+    dropdown: "Brands",
   },
   {
     href: "/new",
@@ -49,22 +49,22 @@ export const mobileNavLinks: {
   {
     href: "/women",
     label: "Women",
-    dropdown: "women",
+    dropdown: "Women",
   },
   {
     href: "/men",
     label: "Men",
-    dropdown: "men",
+    dropdown: "Men",
   },
   {
     href: "/kids",
     label: "Kids",
-    dropdown: "kids",
+    dropdown: "Kids",
   },
   {
     href: "/brands",
     label: "Brands",
-    dropdown: "brands",
+    dropdown: "Brands",
   },
   {
     href: "/aboutus",
