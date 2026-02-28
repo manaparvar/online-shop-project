@@ -21,7 +21,13 @@ export const WomenDDWrapper = styled.ul`
 export const Title = styled.p`
   color: ${({ theme }) => theme.colors.mediumGrey};
   margin-bottom: 8px;
+  @media (max-width: 1024px) {
+    display: none;
+  }
 `;
 export const StyledNavLink = styled(NavLink)`
-  margin-left: 16px;
+  margin-left: 8px;
+  @media (min-width: 1024px) {
+    margin-left: 16px;
+  }
 `;

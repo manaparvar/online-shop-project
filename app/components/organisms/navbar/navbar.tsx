@@ -11,6 +11,7 @@ import KidsDropdown from "./component/dropdowns/kids/kidsDropdown";
 import BrandsDropdown from "./component/dropdowns/brands/brandsDropdown";
 import { useState } from "react";
 import {
+  Nav,
   NavbarWrapper,
   NavItem,
   MyNavLinks,
@@ -24,14 +25,14 @@ const dropdownMap: Record<string, React.FC> = {
   brands: BrandsDropdown,
 };
 
-const TagText = styled(Text)<{ isPink: boolean }>`
-  color: ${({ isPink }) => (isPink ? theme.colors.pink : theme.colors.black)};
+const TagText = styled(Text)<{ $isPink: boolean }>`
+  color: ${({ $isPink }) => ($isPink ? theme.colors.pink : theme.colors.black)};
 `;
 export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   return (
-    <nav>
+    <Nav onMouseLeave={() => setActiveDropdown(null)}>
       <NavbarWrapper>
         {navLinks.map((item, index) => (
           <NavItem
@@ -39,11 +40,10 @@ export default function Navbar() {
             onMouseEnter={() =>
               item.dropdown && setActiveDropdown(item.dropdown)
             }
-            onMouseLeave={() => setActiveDropdown(null)}
           >
             <MyNavLinks href={item.href}>
               <TagText
-                isPink={item.label === "Sale"}
+                $isPink={item.label === "Sale"}
                 variant="h3"
                 color="black"
               >
@@ -64,6 +64,6 @@ export default function Navbar() {
           </DropdownWrapper>
         )}
       </SubMenu>
-    </nav>
+    </Nav>
   );
 }

@@ -3,12 +3,8 @@
 import { useState } from "react";
 import NavLinks from "@/app/components/Atoms/link/link";
 import SearchBar from "@/app/components/forms/searchBar/searchBar";
-import { mobileNavLinks } from "../../component/navData";
 import Icon from "@/app/components/molecules/icon/icon";
-import WomenDropdown from "./../../component/dropdowns/women/womenDropdown";
-import MenDropdown from "./../../component/dropdowns/men/menDropdown";
-import KidsDropdown from "./../../component/dropdowns/kids/kidsDropdown";
-import BrandsDropdown from "./../../component/dropdowns/brands/brandsDropdown";
+import MobileNavbar from "../mobileNav";
 
 import {
   MenuWrapper,
@@ -17,16 +13,7 @@ import {
   ContentWrapper,
   NavbarWrapper,
   TagText,
-  Submenu,
-  DropdownWrapper,
 } from "./components/curtainMenu.style";
-
-const dropdownMap: Record<string, React.FC> = {
-  Women: WomenDropdown,
-  Men: MenDropdown,
-  Kids: KidsDropdown,
-  Brands: BrandsDropdown,
-};
 
 type props = {
   isOpen: boolean;
@@ -35,7 +22,6 @@ type props = {
 
 export default function CurtainMenu({ isOpen, onToggle }: props) {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const DropdownComponent = openDropdown ? dropdownMap[openDropdown] : null;
 
   return (
     <MenuWrapper $isOpen={isOpen}>
@@ -48,8 +34,8 @@ export default function CurtainMenu({ isOpen, onToggle }: props) {
         <SearchBarWrapper>
           <SearchBar />
         </SearchBarWrapper>
-        <NavbarWrapper>
-          {mobileNavLinks.map((item) => (
+        <MobileNavbar />
+        {/* {mobileNavLinks.map((item) => (
             <div key={item.label}>
               <NavLinks
                 href={item.href}
@@ -67,17 +53,13 @@ export default function CurtainMenu({ isOpen, onToggle }: props) {
                   {item.label}
                 </TagText>
                 {item.dropdown && <Icon icon="dropDown" color="mediumGrey" />}
+                {mobileSubmenus.map((item) => (
+                  <DropDowns href={item.href}></DropDowns>
+                ))}
+                <WomenDropdown />
               </NavLinks>
-              <Submenu>
-                {DropdownComponent && (
-                  <DropdownWrapper>
-                    <DropdownComponent />
-                  </DropdownWrapper>
-                )}
-              </Submenu>
             </div>
-          ))}
-        </NavbarWrapper>
+          ))} */}
       </ContentWrapper>
     </MenuWrapper>
   );

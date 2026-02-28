@@ -8,20 +8,19 @@ interface StyledIconProps {
   sizeTablet?: number;
   sizeDesktop?: number;
 }
+export const Nav = styled.nav`
+  height: 80px;
+  display: flex;
+  align-items: center;
+  position: relative;
+`;
 export const NavItem = styled.li`
   position: relative;
 `;
-export const SubMenu = styled.div`
-  color: ${({ theme }) => theme.colors.brightBlue};
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+
+export const DropdownWrapper = styled.ul`
   position: relative;
-  transition: ease-in-out 1;
-  width: ${sizes["4xl"]}px;
-  z-index: 10;
 `;
-export const DropdownWrapper = styled.ul``;
 export const NavbarWrapper = styled.ul`
   display: flex;
   flex-direction: row;
@@ -51,4 +50,14 @@ export const StyledIcon = styled(Icon)<StyledIconProps>`
     height: ${({ sizeDesktop = 8 }) => sizeDesktop}px;
     margin-left: 5px;
   }
+`;
+export const SubMenu = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: absolute;
+  top: 100%;
+  transition: opacity 0.2s ease-in-out;
+  width: 100%;
+  z-index: 10;
 `;

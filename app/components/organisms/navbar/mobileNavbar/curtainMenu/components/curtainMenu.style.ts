@@ -4,6 +4,7 @@ import { Text } from "@/app/components/Atoms/text/text";
 import { sizes } from "@/styles/sizes";
 import HamburgerButton from "../../hamburgerButton/hamburgerButton";
 import Icon from "@/app/components/molecules/icon/icon";
+import WomenDropdown from "../../../component/dropdowns/women/womenDropdown";
 
 // interface StyledIconProps {
 //   sizeMobile?: number;
@@ -11,7 +12,7 @@ import Icon from "@/app/components/molecules/icon/icon";
 //   sizeDesktop?: number;
 // }
 
-export const MenuWrapper = styled.nav<{
+export const MenuWrapper = styled.div<{
   $isOpen: boolean;
 }>`
   background-color: ${({ theme }) => theme.colors.white};
@@ -73,13 +74,8 @@ export const NavbarWrapper = styled.nav`
   }
 `;
 
-export const Submenu = styled.div`
+export const DropDowns = styled(WomenDropdown)`
   color: ${({ theme }) => theme.colors.brightBlue};
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  transition: ease-in-out 1;
-  width: 100%;
 `;
 
 export const TagText = styled(Text)<{ $isPink: boolean }>`
