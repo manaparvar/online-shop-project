@@ -12,7 +12,7 @@ type TextProps = {
   as?: React.ElementType;
 };
 
-export const Text = styled.p<TextProps>`
+export const Text = styled.span<TextProps>`
   ${({ variant }) => {
     const v: TextVariant = variant ?? "body";
     return `

@@ -4,7 +4,7 @@ import { Text } from "@/app/components/Atoms/text/text";
 import { sizes } from "@/styles/sizes";
 import HamburgerButton from "../../hamburgerButton/hamburgerButton";
 import Icon from "@/app/components/molecules/icon/icon";
-import WomenDropdown from "../../../component/dropdowns/women/womenDropdown";
+import WomenDropdown from "../../component/navList";
 
 // interface StyledIconProps {
 //   sizeMobile?: number;
@@ -37,7 +37,7 @@ export const MenuWrapper = styled.div<{
   transform: ${({ $isOpen }) =>
     $isOpen ? "translateX(0)" : "translateX(-110%)"};
   width: clamp(200px, 60vw, 800px);
-  z-index: 10;
+  z-index: 20;
 `;
 // const InnerWrapper = styled.div`
 //   width: fit-content;

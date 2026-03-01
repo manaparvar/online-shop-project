@@ -5,9 +5,10 @@ import Logo from "../molecules/logo/logo";
 import SearchBar from "../forms/searchBar/searchBar";
 import CurtainMenu from "../organisms/navbar/mobileNavbar/curtainMenu/curtainMenu";
 import Profile from "../molecules/profile/profile";
-import Navbar from "../organisms/navbar/navbar";
+// import Navbar from "../organisms/navbar/navbar";
 import Icon from "../molecules/icon/icon";
 import { icons } from "../molecules/icon/component/iconData";
+import MobileNavbar from "../organisms/navbar/mobileNavbar/component/mobileNav";
 import DividerLine from "../Atoms/divider";
 import {
   HeaderWrapper,
@@ -60,7 +61,8 @@ export default function DesktopHeader() {
         </RightSideWrapper>
       </HeaderUpperLine>
       <HeaderDownerPart>
-        <Navbar />
+        <MobileNavbar />
+        {/* <Navbar /> */}
       </HeaderDownerPart>
       <DividerWrapper>
         <DividerLine color="brightGrey" lineType="headerDivider" />

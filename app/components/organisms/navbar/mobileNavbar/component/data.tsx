@@ -1,8 +1,9 @@
 export const menuData = [
-  { label: "Summer Sale", to: "/summersale" },
-  { label: "Home", to: "/", icon: "homeIcon" },
+  // { label: "Home", to: "/", icon: "homeIcon" },
   {
     label: "Women",
+    desktop: "true",
+    icon: "dropDown",
     items: [
       {
         href: "/women-shoes",
@@ -44,6 +45,8 @@ export const menuData = [
   },
   {
     label: "Men",
+    desktop: "true",
+    icon: "dropDown",
     items: [
       {
         href: "/men-suits",
@@ -82,6 +85,8 @@ export const menuData = [
   },
   {
     label: "Kids",
+    icon: "dropDown",
+    desktop: "true",
     items: [
       {
         href: "/kids-pants",
@@ -115,6 +120,8 @@ export const menuData = [
   },
   {
     label: "Brands",
+    desktop: "true",
+    icon: "dropDown",
     items: [
       {
         href: "/brands-d&g",
@@ -147,6 +154,7 @@ export const menuData = [
     ],
   },
 
-  { label: "About us", to: "/about" },
-  { label: "Contact", to: "/contact-us" },
+  // { label: "About us", to: "/about" },
+  // { label: "Contact", to: "/contact-us" },
+  { label: "Summer Sale", to: "/summersale", desktop: "true" },
 ];

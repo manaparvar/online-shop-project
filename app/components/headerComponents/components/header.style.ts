@@ -8,6 +8,7 @@ export const HeaderWrapper = styled.div`
   padding: 0 clamp(16px, 6vw, 80px);
   position: fixed;
   width: 100%;
+  z-index: 10;
 `;
 export const HeaderUpperLine = styled.div`
   align-items: center;

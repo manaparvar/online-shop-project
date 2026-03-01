@@ -4,7 +4,7 @@ import { useState } from "react";
 import NavLinks from "@/app/components/Atoms/link/link";
 import SearchBar from "@/app/components/forms/searchBar/searchBar";
 import Icon from "@/app/components/molecules/icon/icon";
-import MobileNavbar from "../mobileNav";
+import MobileNavbar from "../component/mobileNav";
 
 import {
   MenuWrapper,

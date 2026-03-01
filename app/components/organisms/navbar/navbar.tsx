@@ -5,11 +5,8 @@ import { Text } from "../../Atoms/text/text";
 import { theme } from "../../../../styles/theme";
 import { navLinks } from "./component/navData";
 import Icon from "../../molecules/icon/icon";
-import WomenDropdown from "./component/dropdowns/women/womenDropdown";
-import MenDropdown from "./component/dropdowns/men/menDropdown";
-import KidsDropdown from "./component/dropdowns/kids/kidsDropdown";
-import BrandsDropdown from "./component/dropdowns/brands/brandsDropdown";
 import { useState } from "react";
+import MobileNavbar from "./mobileNavbar/component/mobileNav";
 import {
   Nav,
   NavbarWrapper,
@@ -17,13 +14,13 @@ import {
   MyNavLinks,
   SubMenu,
   DropdownWrapper,
-} from "./component/navbar.style";
-const dropdownMap: Record<string, React.FC> = {
-  women: WomenDropdown,
-  men: MenDropdown,
-  kids: KidsDropdown,
-  brands: BrandsDropdown,
-};
+} from "./navbar.style";
+// const dropdownMap: Record<string, React.FC> = {
+//   women: WomenDropdown,
+//   men: MenDropdown,
+//   kids: KidsDropdown,
+//   brands: BrandsDropdown,
+// };
 
 const TagText = styled(Text)<{ $isPink: boolean }>`
   color: ${({ $isPink }) => ($isPink ? theme.colors.pink : theme.colors.black)};
@@ -54,7 +51,7 @@ export default function Navbar() {
           </NavItem>
         ))}
       </NavbarWrapper>
-      <SubMenu>
+      {/* <SubMenu>
         {activeDropdown && (
           <DropdownWrapper>
             {(() => {
@@ -63,7 +60,7 @@ export default function Navbar() {
             })()}
           </DropdownWrapper>
         )}
-      </SubMenu>
+      </SubMenu> */}
     </Nav>
   );
 }
