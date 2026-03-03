@@ -17,9 +17,9 @@ export const textVariants = {
   },
   h3: {
     fontSize: {
-      mobile: "18px",
+      mobile: "16px",
       tablet: "19px",
-      desktop: "19px",
+      desktop: "20px",
     },
     fontWeight: 500,
   },

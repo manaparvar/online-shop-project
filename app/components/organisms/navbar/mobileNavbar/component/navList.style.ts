@@ -26,7 +26,6 @@ export const NavbarList = styled.ul`
   width: 100%;
   @media (min-width: 1024px) {
     flex-direction: row;
-    margin-top: ${sizes["5xl"]}px;
-    gap: ${sizes.md}px;
+    gap: ${sizes.xl}px;
   }
 `;

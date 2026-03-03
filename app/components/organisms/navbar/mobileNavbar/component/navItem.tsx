@@ -6,6 +6,7 @@ import SubList from "./subList";
 import { SubMenu, ItemWrapper, DropdownButton } from "./navItem.style";
 import { useDevice } from "@/app/components/Atoms/divider/useDevice";
 import { useState } from "react";
+import { textVariants } from "@/styles/variants";
 
 type props = {
   item: any;
@@ -13,32 +14,27 @@ type props = {
 
 export default function NavItem({ item }: props) {
   const isDesktop = useDevice();
-  const { isActive, setIsActive } = useState<boolean>(true);
-
-  // const openMenu = () => {
-  //   setIsActive(!isActive);
-  // };
-  // const closeMenu = () => setIsActive(true);
+  const [isActive, setIsActive] = useState<boolean>(false);
 
   return (
     <ItemWrapper>
       {item.to ? (
         <NavLink href={item.to}>
-          <Text variant={isDesktop ? "h3" : "caption"} color="black">
+          <Text variant="h3" color="black">
             {item.label}
           </Text>
         </NavLink>
       ) : (
-        <DropdownButton onClick={() => setIsActive(false)}>
-          <Text variant={isDesktop ? "h3" : "caption"} color="black">
+        <DropdownButton onClick={() => setIsActive(!isActive)}>
+          <Text variant="h3" color="black">
             {item.label}
           </Text>
           <Icon icon="dropDown" color="mediumGrey" />
         </DropdownButton>
       )}
-      <SubMenu isActive={!isActive}>
-        {item.items && <SubList items={item.items} />}
-      </SubMenu>
+      {isActive && (
+        <SubMenu>{item.items && <SubList items={item.items} />}</SubMenu>
+      )}
     </ItemWrapper>
   );
 }

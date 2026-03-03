@@ -13,22 +13,22 @@ type TextProps = {
 };
 
 export const Text = styled.span<TextProps>`
-  ${({ variant }) => {
-    const v: TextVariant = variant ?? "body";
+  ${({ variant = "body", theme }) => {
+    const styles = textVariants[variant];
     return `
     
-      font-size: ${textVariants[v].fontSize.mobile};
-      font-weight: ${textVariants[v].fontWeight};
+      font-size:${styles.fontSize.mobile}; 
+      font-weight: ${styles.fontWeight};
 
-    @media (min-width: 376px) {
-      font-size: ${textVariants[v].fontSize.tablet};
-      font-weight: ${textVariants[v].fontWeight};
+    @media (min-width: ${theme.breakpoints.tablet}) {
+      font-size: ${styles.fontSize.tablet};
+      font-weight: ${styles.fontWeight};
     }
-      @media (min-width: 1024px){
-      font-size: ${textVariants[v].fontSize.desktop};
+      @media (min-width: ${theme.breakpoints.desktop}){
+      font-size: ${styles.fontSize.desktop};
       
     }
     `;
   }}
-  color: ${({ color }) => (color ? theme.colors[color] : theme.colors.black)};
+  color: ${({ theme }) => theme.colors.black};
 `;

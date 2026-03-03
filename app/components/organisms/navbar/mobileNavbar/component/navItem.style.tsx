@@ -12,4 +12,11 @@ export const DropdownButton = styled.div`
     justify-content: left;
   }
 `;
-export const SubMenu = styled.ul``;
+export const SubMenu = styled.ul`
+  @media (min-width: 1024px) {
+    display: none;
+    ::hover {
+      display: block;
+    }
+  }
+`;
