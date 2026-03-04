@@ -11,6 +11,7 @@ export const IconWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: ${({ theme }) => theme.colors.grey[300]};
 `;
 export const StyledIcon = styled.svg<StyledIconProps>`
   width: ${({ sizeMobile = 16 }) => sizeMobile}px;

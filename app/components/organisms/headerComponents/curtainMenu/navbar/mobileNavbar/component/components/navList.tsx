@@ -1,8 +1,8 @@
 "use client";
 
-import { menuData } from "./data";
+import { menuData } from "../data";
 
-import NavItem from "./navItem";
+import NavItem from "../navItem";
 import { NavbarList } from "./navList.style";
 
 export default function NavList() {

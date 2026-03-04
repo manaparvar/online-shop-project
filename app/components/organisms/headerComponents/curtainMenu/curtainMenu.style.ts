@@ -2,15 +2,7 @@ import styled from "styled-components";
 import { theme } from "@/styles/theme";
 import { Text } from "@/app/components/Atoms/text/text";
 import { sizes } from "@/styles/sizes";
-import HamburgerButton from "../../hamburgerButton/hamburgerButton";
-import Icon from "@/app/components/molecules/icon/icon";
-import WomenDropdown from "../../component/navList";
-
-// interface StyledIconProps {
-//   sizeMobile?: number;
-//   sizeTablet?: number;
-//   sizeDesktop?: number;
-// }
+import HamburgerButton from "./navbar/mobileNavbar/hamburgerButton/hamburgerButton";
 
 export const MenuWrapper = styled.div<{
   $isOpen: boolean;
@@ -39,12 +31,7 @@ export const MenuWrapper = styled.div<{
   width: clamp(200px, 60vw, 800px);
   z-index: 20;
 `;
-// const InnerWrapper = styled.div`
-//   width: fit-content;
-//   display: flex;
-//   flex-direction: column;
-//   align-self: center;
-// `;
+
 export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -74,27 +61,6 @@ export const NavbarWrapper = styled.nav`
   }
 `;
 
-export const DropDowns = styled(WomenDropdown)`
-  color: ${({ theme }) => theme.colors.brightBlue};
-`;
-
 export const TagText = styled(Text)<{ $isPink: boolean }>`
   color: ${({ $isPink }) => ($isPink ? theme.colors.pink : theme.colors.black)};
 `;
-
-export const DropdownWrapper = styled.div``;
-
-// export const StyledIcon = styled(Icon)<StyledIconProps>`
-//   width: ${({ sizeMobile = 16 }) => sizeMobile}px;
-//   height: ${({ sizeMobile = 16 }) => sizeMobile}px;
-
-//   @media (min-width: 768px) {
-//     width: ${({ sizeTablet = 16 }) => sizeTablet}px;
-//     height: ${({ sizeTablet = 16 }) => sizeTablet}px;
-//   }
-
-//   @media (min-width: 1024px) {
-//     width: ${({ sizeDesktop = 16 }) => sizeDesktop}px;
-//     height: ${({ sizeDesktop = 16 }) => sizeDesktop}px;
-//   }
-// `;

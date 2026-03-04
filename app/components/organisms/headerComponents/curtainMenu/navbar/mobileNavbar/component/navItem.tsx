@@ -1,14 +1,8 @@
 import { menuData } from "./data";
 import Icon from "@/app/components/molecules/icon/icon";
 import NavLink from "@/app/components/Atoms/link/link";
-import SubList from "./subList";
-import {
-  SubMenu,
-  ItemWrapper,
-  DropdownButton,
-  TagText,
-  StyledIcon,
-} from "./navItem.style";
+import SubList from "./components/components/subList";
+import { SubMenu, ItemWrapper, DropdownButton, TagText } from "./navItem.style";
 import { useDevice } from "@/app/components/Atoms/divider/useDevice";
 import { useState } from "react";
 
@@ -19,11 +13,7 @@ type props = {
 export default function NavItem({ item }: props) {
   const device = useDevice();
   const [isActive, setIsActive] = useState<string | null>(null);
-  console.log("isActive :>> ", isActive);
-  if (isActive === item.label) {
-    console.log("item.label :>> ", item.label);
-    console.log("item.items :>> ", item.items);
-  }
+
   return (
     <ItemWrapper
       onMouseLeave={() => {
@@ -43,7 +33,9 @@ export default function NavItem({ item }: props) {
       ) : (
         <DropdownButton
           onClick={() => {
-            item.label ? setIsActive(null) : setIsActive(item.label);
+            isActive === item.label
+              ? setIsActive(null)
+              : setIsActive(item.label);
           }}
           onMouseEnter={() => {
             if (device === "desktop") setIsActive(item.label);
@@ -56,7 +48,7 @@ export default function NavItem({ item }: props) {
           >
             {item.label}
           </TagText>
-          <StyledIcon icon="dropDown" />
+          <Icon icon="dropDown" />
         </DropdownButton>
       )}
       {isActive === item.label && (

@@ -1,6 +1,7 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Text } from "@/app/components/Atoms/text/text";
 import Icon from "@/app/components/molecules/icon/icon";
+import { sizes } from "@/styles/sizes";
 
 export const ItemWrapper = styled.li`
   gap: 16px;
@@ -14,6 +15,7 @@ export const DropdownButton = styled.div`
     justify-content: left;
   }
 `;
+
 export const SubMenu = styled.ul`
   @media (min-width: 1024px) {
     position: absolute;
@@ -22,7 +24,4 @@ export const SubMenu = styled.ul`
 export const TagText = styled(Text)<{ $isPink: boolean }>`
   color: ${({ $isPink, theme }) =>
     $isPink ? theme.colors.pink : theme.colors.black};
-`;
-export const StyledIcon = styled(Icon)`
-  color: ${({ theme }) => theme.colors.black};
 `;
