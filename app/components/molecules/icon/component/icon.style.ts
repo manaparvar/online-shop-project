@@ -10,6 +10,7 @@ interface StyledIconProps {
 export const IconWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 export const StyledIcon = styled.svg<StyledIconProps>`
   width: ${({ sizeMobile = 16 }) => sizeMobile}px;

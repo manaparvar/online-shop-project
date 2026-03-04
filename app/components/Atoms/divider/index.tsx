@@ -24,5 +24,5 @@ export const Line = styled.div<{
   width: ${({ width }) => width};
   height: ${({ height }) => height};
   background-color: ${({ color }) =>
-    color ? theme.colors[color] : theme.colors.brightGrey};
+    color ? theme.colors[color] : theme.colors.grey[100]};
 `;

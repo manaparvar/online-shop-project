@@ -64,7 +64,6 @@ export const IconWrapper = styled.div`
   @media (min-width: 1024px) {
     gap: 24px;
   }
-  justify-content: left;
 `;
 
 export const HeaderDownerPart = styled.div`

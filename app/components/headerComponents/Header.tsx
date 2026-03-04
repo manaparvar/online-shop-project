@@ -50,7 +50,6 @@ export default function DesktopHeader() {
               <Icon
                 key={index}
                 icon={item.icon}
-                color="mediumGrey"
                 label={item.label}
                 fontVariant="caption"
               />
@@ -62,10 +61,9 @@ export default function DesktopHeader() {
       </HeaderUpperLine>
       <HeaderDownerPart>
         <MobileNavbar />
-        {/* <Navbar /> */}
       </HeaderDownerPart>
       <DividerWrapper>
-        <DividerLine color="brightGrey" lineType="headerDivider" />
+        <DividerLine lineType="headerDivider" />
       </DividerWrapper>
     </HeaderWrapper>
   );

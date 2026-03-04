@@ -13,9 +13,7 @@ export default function SubList({ items }: props) {
       {items.map((myItem) => (
         <li key={myItem.label}>
           <NavLink href={myItem.href}>
-            <Text variant="caption" color="darkGrey">
-              {myItem.label}
-            </Text>
+            <Text variant="caption">{myItem.label}</Text>
           </NavLink>
         </li>
       ))}
