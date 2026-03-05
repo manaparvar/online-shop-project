@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export function useDevice() {
   const [device, setDevice] = useState<"mobile" | "tablet" | "desktop">(
-    "mobile"
+    "mobile",
   );
 
   useEffect(() => {

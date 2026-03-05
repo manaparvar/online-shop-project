@@ -3,12 +3,11 @@
 import { useState } from "react";
 import Logo from "../../molecules/logo/logo";
 import SearchBar from "../../forms/searchBar/searchBar";
-import CurtainMenu from "../organisms/headerComponents/curtainMenu/navbar/mobileNavbar/curtainMenu/curtainMenu";
+import CurtainMenu from "./curtainMenu/curtainMenu";
 import Profile from "../../molecules/profile/profile";
-// import Navbar from "../organisms/navbar/navbar";
 import Icon from "../../molecules/icon/icon";
 import { icons } from "../../molecules/icon/component/iconData";
-import Navbar from "../curtainMenu/navbar/navbar";
+import Navbar from "./curtainMenu/navbar/navbar";
 import DividerLine from "../../Atoms/divider";
 import {
   HeaderWrapper,

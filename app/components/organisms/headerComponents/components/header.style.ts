@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { sizes } from "@/styles/sizes";
-import HamburgerButton from "@/app/components/organisms/navbar/mobileNavbar/hamburgerButton/hamburgerButton";
+import HamburgerButton from "@/app/components/organisms/headerComponents/curtainMenu/navbar/mobileNavbar/hamburgerButton/hamburgerButton";
 
 export const HeaderWrapper = styled.div`
   display: flex;
@@ -8,6 +8,7 @@ export const HeaderWrapper = styled.div`
   padding: 0 clamp(16px, 6vw, 80px);
   position: fixed;
   width: 100%;
+  z-index: 10;
 `;
 export const HeaderUpperLine = styled.div`
   align-items: center;
@@ -63,7 +64,6 @@ export const IconWrapper = styled.div`
   @media (min-width: 1024px) {
     gap: 24px;
   }
-  justify-content: left;
 `;
 
 export const HeaderDownerPart = styled.div`

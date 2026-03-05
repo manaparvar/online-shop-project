@@ -2,16 +2,9 @@ import styled from "styled-components";
 import { theme } from "@/styles/theme";
 import { Text } from "@/app/components/Atoms/text/text";
 import { sizes } from "@/styles/sizes";
-import HamburgerButton from "../../hamburgerButton/hamburgerButton";
-import Icon from "@/app/components/molecules/icon/icon";
+import HamburgerButton from "./navbar/mobileNavbar/hamburgerButton/hamburgerButton";
 
-// interface StyledIconProps {
-//   sizeMobile?: number;
-//   sizeTablet?: number;
-//   sizeDesktop?: number;
-// }
-
-export const MenuWrapper = styled.nav<{
+export const MenuWrapper = styled.div<{
   $isOpen: boolean;
 }>`
   background-color: ${({ theme }) => theme.colors.white};
@@ -36,14 +29,9 @@ export const MenuWrapper = styled.nav<{
   transform: ${({ $isOpen }) =>
     $isOpen ? "translateX(0)" : "translateX(-110%)"};
   width: clamp(200px, 60vw, 800px);
-  z-index: 10;
+  z-index: 20;
 `;
-// const InnerWrapper = styled.div`
-//   width: fit-content;
-//   display: flex;
-//   flex-direction: column;
-//   align-self: center;
-// `;
+
 export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -73,32 +61,6 @@ export const NavbarWrapper = styled.nav`
   }
 `;
 
-export const Submenu = styled.div`
-  color: ${({ theme }) => theme.colors.brightBlue};
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  transition: ease-in-out 1;
-  width: 100%;
-`;
-
 export const TagText = styled(Text)<{ $isPink: boolean }>`
   color: ${({ $isPink }) => ($isPink ? theme.colors.pink : theme.colors.black)};
 `;
-
-export const DropdownWrapper = styled.div``;
-
-// export const StyledIcon = styled(Icon)<StyledIconProps>`
-//   width: ${({ sizeMobile = 16 }) => sizeMobile}px;
-//   height: ${({ sizeMobile = 16 }) => sizeMobile}px;
-
-//   @media (min-width: 768px) {
-//     width: ${({ sizeTablet = 16 }) => sizeTablet}px;
-//     height: ${({ sizeTablet = 16 }) => sizeTablet}px;
-//   }
-
-//   @media (min-width: 1024px) {
-//     width: ${({ sizeDesktop = 16 }) => sizeDesktop}px;
-//     height: ${({ sizeDesktop = 16 }) => sizeDesktop}px;
-//   }
-// `;

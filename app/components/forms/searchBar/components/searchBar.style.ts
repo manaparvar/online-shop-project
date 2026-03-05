@@ -47,9 +47,9 @@ export const SearchInput = styled.input<{ fontSize?: fontKey }>`
       font-size: ${({ fontSize }) =>
         fontSize ?? textVariants.caption.fontSize.desktop};
     }
-    color: ${({ theme }) => theme.colors.mediumGrey};
+    color: ${({ theme }) => theme.colors.grey[300]};
   }
-  background-color: ${({ theme }) => theme.colors.brightGrey};
+  background-color: ${({ theme }) => theme.colors.grey[100]};
   border-radius: 0 5px 5px 0;
   border: none;
   flex: 1;
@@ -61,10 +61,8 @@ export const SearchInput = styled.input<{ fontSize?: fontKey }>`
   }
 `;
 export const SearchButton = styled.button`
-  background-color: ${({ theme }) => theme.colors.midBrightGrey};
+  background-color: ${({ theme }) => theme.colors.grey[200]};
   border-radius: 5px 0 0 5px;
-  border: #d5d5d5 solid 0.1px;
-  flex: 0 0 40px;
   height: 100٪;
   padding-left: 4%;
   padding-right: 4%;
@@ -74,6 +72,6 @@ export const SearchButton = styled.button`
   }
   &:hover {
     box-shadow: 0 0 3px #b7b7b7;
-    border: #d5d5d5 solid 0.1px;
+    border: ${({ theme }) => theme.colors.grey[300]} solid 0.1px;
   }
 `;
