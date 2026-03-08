@@ -9,8 +9,8 @@ export default function Logo() {
       <LogoImage
         src="/MainLogo.png"
         alt="Website Logo"
-        width={sizes["lg"]}
-        height={sizes["lg"]}
+        width={32}
+        height={32}
       />
       <TextWrapper>
         <Text variant="button">Shopping</Text>

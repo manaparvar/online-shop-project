@@ -15,12 +15,12 @@ export const LogoWrapper = styled(Link)`
 `;
 export const LogoImage = styled(Image)`
   @media (min-width: 376px) {
-    width: ${sizes.xlg}px;
-    height: ${sizes.xlg}px;
+    width: ${sizes.xlg};
+    height: ${sizes.xlg};
   }
   @media (min-width: 1024px) {
-    width: ${sizes.xl}px;
-    height: ${sizes.xl}px;
+    width: ${sizes.xl};
+    height: ${sizes.xl};
   }
 `;
 export const TextWrapper = styled.div`
