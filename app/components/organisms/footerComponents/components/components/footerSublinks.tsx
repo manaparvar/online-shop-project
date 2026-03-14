@@ -1,5 +1,5 @@
-import { Text } from "../Atoms/text/text";
-import NavLink from "../Atoms/link/link";
+import { Text } from "../../../../Atoms/text/text";
+import NavLink from "../../../../Atoms/link/link";
 import { LinksWrapper, Links } from "./footerSublinks.style";
 
 type props = {

@@ -1,5 +1,15 @@
-import { Heart, ShoppingBag, X, SearchIcon, ChevronDown } from "lucide-react";
-import { LucideIcon } from "lucide-react";
+import {
+  LucideIcon,
+  Heart,
+  ShoppingBag,
+  X,
+  SearchIcon,
+  ChevronDown,
+  Instagram,
+  Facebook,
+  Youtube,
+  Twitter,
+} from "lucide-react";
 import { textVariants } from "../../../../../styles/variants";
 
 export type IconName =
@@ -7,7 +17,11 @@ export type IconName =
   | "shoppingBag"
   | "close"
   | "search"
-  | "dropDown";
+  | "dropDown"
+  | "instagram"
+  | "facebook"
+  | "youtube"
+  | "twitter";
 
 export const iconsMap: Record<IconName, LucideIcon> = {
   heart: Heart,
@@ -15,14 +29,17 @@ export const iconsMap: Record<IconName, LucideIcon> = {
   close: X,
   search: SearchIcon,
   dropDown: ChevronDown,
+  instagram: Instagram,
+  facebook: Facebook,
+  youtube: Youtube,
+  twitter: Twitter,
 } as const;
 
 type IconItem = {
   fontVariant?: keyof typeof textVariants;
   icon: IconName;
-  label: string;
+  label?: string;
 };
-
 export const icons: IconItem[] = [
   {
     fontVariant: "button",
@@ -48,5 +65,22 @@ export const icons: IconItem[] = [
     fontVariant: "caption",
     icon: "dropDown",
     label: "DropDown",
+  },
+
+  {
+    fontVariant: "caption",
+    icon: "instagram",
+  },
+  {
+    fontVariant: "caption",
+    icon: "facebook",
+  },
+  {
+    fontVariant: "caption",
+    icon: "youtube",
+  },
+  {
+    fontVariant: "caption",
+    icon: "twitter",
   },
 ] as const;
