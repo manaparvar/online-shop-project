@@ -36,6 +36,7 @@ export const Label = styled(Text)`
   @media (min-width: 1024px) {
     display: block;
     margin-top: 4px;
+    transition: all 1s ease;
     &:hover {
       opacity: 0.5;
     }

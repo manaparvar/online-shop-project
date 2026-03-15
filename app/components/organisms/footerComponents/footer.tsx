@@ -1,20 +1,24 @@
 "use client";
+import { sizes } from "@/styles/sizes";
+
 import { footerData } from "./components/footerData";
 import styled from "styled-components";
 import { Text } from "../../Atoms/text/text";
 import Logo from "../../molecules/logo/logo";
-
 import SubList from "./components/footerSublist";
+
 import {
   LinksWrapper,
   FooterWrapper,
   ContactContainer,
-  LogoContainer,
+  SocialLogoContainer,
   NewsletterContainer,
   WidgetsContainer,
+  StyledInput,
 } from "./footer.style";
 import NavLink from "../../Atoms/link/link";
 import Icon from "../../molecules/icon/icon";
+import Input from "../../Atoms/input/input";
 export default function Footer() {
   const columns = footerData.columns ? footerData.columns.items : [];
   const widgets = footerData.widgets ? footerData.widgets.items : [];
@@ -33,23 +37,30 @@ export default function Footer() {
         {widgets.length > 0 &&
           widgets.map((item) =>
             item.type === "social" ? (
-              <ContactContainer>
+              <ContactContainer key={"social"}>
                 <Text variant="button">{item.title}</Text>
                 <Text variant="caption">{item.phoneNumber}</Text>
-                <LogoContainer>
+                <SocialLogoContainer>
                   {item.socialLinks?.map((socialItem) => (
-                    <NavLink href={socialItem.socialLogoUrl}>
+                    <NavLink
+                      key={socialItem.socialLogo}
+                      href={socialItem.socialLogoUrl}
+                    >
                       <Icon icon={socialItem.socialLogo} />
                     </NavLink>
                   ))}
-                </LogoContainer>
+                </SocialLogoContainer>
               </ContactContainer>
             ) : (
               item.type === "newsletter" && (
-                <NewsletterContainer>
+                <NewsletterContainer key={"newsletter"}>
                   <Text variant="button">{item.title}</Text>
                   <Text variant="caption">{item.description}</Text>
-                  <input type="email" />
+                  <StyledInput
+                    type="email"
+                    variant="caption"
+                    placeholder="me@gmail.com"
+                  />
                 </NewsletterContainer>
               )
             ),
