@@ -1,7 +1,7 @@
 export const theme = {
   colors: {
     grey: {
-      50: "rgb(245, 243, 237)",
+      50: "rgb(248, 247, 245)",
       100: "rgb(242, 240, 234)",
       200: "rgb(229, 224, 224)",
       300: "rgb(164, 164, 164)",
@@ -19,7 +19,7 @@ export const theme = {
     yellow: "rgba(237, 207, 93, 1)",
   },
   breakpoints: {
-    mobile: "0px",
+    mobile: "320px",
     tablet: "376px",
     desktop: "1024px",
   },

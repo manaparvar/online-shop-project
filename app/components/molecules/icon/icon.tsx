@@ -20,7 +20,7 @@ export default function Icon({ fontVariant, icon, label }: IconProps) {
     <IconWrapper>
       <StyledIcon as={SelectedIcon} strokeWidth={1.25} />
       {label && (
-        <Label variant={fontVariant} color="black">
+        <Label variant="caption" color="black">
           {label}
         </Label>
       )}

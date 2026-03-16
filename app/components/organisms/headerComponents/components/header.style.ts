@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "@/styles/theme";
 import { sizes } from "@/styles/sizes";
 import HamburgerButton from "@/app/components/organisms/headerComponents/curtainMenu/navbar/mobileNavbar/hamburgerButton/hamburgerButton";
 
@@ -15,11 +16,11 @@ export const HeaderUpperLine = styled.div`
   align-items: center;
   display: flex;
   height: 56px;
-  @media (min-width: 376px) {
-    height: ${sizes["2.5xl"]}px;
+  @media (min-width: ${theme.breakpoints.tablet}) {
+    height: ${sizes["2.5xl"]};
   }
-  @media (min-width: 1024px) {
-    height: ${sizes["3xl"]}px;
+  @media (min-width: ${theme.breakpoints.desktop}) {
+    height: ${sizes["3xl"]};
   }
   justify-content: space-between;
 `;
@@ -27,18 +28,18 @@ export const MyHamburgerButton = styled(HamburgerButton)`
   z-index: 20;
 `;
 export const MobileMenuWrapper = styled.div`
-  @media (min-width: 1024px) {
+  @media (min-width: ${theme.breakpoints.desktop}) {
     display: none;
   }
 `;
 export const SearchBarWrapper = styled.div`
   display: none;
 
-  @media (min-width: 1024px) {
+  @media (min-width: ${theme.breakpoints.desktop}) {
     display: flex;
     flex: 3;
     justify-content: center;
-    margin: 0 24px;
+    margin: 0 ${sizes.md};
     max-width: 600px;
   }
 `;
@@ -46,34 +47,34 @@ export const RightSideWrapper = styled.div`
   align-items: center;
   display: flex;
   flex-direction: row;
-  gap: 8px;
-  @media (min-width: 376px) {
-    gap: 16px;
+  gap: ${sizes.xs};
+  @media (min-width: ${theme.breakpoints.tablet}) {
+    gap: ${sizes.sm};
   }
-  @media (min-width: 1024px) {
-    gap: 24px;
+  @media (min-width: ${theme.breakpoints.desktop}) {
+    gap: ${sizes.md};
   }
   justify-content: center;
 `;
 export const IconWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 8px;
-  @media (min-width: 376px) {
+  gap: ${sizes.xs};
+  @media (min-width: ${theme.breakpoints.tablet}) {
     gap: 16px;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: ${theme.breakpoints.desktop}) {
     gap: 24px;
   }
 `;
 
 export const HeaderDownerPart = styled.div`
   display: none;
-  @media (min-width: 1024px) {
+  @media (min-width: ${theme.breakpoints.desktop}) {
     align-items: center;
     display: flex;
     flex-direction: row;
-    height: 40px;
+    height: ${sizes.xlg};
   }
 `;
 export const DividerWrapper = styled.div`
