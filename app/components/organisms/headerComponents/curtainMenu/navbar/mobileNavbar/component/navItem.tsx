@@ -25,7 +25,7 @@ export default function NavItem({ item }: props) {
           <TagText
             variant="h3"
             color="black"
-            $isPink={item.label === "Summer Sale"}
+            $isAttention={item.label === "Summer Sale"}
           >
             {item.label}
           </TagText>
@@ -44,7 +44,7 @@ export default function NavItem({ item }: props) {
           <TagText
             variant="h3"
             color="black"
-            $isPink={item.label === "Summer Sale"}
+            $isAttention={item.label === "Summer Sale"}
           >
             {item.label}
           </TagText>

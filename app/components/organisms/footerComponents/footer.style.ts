@@ -1,55 +1,45 @@
 import { sizes } from "@/styles/sizes";
 import styled from "styled-components";
-import Input from "../../Atoms/input/input";
+import { theme } from "@/styles/theme";
 import { textVariants } from "@/styles/variants";
 
 export const FooterWrapper = styled.div`
-  height: ${sizes["7xl"]};
   display: flex;
+  height: fit-content;
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.brightBlue};
-  margin-top: 800px;
   padding: ${sizes.sm};
   gap: ${sizes.lg};
+
+  @media (min-width: ${theme.breakpoints.tablet}) {
+    padding: ${sizes.xl} ${sizes.lg};
+  }
+  @media (min-width: 600px) {
+    padding: ${sizes.xl} ${sizes.xl};
+  }
+  @media (min-width: 700px) {
+    flex-direction: column;
+    padding: ${sizes.xl} ${sizes.xl};
+    gap: ${sizes["2xl"]};
+  }
+  @media (min-width: ${theme.breakpoints.desktop}) {
+    padding: ${sizes["2.5xl"]} ${sizes["4.5xl"]};
+    gap: ${sizes["2xl"]};
+  }
+`;
+export const FooterFeatures = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: ${sizes.lg};
+  @media (min-width: 700px) {
+    flex-direction: row;
+    gap: ${sizes["2.5xl"]};
+  }
 `;
 
 export const LinksWrapper = styled.ul`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 3fr;
-  column-gap: 20px;
-`;
-export const WidgetsContainer = styled.div`
-  display: grid;
-  grid-template-columns: 3fr 3fr;
-  column-gap: 60px;
-  flex-direction: row;
+  display: flex;
   justify-content: space-between;
-`;
-
-export const ContactContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${sizes.xs};
-`;
-
-export const SocialLogoContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: ${sizes.xs};
-`;
-
-export const NewsletterContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${sizes.xs};
-`;
-export const StyledInput = styled(Input)`
-  width: ${sizes["3xl"]};
-  height: ${sizes.md};
-  border-radius: 3px 0 0 3px;
-  background-color: ${({ theme }) => theme.colors.white};
-  &::placeholder {
-    text-align: center;
-    font-size: ${textVariants.caption.fontSize.mobile};
-  }
+  flex-grow: 2;
 `;

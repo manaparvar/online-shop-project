@@ -20,7 +20,7 @@ export const SubMenu = styled.ul`
     position: absolute;
   }
 `;
-export const TagText = styled(Text)<{ $isPink: boolean }>`
-  color: ${({ $isPink, theme }) =>
-    $isPink ? theme.colors.pink : theme.colors.black};
+export const TagText = styled(Text)<{ $isAttention: boolean }>`
+  color: ${({ $isAttention, theme }) =>
+    $isAttention ? theme.colors.pink : theme.colors.black};
 `;

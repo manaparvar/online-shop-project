@@ -6,9 +6,7 @@ const NavLink = styled(Link)`
   flex-direction: row;
   justify-content: space-between;
   width: auto;
-  &:hover {
-    opacity: 0.5;
-  }
+  transition: all 0.5s ease;
 `;
 
 export default NavLink;

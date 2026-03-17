@@ -8,10 +8,16 @@ export const IconWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   color: ${({ theme }) => theme.colors.grey[300]};
+  transition: all 0.5s ease;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.grey[200]};
+  }
 `;
 export const StyledIcon = styled.svg`
   width: ${sizes.sm};
   height: ${sizes.sm};
+  transition: all 0.5s ease;
 
   @media (min-width: ${theme.breakpoints.tablet}) {
     width: ${sizes.md};
@@ -21,7 +27,6 @@ export const StyledIcon = styled.svg`
   @media (min-width: ${theme.breakpoints.desktop}) {
     width: ${sizes.md};
     height: $${sizes.md};
-    opacity: 0.5;
   }
 `;
 
@@ -30,9 +35,9 @@ export const Label = styled(Text)`
   @media (min-width: ${theme.breakpoints.desktop}) {
     display: block;
     margin-top: 4px;
-    transition: all 1s ease;
+    transition: all 0.5s ease;
     &:hover {
-      opacity: 0.5;
+      color: ${({ theme }) => theme.colors.grey[200]};
     }
   }
 `;

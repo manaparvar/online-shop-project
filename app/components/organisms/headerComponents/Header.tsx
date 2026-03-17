@@ -36,7 +36,7 @@ export default function DesktopHeader() {
     <HeaderWrapper>
       <HeaderUpperLine>
         <MobileMenuWrapper>
-          <MyHamburgerButton size="lg" isOpen={isOpen} onToggle={openMenu} />
+          <MyHamburgerButton isOpen={isOpen} onToggle={openMenu} />
           <CurtainMenu isOpen={isOpen} onToggle={closeMenu} />
         </MobileMenuWrapper>
         <Logo />
@@ -46,12 +46,7 @@ export default function DesktopHeader() {
         <RightSideWrapper>
           <IconWrapper>
             {filteredIcons.map((item, index) => (
-              <Icon
-                key={index}
-                icon={item.icon}
-                label={item.label}
-                fontVariant="caption"
-              />
+              <Icon key={index} icon={item.icon} label={item.label} />
             ))}
           </IconWrapper>
 

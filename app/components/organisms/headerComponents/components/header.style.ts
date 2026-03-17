@@ -6,8 +6,9 @@ import HamburgerButton from "@/app/components/organisms/headerComponents/curtain
 export const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  background-color: ${({ theme }) => theme.colors.white};
   padding: 0 clamp(16px, 6vw, 80px);
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   z-index: 10;
@@ -80,4 +81,5 @@ export const HeaderDownerPart = styled.div`
 export const DividerWrapper = styled.div`
   display: flex;
   justify-content: center;
+  margin-top: 5px;
 `;

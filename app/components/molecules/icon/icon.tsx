@@ -8,12 +8,10 @@ type TextVariant = keyof typeof textVariants;
 
 type IconProps = {
   icon: IconName;
-  className?: string;
-  fontVariant?: TextVariant;
   label?: string;
 };
 
-export default function Icon({ fontVariant, icon, label }: IconProps) {
+export default function Icon({ icon, label }: IconProps) {
   const SelectedIcon = iconsMap[icon];
 
   return (

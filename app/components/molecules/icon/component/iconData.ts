@@ -10,7 +10,7 @@ import {
   Youtube,
   Twitter,
 } from "lucide-react";
-import { textVariants } from "../../../../../styles/variants";
+import { textVariants } from "@/styles/variants";
 
 export type IconName =
   | "heart"
