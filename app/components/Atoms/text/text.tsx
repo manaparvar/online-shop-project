@@ -26,6 +26,8 @@ export const Text = styled.span<TextProps>`
     }
       @media (min-width: ${theme.breakpoints.desktop}){
       font-size: ${styles.fontSize.desktop};
+      font-weight: ${styles.fontWeight};
+
       
     }
     `;

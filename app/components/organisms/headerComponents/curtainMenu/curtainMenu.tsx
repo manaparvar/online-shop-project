@@ -1,9 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import NavLinks from "@/app/components/Atoms/link/link";
 import SearchBar from "@/app/components/forms/searchBar/searchBar";
-import Icon from "@/app/components/molecules/icon/icon";
 import Navbar from "./navbar/navbar";
 
 import {
@@ -11,8 +9,6 @@ import {
   MyHamburgerButton,
   SearchBarWrapper,
   ContentWrapper,
-  NavbarWrapper,
-  TagText,
 } from "./curtainMenu.style";
 
 type props = {
@@ -27,7 +23,6 @@ export default function CurtainMenu({ isOpen, onToggle }: props) {
     <MenuWrapper $isOpen={isOpen}>
       <ContentWrapper>
         <MyHamburgerButton
-          size="lg"
           isOpen={isOpen}
           onToggle={onToggle}
         ></MyHamburgerButton>

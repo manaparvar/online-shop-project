@@ -1,15 +1,16 @@
 import styled from "styled-components";
+import { theme } from "@/styles/theme";
 import { sizes } from "@/styles/sizes";
 
 export const NavbarWrapper = styled.nav`
   display: flex;
   flex-direction: column;
-  gap: ${sizes.sm}px;
-  @media (min-width: 376px) {
-    padding-top: ${sizes.lg}px;
+  gap: ${sizes.sm};
+  @media (min-width: ${theme.breakpoints.tablet}) {
+    padding-top: ${sizes.lg};
   }
-  @media (min-width: 1024px) {
+  @media (min-width: ${theme.breakpoints.desktop}) {
     flex-direction: row;
-    padding-top: ${sizes.xs}px;
+    padding-top: ${sizes.xs};
   }
 `;

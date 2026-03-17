@@ -1,20 +1,19 @@
 import styled from "styled-components";
 import { sizes } from "@/styles/sizes";
+import { theme } from "@/styles/theme";
 import { textVariants } from "@/styles/variants";
-type fontKey = keyof typeof textVariants;
 
 export const SearchWrapper = styled.div`
-  height: ${sizes.md}px;
+  height: ${sizes.md};
   width: 100%;
   /* width: clamp(264px, 84vw, 312px); */
-  @media (min-width: 376px) {
-    height: ${sizes.lg}px;
+  @media (min-width: ${theme.breakpoints.tablet}) {
+    height: ${sizes.lg};
     width: 80%;
     position: absolute;
-    /* width: clamp(312px, 80vw, 856px); */
   }
-  @media (min-width: 1024px) {
-    height: ${sizes.xlg}px;
+  @media (min-width: ${theme.breakpoints.desktop}) {
+    height: ${sizes.xlg};
     width: 304px;
     position: static;
   }
@@ -22,30 +21,27 @@ export const SearchWrapper = styled.div`
   flex-direction: row;
   justify-content: center;
 `;
-export const SearchInput = styled.input<{ fontSize?: fontKey }>`
+export const SearchInput = styled.input`
   box-sizing: border-box;
   flex: 1;
   height: 100%;
   width: 100%;
 
-  @media (min-width: 376px) {
-    height: 32px;
-    width: 80%;
+  @media (min-width: ${theme.breakpoints.tablet}) {
+    height: ${sizes.lg};
+    width: ${sizes["2xlg"]};
   }
-  @media (min-width: 1024px) {
-    height: 40px;
-    width: 80%;
+  @media (min-width: ${theme.breakpoints.desktop}) {
+    height: ${sizes.xlg};
+    width: ${sizes["2xlg"]};
   }
   &::placeholder {
-    font-size: ${({ fontSize }) =>
-      fontSize ?? textVariants.caption.fontSize.mobile};
-    @media (min-width: 376px) {
-      font-size: ${({ fontSize }) =>
-        fontSize ?? textVariants.caption.fontSize.tablet};
+    font-size: ${textVariants.caption.fontSize.mobile};
+    @media (min-width: ${theme.breakpoints.tablet}) {
+      font-size: ${textVariants.caption.fontSize.tablet};
     }
-    @media (min-width: 1024px) {
-      font-size: ${({ fontSize }) =>
-        fontSize ?? textVariants.caption.fontSize.desktop};
+    @media (min-width: ${theme.breakpoints.desktop}) {
+      font-size: ${textVariants.caption.fontSize.desktop};
     }
     color: ${({ theme }) => theme.colors.grey[300]};
   }
@@ -53,7 +49,7 @@ export const SearchInput = styled.input<{ fontSize?: fontKey }>`
   border-radius: 0 5px 5px 0;
   border: none;
   flex: 1;
-  padding-left: 8px;
+  padding-left: ${sizes.xs};
 
   &:focus {
     border: #e4e4e4 solid 1px;
@@ -61,7 +57,7 @@ export const SearchInput = styled.input<{ fontSize?: fontKey }>`
   }
 `;
 export const SearchButton = styled.button`
-  background-color: ${({ theme }) => theme.colors.grey[200]};
+  background-color: ${({ theme }) => theme.colors.grey[100]};
   border-radius: 5px 0 0 5px;
   height: 100٪;
   padding-left: 4%;
@@ -71,7 +67,6 @@ export const SearchButton = styled.button`
     display: block;
   }
   &:hover {
-    box-shadow: 0 0 3px #b7b7b7;
     border: ${({ theme }) => theme.colors.grey[300]} solid 0.1px;
   }
 `;

@@ -21,13 +21,8 @@ export default function SearchBar() {
   return (
     <SearchWrapper>
       <SearchButton onClick={handleSearch}>
-        {filteredIcons.map((item, index) => (
-          <Icon
-            color="black"
-            fontVariant={item.fontVariant}
-            icon={item.icon}
-            key={index}
-          />
+        {filteredIcons.map((item) => (
+          <Icon icon={item.icon} key={item.label} />
         ))}
       </SearchButton>
       <SearchInput
