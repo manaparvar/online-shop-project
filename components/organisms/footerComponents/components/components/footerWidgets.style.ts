@@ -1,6 +1,6 @@
 import { sizes } from "@/styles/sizes";
 import styled from "styled-components";
-import Input from "@/components/Atoms/input/input";
+import Input from "@/components/atoms/input/input";
 import { theme } from "@/styles/theme";
 import { footerData } from "../footerData";
 import { textVariants } from "@/styles/variants";

@@ -1,7 +1,7 @@
 import { sizes } from "@/styles/sizes";
 import styled from "styled-components";
 import { theme } from "@/styles/theme";
-import NavLink from "@/components/Atoms/link/link";
+import NavLink from "@/components/atoms/link/link";
 
 export const LinksWrapper = styled.ul`
   margin-top: ${sizes.xl};

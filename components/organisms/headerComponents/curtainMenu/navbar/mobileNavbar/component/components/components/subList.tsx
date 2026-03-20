@@ -1,5 +1,5 @@
-import { Text } from "@/components/Atoms/text/text";
-import NavLink from "@/components/Atoms/link/link";
+import { Text } from "@/components/atoms/text/text";
+import NavLink from "@/components/atoms/link/link";
 import { SublistWrapper, LinkFrame } from "./subList.style";
 
 type props = {
