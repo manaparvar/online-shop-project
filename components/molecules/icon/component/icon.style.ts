@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Text } from "@/components/Atoms/text/text";
+import { Text } from "@/components/atoms/text/text";
 import { theme } from "@/styles/theme";
 import { sizes } from "@/styles/sizes";
 import { textVariants } from "@/styles/variants";

@@ -5,10 +5,10 @@ import {
   WidgetsContainer,
   StyledInput,
 } from "./footerWidgets.style";
-import NavLink from "@/components/Atoms/link/link";
+import NavLink from "@/components/atoms/link/link";
 import Icon from "@/components/molecules/icon/icon";
 import { footerData } from "../footerData";
-import { Text } from "@/components/Atoms/text/text";
+import { Text } from "@/components/atoms/text/text";
 
 export default function Widgets() {
   const widgets = footerData.widgets ? footerData.widgets.items : [];

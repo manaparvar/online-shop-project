@@ -8,7 +8,7 @@ import Profile from "../../molecules/profile/profile";
 import Icon from "../../molecules/icon/icon";
 import { icons } from "../../molecules/icon/component/iconData";
 import Navbar from "./curtainMenu/navbar/navbar";
-import DividerLine from "../../Atoms/divider";
+import DividerLine from "../../atoms/divider";
 import {
   HeaderWrapper,
   HeaderUpperLine,
