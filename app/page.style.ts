@@ -1,5 +1,5 @@
 "use client";
-import Footer from "./components/organisms/footerComponents/footer";
+import Footer from "../components/organisms/footerComponents/footer";
 
 import styled from "styled-components";
 

@@ -1,0 +1,26 @@
+"use client";
+import { textVariants } from "../../../styles/variants";
+import { IconName, iconsMap } from "./component/iconData";
+import { IconWrapper, StyledIcon, Label } from "./component/icon.style";
+
+type TextVariant = keyof typeof textVariants;
+
+type IconProps = {
+  icon: IconName;
+  label?: string;
+};
+
+export default function Icon({ icon, label }: IconProps) {
+  const SelectedIcon = iconsMap[icon];
+  console.log("counter", icon, label);
+  return (
+    <IconWrapper>
+      <StyledIcon as={SelectedIcon} strokeWidth={1.25} />
+      {label && (
+        <Label variant="caption" color="black">
+          {label}
+        </Label>
+      )}
+    </IconWrapper>
+  );
+}
