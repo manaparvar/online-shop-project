@@ -5,7 +5,7 @@ import {
   HamburgerUpperLine,
   HamburgerMiddleLine,
   HamburgerDownerLine,
-} from "./component/hamburgerButton.style";
+} from "./hamburgerButton.style";
 
 type props = {
   isOpen: boolean;

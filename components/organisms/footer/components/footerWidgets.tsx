@@ -7,7 +7,7 @@ import {
 } from "./footerWidgets.style";
 import NavLink from "@/components/atoms/link/link";
 import Icon from "@/components/molecules/icon/icon";
-import { footerData } from "../footerData";
+import { footerData } from "./footerData";
 import { Text } from "@/components/atoms/text/text";
 
 export default function Widgets() {

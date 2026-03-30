@@ -1,5 +1,5 @@
 "use client";
-import Footer from "../components/organisms/footerComponents/footer";
+import Footer from "../components/organisms/footer/footer";
 
 import styled from "styled-components";
 
@@ -14,7 +14,7 @@ export const PageWrapper = styled.div`
   align-items: stretch;
 `;
 export const Main = styled.div`
-  height: 1000px;
+  min-height: 1000px;
   margin: 0px auto;
 `;
 export const StyledFooter = styled(Footer)``;

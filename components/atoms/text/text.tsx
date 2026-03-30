@@ -5,21 +5,20 @@ import { theme } from "../../../styles/theme";
 import { textVariants } from "../../../styles/variants";
 
 type TextVariant = keyof typeof textVariants;
-
+type TextWrapProps = "wrap" | "nowrap";
 type TextProps = {
   variant?: TextVariant;
   color?: keyof typeof theme.colors;
   as?: React.ElementType;
 };
 
-export const Text = styled.span<TextProps>`
+export const Text = styled.p<TextProps>`
   ${({ variant = "body", theme }) => {
     const styles = textVariants[variant];
     return `
-    
       font-size:${styles.fontSize.mobile}; 
       font-weight: ${styles.fontWeight};
-
+      
     @media (min-width: ${theme.breakpoints.tablet}) {
       font-size: ${styles.fontSize.tablet};
       font-weight: ${styles.fontWeight};

@@ -1,7 +1,6 @@
 "use client";
 import { LogoWrapper, TextWrapper, LogoImage } from "./component/logo.style";
 import { Text } from "../../atoms/text/text";
-import { sizes } from "@/styles/sizes";
 
 export default function Logo() {
   return (
@@ -15,7 +14,7 @@ export default function Logo() {
       <TextWrapper>
         <Text variant="button">Shopping</Text>
         <Text variant="button" color="pink">
-          Website
+          &nbsp;Website
         </Text>
       </TextWrapper>
     </LogoWrapper>

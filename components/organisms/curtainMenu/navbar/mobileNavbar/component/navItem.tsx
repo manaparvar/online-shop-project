@@ -1,9 +1,9 @@
 import { menuData } from "./data";
 import Icon from "@/components/molecules/icon/icon";
 import NavLink from "@/components/atoms/link/link";
-import SubList from "./components/components/subList";
+import SubList from "./subList";
 import { SubMenu, ItemWrapper, DropdownButton, TagText } from "./navItem.style";
-import { useDevice } from "@/components/atoms/divider/useDevice";
+import { useDevice } from "@/components/hooks/useDevice";
 import { useState } from "react";
 
 type props = {

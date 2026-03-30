@@ -1,5 +1,5 @@
 "use client";
-import Widgets from "./components/components/footerWidgets";
+import Widgets from "./components/footerWidgets";
 import { footerData } from "./components/footerData";
 import Logo from "../../molecules/logo/logo";
 import SubList from "./components/footerSublist";

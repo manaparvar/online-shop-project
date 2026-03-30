@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Text } from "@/components/atoms/text/text";
 import { theme } from "@/styles/theme";
 import { sizes } from "@/styles/sizes";
-import { textVariants } from "@/styles/variants";
+
 export const IconWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -32,10 +32,12 @@ export const StyledIcon = styled.svg`
 
 export const Label = styled(Text)`
   display: none;
+
   @media (min-width: ${theme.breakpoints.desktop}) {
     display: block;
     margin-top: 4px;
     transition: all 0.5s ease;
+
     &:hover {
       color: ${({ theme }) => theme.colors.grey[200]};
     }

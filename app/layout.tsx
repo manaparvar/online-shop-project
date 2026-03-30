@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import ThemeWrapper from "@/styles/themeWrapper";
 import Script from "next/script";
 import type { Metadata, Viewport } from "next";
+import Header from "../components/organisms/header/header";
+import { PageWrapper, StyledFooter } from "./page.style";
 
 export const metadata: Metadata = {
   title: "My App",
@@ -30,7 +32,13 @@ export default function RootLayout({
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
-        <ThemeWrapper>{children}</ThemeWrapper>
+        <ThemeWrapper>
+          <PageWrapper>
+            <Header />
+            {children}
+            <StyledFooter />
+          </PageWrapper>
+        </ThemeWrapper>
       </body>
     </html>
   );

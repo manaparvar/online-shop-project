@@ -1,6 +1,6 @@
 import NavLink from "../../../atoms/link/link";
 import { Text } from "../../../atoms/text/text";
-import Sublinks from "./components/footerSublinks";
+import Sublinks from "./footerSublinks";
 
 type props = {
   item: any;
