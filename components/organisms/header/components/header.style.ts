@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { theme } from "@/styles/theme";
 import { sizes } from "@/styles/sizes";
-import HamburgerButton from "@/components/organisms/headerComponents/curtainMenu/navbar/mobileNavbar/hamburgerButton/hamburgerButton";
+import HamburgerButton from "@/components/organisms/curtainMenu/navbar/mobileNavbar/hamburgerButton/hamburgerButton";
 
 export const HeaderWrapper = styled.div`
   display: flex;

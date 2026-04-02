@@ -10,13 +10,11 @@ export default function SubList({ items }: props) {
   return (
     <SublistWrapper>
       {items.map((myItem) => (
-        <li key={myItem.label}>
-          <LinkFrame>
-            <NavLink href={myItem.href}>
-              <Text variant="caption">{myItem.label}</Text>
-            </NavLink>
-          </LinkFrame>
-        </li>
+        <LinkFrame key={myItem.label}>
+          <NavLink href={myItem.href}>
+            <Text variant="caption">{myItem.label}</Text>
+          </NavLink>
+        </LinkFrame>
       ))}
     </SublistWrapper>
   );

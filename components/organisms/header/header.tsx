@@ -3,11 +3,11 @@
 import { useState } from "react";
 import Logo from "../../molecules/logo/logo";
 import SearchBar from "../../forms/searchBar/searchBar";
-import CurtainMenu from "./curtainMenu/curtainMenu";
-import Profile from "../../molecules/profile/profile";
+import CurtainMenu from "../curtainMenu/curtainMenu";
+import Profile from "../../molecules/avatar/avatar";
 import Icon from "../../molecules/icon/icon";
 import { icons } from "../../molecules/icon/component/iconData";
-import Navbar from "./curtainMenu/navbar/navbar";
+import Navbar from "../curtainMenu/navbar/navbar";
 import DividerLine from "../../atoms/divider";
 import {
   HeaderWrapper,
@@ -50,7 +50,7 @@ export default function DesktopHeader() {
             ))}
           </IconWrapper>
 
-          <Profile />
+          <Profile alt="User Profile" src="/profile.jpg" />
         </RightSideWrapper>
       </HeaderUpperLine>
       <HeaderDownerPart>

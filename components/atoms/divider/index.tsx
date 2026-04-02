@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { LineVariants } from "./variants";
 import { theme } from "@/styles/theme";
-import { useDevice } from "./useDevice";
+import { useDevice } from "../../hooks/useDevice";
 type ColorKey = keyof typeof theme.colors;
 type lineProps = {
   width?: string;

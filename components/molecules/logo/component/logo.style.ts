@@ -26,4 +26,5 @@ export const LogoImage = styled(Image)`
 `;
 export const TextWrapper = styled.div`
   /* gap: 8px; */
+  display: flex;
 `;
