@@ -5,8 +5,8 @@ import Logo from "../../molecules/logo/logo";
 import SearchBar from "../../forms/searchBar/searchBar";
 import CurtainMenu from "../curtainMenu/curtainMenu";
 import Profile from "../../molecules/avatar/avatar";
-import Icon from "../../molecules/icon/icon";
-import { icons } from "../../molecules/icon/component/iconData";
+import Icon from "../../atoms/icon/icon";
+import { icons } from "../../atoms/icon/component/iconData";
 import Navbar from "../curtainMenu/navbar/navbar";
 import DividerLine from "../../atoms/divider";
 import {

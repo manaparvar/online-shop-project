@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import { Main } from "./page.style";
-// import Content from "./components/Content";
-
+import Carousel from "../components/organisms/carousel/carousel";
 export const metadata: Metadata = {
   title: "Online Shop",
   description: "This is a fashion online shop.",
 };
 
 export default function Home() {
-  return <Main>This is main page</Main>;
+  return (
+    <Main>
+      <Carousel />
+    </Main>
+  );
 }

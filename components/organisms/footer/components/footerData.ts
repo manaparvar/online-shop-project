@@ -1,4 +1,4 @@
-import { IconName } from "@/components/molecules/icon/component/iconData";
+import { IconName } from "@/components/atoms/icon/component/iconData";
 
 type props = {
   socialLogo: IconName;

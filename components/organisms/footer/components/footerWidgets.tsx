@@ -6,7 +6,7 @@ import {
   StyledInput,
 } from "./footerWidgets.style";
 import NavLink from "@/components/atoms/link/link";
-import Icon from "@/components/molecules/icon/icon";
+import Icon from "@/components/atoms/icon/icon";
 import { footerData } from "./footerData";
 import { Text } from "@/components/atoms/text/text";
 
