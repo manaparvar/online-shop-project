@@ -6,6 +6,7 @@ import Script from "next/script";
 import type { Metadata, Viewport } from "next";
 import Header from "../components/organisms/header/header";
 import { PageWrapper, StyledFooter } from "./page.style";
+import Container from "@/components/atoms/grid/container";
 
 export const metadata: Metadata = {
   title: "My App",
@@ -42,11 +43,9 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
         <ThemeWrapper>
-          <PageWrapper>
-            <Header />
-            {children}
-            <StyledFooter />
-          </PageWrapper>
+          <Header />
+          <Container>{children}</Container>
+          <StyledFooter />
         </ThemeWrapper>
       </body>
     </html>

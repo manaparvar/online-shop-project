@@ -15,11 +15,11 @@ export const LogoWrapper = styled(Link)`
   }
 `;
 export const LogoImage = styled(Image)`
-  @media (min-width: ${theme.breakpoints.tablet}) {
+  @media (min-width: ${theme.breakpoints.sm}) {
     width: ${sizes.xlg};
     height: ${sizes.xlg};
   }
-  @media (min-width: ${theme.breakpoints.desktop}) {
+  @media (min-width: ${theme.breakpoints.lg}) {
     width: ${sizes.xl};
     height: ${sizes.xl};
   }

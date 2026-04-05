@@ -32,10 +32,10 @@ export const Content = styled.div<VariantProps>`
       background-color: rgba(255, 255, 255, 0.5);
       margin-top: 60px;
 
-      @media (min-width: ${theme.breakpoints.tablet}) {
+      @media (min-width: ${theme.breakpoints.sm}) {
         margin-top: 50px;
       }
-      @media (min-width: ${theme.breakpoints.desktop}) {
+      @media (min-width: ${theme.breakpoints.lg}) {
         margin-top: 168px;
       }
     `}
@@ -54,13 +54,13 @@ export const Title = styled.h3<VariantProps>`
       font-weight: 200;
       font-family: var(--font-rubik), sans-serif;
 
-      @media (min-width: ${theme.breakpoints.tablet}) {
+      @media (min-width: ${theme.breakpoints.sm}) {
         font-size: 1rem;
         font-weight: bold;
         margin-top: 10px;
       }
 
-      @media (min-width: ${theme.breakpoints.desktop}) {
+      @media (min-width: ${theme.breakpoints.lg}) {
         font-size: 1rem;
       }
     `}
@@ -72,7 +72,7 @@ export const Title = styled.h3<VariantProps>`
       font-weight: 200;
       font-family: var(--font-rubik), sans-serif;
 
-      @media (min-width: ${theme.breakpoints.desktop}) {
+      @media (min-width: ${theme.breakpoints.lg}) {
         font-size: 4rem;
       }
     `}
@@ -85,7 +85,7 @@ export const Title = styled.h3<VariantProps>`
       white-space: nowrap;
       margin-top: 8px;
 
-      @media (min-width: ${theme.breakpoints.desktop}) {
+      @media (min-width: ${theme.breakpoints.lg}) {
         font-size: 16px;
       }
     `}
@@ -102,11 +102,11 @@ export const Subtitle = styled.p<VariantProps>`
       font-weight: 200;
       font-family: var(--font-rubik), sans-serif;
 
-      @media (min-width: ${theme.breakpoints.tablet}) {
+      @media (min-width: ${theme.breakpoints.sm}) {
         font-size: 12px;
       }
 
-      @media (min-width: ${theme.breakpoints.desktop}) {
+      @media (min-width: ${theme.breakpoints.lg}) {
         font-size: 1rem;
       }
     `}

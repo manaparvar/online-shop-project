@@ -19,12 +19,12 @@ export const StyledIcon = styled.svg`
   height: ${sizes.sm};
   transition: all 0.5s ease;
 
-  @media (min-width: ${theme.breakpoints.tablet}) {
+  @media (min-width: ${theme.breakpoints.sm}) {
     width: ${sizes.md};
     height: ${sizes.md};
   }
 
-  @media (min-width: ${theme.breakpoints.desktop}) {
+  @media (min-width: ${theme.breakpoints.lg}) {
     width: ${sizes.md};
     height: ${sizes.md};
   }
@@ -33,7 +33,7 @@ export const StyledIcon = styled.svg`
 export const Label = styled(Text)`
   display: none;
 
-  @media (min-width: ${theme.breakpoints.desktop}) {
+  @media (min-width: ${theme.breakpoints.lg}) {
     display: block;
     margin-top: 4px;
     transition: all 0.5s ease;

@@ -10,7 +10,7 @@ export const SublistWrapper = styled.ul`
   background-color: ${({ theme }) => theme.colors.grey[50]};
   border-radius: 3px;
   gap: ${sizes.xs};
-  @media (min-width: ${theme.breakpoints.desktop}) {
+  @media (min-width: ${theme.breakpoints.lg}) {
     padding: ${sizes.sm};
     background-color: ${({ theme }) => theme.colors.white};
     width: ${sizes["5xl"]};
@@ -21,7 +21,7 @@ export const SublistWrapper = styled.ul`
 export const LinkFrame = styled.li`
   padding: 5px;
 
-  @media (min-width: ${theme.breakpoints.desktop}) {
+  @media (min-width: ${theme.breakpoints.lg}) {
     &:hover {
       background-color: ${({ theme }) => theme.colors.grey[100]};
       border-radius: 4px;

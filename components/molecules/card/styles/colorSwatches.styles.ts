@@ -42,12 +42,12 @@ export const SwatchButton = styled.button<SwatchProps>`
     border: 1px solid rgba(0, 0, 0, 0.08);
     pointer-events: none;
   }
-  @media (min-width: ${theme.breakpoints.desktop}) {
+  @media (min-width: ${theme.breakpoints.lg}) {
     width: 16px;
     min-height: 16px;
     top: 10px;
   }
-  @media (min-width: ${theme.breakpoints.tablet}) {
+  @media (min-width: ${theme.breakpoints.sm}) {
     width: 12px;
     min-height: 12px;
 

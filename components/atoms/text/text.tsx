@@ -19,11 +19,11 @@ export const Text = styled.p<TextProps>`
       font-size:${styles.fontSize.mobile}; 
       font-weight: ${styles.fontWeight};
       
-    @media (min-width: ${theme.breakpoints.tablet}) {
+    @media (min-width: ${theme.breakpoints.sm}) {
       font-size: ${styles.fontSize.tablet};
       font-weight: ${styles.fontWeight};
     }
-      @media (min-width: ${theme.breakpoints.desktop}){
+      @media (min-width: ${theme.breakpoints.lg}){
       font-size: ${styles.fontSize.desktop};
       font-weight: ${styles.fontWeight};
 

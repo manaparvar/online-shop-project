@@ -14,7 +14,7 @@ export const MenuWrapper = styled.div<{
   height: 100vh;
   left: 0;
   padding: ${sizes.xs} ${sizes.md};
-  @media (min-width: ${theme.breakpoints.tablet}) {
+  @media (min-width: ${theme.breakpoints.sm}) {
     padding: ${sizes.sm} ${sizes.md};
   }
   @media (min-width: 500px) {
@@ -36,7 +36,7 @@ export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${sizes.sm};
-  @media (min-width: ${theme.breakpoints.tablet}) {
+  @media (min-width: ${theme.breakpoints.sm}) {
     gap: ${sizes.md};
   }
   margin: 0 auto;
@@ -47,7 +47,7 @@ export const MyHamburgerButton = styled(HamburgerButton)`
 `;
 export const SearchBarWrapper = styled.div`
   box-sizing: border-box;
-  @media (min-width: ${theme.breakpoints.desktop}) {
+  @media (min-width: ${theme.breakpoints.lg}) {
     display: none;
   }
   width: 100%;
@@ -56,7 +56,7 @@ export const NavbarWrapper = styled.nav`
   display: flex;
   flex-direction: column;
   gap: ${sizes.xs};
-  @media (min-width: ${theme.breakpoints.tablet}) {
+  @media (min-width: ${theme.breakpoints.sm}) {
     margin-top: ${sizes.lg};
   }
 `;

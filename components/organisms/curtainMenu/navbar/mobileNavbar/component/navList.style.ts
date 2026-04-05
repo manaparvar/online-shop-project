@@ -8,10 +8,10 @@ export const NavbarList = styled.ul`
   gap: ${sizes.xs};
   height: fit-content;
   width: 100%;
-  @media (min-width: ${theme.breakpoints.tablet}) {
+  @media (min-width: ${theme.breakpoints.sm}) {
     gap: ${sizes.sm};
   }
-  @media (min-width: ${theme.breakpoints.desktop}) {
+  @media (min-width: ${theme.breakpoints.lg}) {
     flex-direction: row;
     gap: ${sizes.xl};
   }

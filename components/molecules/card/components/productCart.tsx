@@ -15,6 +15,8 @@ import Badge from "@/components/atoms/badge/badge";
 import Button from "@/components/atoms/button/button";
 import Icon from "@/components/atoms/icon/icon";
 import { AnimatedImage } from "../styles/productCart.styles";
+import Row from "@/components/atoms/grid/row";
+import Column from "@/components/atoms/grid/column";
 
 const ProductCard = ({
   variant,
@@ -92,30 +94,34 @@ const ProductCard = ({
         {subtitle && <Subtitle $variant={variant}>{subtitle}</Subtitle>}
 
         {buttonLabel && (
-          <ButtonWrapper>
-            <Button
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation();
-                onButtonClick?.();
-              }}
-            >
-              {buttonLabel}
-            </Button>
-            <Button
-              type="button"
-              $iconButton
-              $isFavorite={selectFavorite}
-              onClick={(e) => {
-                e.stopPropagation();
+          <Row>
+            <Column sm={10}>
+              <Button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onButtonClick?.();
+                }}
+              >
+                {buttonLabel}
+              </Button>
+            </Column>
+            <Column sm={2}>
+              <Button
+                type="button"
+                $iconButton
+                $isFavorite={selectFavorite}
+                onClick={(e) => {
+                  e.stopPropagation();
 
-                setSelectFavorite(!selectFavorite);
-                onSelectFavorite?.(selectFavorite);
-              }}
-            >
-              <Icon icon="heart" />
-            </Button>
-          </ButtonWrapper>
+                  setSelectFavorite(!selectFavorite);
+                  onSelectFavorite?.(selectFavorite);
+                }}
+              >
+                <Icon icon="heart" />
+              </Button>
+            </Column>
+          </Row>
         )}
       </Content>
     </>

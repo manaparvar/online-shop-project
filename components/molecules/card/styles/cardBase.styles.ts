@@ -21,11 +21,11 @@ export const CardWrapper = styled.div<WrapperProps>`
       min-height: 192px;
       background: #f2f0ea;
       padding: 8px;
-      @media (min-width: ${theme.breakpoints.tablet}) {
+      @media (min-width: ${theme.breakpoints.sm}) {
         width: 200px;
         min-height: 320px;
       }
-      @media (min-width: ${theme.breakpoints.desktop}) {
+      @media (min-width: ${theme.breakpoints.lg}) {
         width: 216px;
         height: 344px;
       }
@@ -37,11 +37,11 @@ export const CardWrapper = styled.div<WrapperProps>`
       width: 240px;
       height: 264px;
 
-      @media (min-width: ${theme.breakpoints.tablet}) {
+      @media (min-width: ${theme.breakpoints.sm}) {
         width: 200px;
         height: 216px;
       }
-      @media (min-width: ${theme.breakpoints.desktop}) {
+      @media (min-width: ${theme.breakpoints.lg}) {
         width: 296px;
         height: 336px;
       }
@@ -51,7 +51,7 @@ export const CardWrapper = styled.div<WrapperProps>`
       background: ${({ theme }) => theme.colors.white};
       border: 1px solid #ececec;
 
-      @media (min-width: ${theme.breakpoints.desktop}) {
+      @media (min-width: ${theme.breakpoints.lg}) {
         &:hover {
           transform: scale(1.05);
           box-shadow: 0px 11px 10px 0px rgba(0, 0, 0, 0.27);
@@ -81,11 +81,11 @@ export const CardWrapper = styled.div<WrapperProps>`
       padding: 5px;
       width: 90px;
 
-      @media (min-width: ${theme.breakpoints.tablet}) {
+      @media (min-width: ${theme.breakpoints.sm}) {
         height: 120px;
         width: 100px;
       }
-      @media (min-width: ${theme.breakpoints.desktop}) {
+      @media (min-width: ${theme.breakpoints.lg}) {
         height: 180px;
         width: 116px;
       }

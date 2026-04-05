@@ -18,7 +18,7 @@ const Badge = styled.span`
   font-size: 9px;
   font-weight: 700;
 
-  @media (min-width: ${theme.breakpoints.tablet}) {
+  @media (min-width: ${theme.breakpoints.md}) {
     width: 32px;
     min-height: 24px;
     font-size: 12px;
@@ -27,7 +27,7 @@ const Badge = styled.span`
     left: 16px;
   }
 
-  @media (min-width: ${theme.breakpoints.desktop}) {
+  @media (min-width: ${theme.breakpoints.lg}) {
     width: 48px;
     min-height: 32px;
     font-size: 14px;

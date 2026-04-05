@@ -8,7 +8,7 @@ export const PriceRow = styled.div`
   position: absolute;
   bottom: 0px;
   left: 10px;
-  @media (min-width: ${theme.breakpoints.tablet}) {
+  @media (min-width: ${theme.breakpoints.sm}) {
     bottom: -10px;
   }
 `;
@@ -18,7 +18,7 @@ export const Price = styled.span`
   font-weight: 700;
   color: ${({ theme }) => theme.colors.black};
 
-  @media (min-width: ${theme.breakpoints.tablet}) {
+  @media (min-width: ${theme.breakpoints.sm}) {
     font-size: 24px;
     font-weight: bold;
   }
@@ -28,7 +28,7 @@ export const OldPrice = styled.span`
   font-size: 12px;
   color: #888;
   text-decoration: line-through;
-  @media (min-width: ${theme.breakpoints.desktop}) {
+  @media (min-width: ${theme.breakpoints.lg}) {
     font-size: 24px;
   }
 `;
