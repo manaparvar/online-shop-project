@@ -1,5 +1,5 @@
 import { menuData } from "./data";
-import Icon from "@/components/molecules/icon/icon";
+import Icon from "@/components/atoms/icon/icon";
 import NavLink from "@/components/atoms/link/link";
 import SubList from "./subList";
 import { SubMenu, ItemWrapper, DropdownButton, TagText } from "./navItem.style";

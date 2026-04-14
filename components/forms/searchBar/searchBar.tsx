@@ -1,7 +1,7 @@
 "use client";
 
-import { icons } from "../../molecules/icon/component/iconData";
-import Icon from "../../molecules/icon/icon";
+import { icons } from "../../atoms/icon/component/iconData";
+import Icon from "../../atoms/icon/icon";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { SearchWrapper } from "./components/searchBar.style";

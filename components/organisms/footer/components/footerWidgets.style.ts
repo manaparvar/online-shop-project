@@ -2,7 +2,6 @@ import { sizes } from "@/styles/sizes";
 import styled from "styled-components";
 import Input from "@/components/forms/input/input";
 import { theme } from "@/styles/theme";
-import { footerData } from "../footerData";
 import { textVariants } from "@/styles/variants";
 
 export const WidgetsContainer = styled.div`
@@ -17,7 +16,7 @@ export const WidgetsContainer = styled.div`
     justify-content: flex-end;
   }
 
-  @media (min-width: ${theme.breakpoints.desktop}) {
+  @media (min-width: ${theme.breakpoints.lg}) {
   }
 `;
 
@@ -49,7 +48,7 @@ export const StyledInput = styled(Input)`
     text-align: center;
     font-size: ${textVariants.caption.fontSize.mobile};
   }
-  @media (min-width: ${theme.breakpoints.tablet}) {
+  @media (min-width: ${theme.breakpoints.sm}) {
     height: ${sizes.md};
   }
   @media (min-width: 700px) {
@@ -60,7 +59,7 @@ export const StyledInput = styled(Input)`
       font-size: ${textVariants.caption.fontSize.tablet};
     }
   }
-  @media (min-width: ${theme.breakpoints.desktop}) {
+  @media (min-width: ${theme.breakpoints.lg}) {
     &::placeholder {
       text-align: center;
       font-size: ${textVariants.caption.fontSize.desktop};

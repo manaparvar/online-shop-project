@@ -16,5 +16,6 @@ export const PageWrapper = styled.div`
 export const Main = styled.div`
   min-height: 1000px;
   margin: 0px auto;
+  width: 100%;
 `;
 export const StyledFooter = styled(Footer)``;

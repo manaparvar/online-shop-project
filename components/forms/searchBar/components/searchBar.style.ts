@@ -7,12 +7,12 @@ export const SearchWrapper = styled.div`
   height: ${sizes.md};
   width: 100%;
   /* width: clamp(264px, 84vw, 312px); */
-  @media (min-width: ${theme.breakpoints.tablet}) {
+  @media (min-width: ${theme.breakpoints.sm}) {
     height: ${sizes.lg};
     width: 80%;
     position: absolute;
   }
-  @media (min-width: ${theme.breakpoints.desktop}) {
+  @media (min-width: ${theme.breakpoints.lg}) {
     height: ${sizes.xlg};
     width: 304px;
     position: static;
@@ -27,20 +27,20 @@ export const SearchInput = styled.input`
   height: 100%;
   width: 100%;
 
-  @media (min-width: ${theme.breakpoints.tablet}) {
+  @media (min-width: ${theme.breakpoints.sm}) {
     height: ${sizes.lg};
     width: ${sizes["2xlg"]};
   }
-  @media (min-width: ${theme.breakpoints.desktop}) {
+  @media (min-width: ${theme.breakpoints.lg}) {
     height: ${sizes.xlg};
     width: ${sizes["2xlg"]};
   }
   &::placeholder {
     font-size: ${textVariants.caption.fontSize.mobile};
-    @media (min-width: ${theme.breakpoints.tablet}) {
+    @media (min-width: ${theme.breakpoints.sm}) {
       font-size: ${textVariants.caption.fontSize.tablet};
     }
-    @media (min-width: ${theme.breakpoints.desktop}) {
+    @media (min-width: ${theme.breakpoints.lg}) {
       font-size: ${textVariants.caption.fontSize.desktop};
     }
     color: ${({ theme }) => theme.colors.grey[300]};

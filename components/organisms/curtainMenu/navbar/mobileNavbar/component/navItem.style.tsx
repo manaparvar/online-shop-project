@@ -10,13 +10,13 @@ export const DropdownButton = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  @media (min-width: ${theme.breakpoints.desktop}) {
+  @media (min-width: ${theme.breakpoints.lg}) {
     justify-content: left;
   }
 `;
 
 export const SubMenu = styled.ul`
-  @media (min-width: ${theme.breakpoints.desktop}) {
+  @media (min-width: ${theme.breakpoints.lg}) {
     position: absolute;
   }
 `;

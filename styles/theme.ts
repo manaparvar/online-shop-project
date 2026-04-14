@@ -19,10 +19,12 @@ export const theme = {
     yellow: "rgba(237, 207, 93, 1)",
   },
   breakpoints: {
-    mobile: "320px",
-    tablet: "376px",
-    desktop: "1024px",
+    sm: "376px",
+    md: "768px",
+    lg: "1290px",
+    xl: "1440px",
   },
+  gutterWidth: 0,
 } as const;
 
 export type ThemeType = typeof theme;

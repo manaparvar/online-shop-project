@@ -6,10 +6,10 @@ export const NavbarWrapper = styled.nav`
   display: flex;
   flex-direction: column;
   gap: ${sizes.sm};
-  @media (min-width: ${theme.breakpoints.tablet}) {
+  @media (min-width: ${theme.breakpoints.sm}) {
     padding-top: ${sizes.lg};
   }
-  @media (min-width: ${theme.breakpoints.desktop}) {
+  @media (min-width: ${theme.breakpoints.lg}) {
     flex-direction: row;
     padding-top: ${sizes.xs};
   }

@@ -11,7 +11,7 @@ export const FooterWrapper = styled.div`
   padding: ${sizes.sm};
   gap: ${sizes.lg};
 
-  @media (min-width: ${theme.breakpoints.tablet}) {
+  @media (min-width: ${theme.breakpoints.sm}) {
     padding: ${sizes.xl} ${sizes.lg};
   }
   @media (min-width: 600px) {
@@ -22,7 +22,7 @@ export const FooterWrapper = styled.div`
     padding: ${sizes.xl} ${sizes.xl};
     gap: ${sizes["2xl"]};
   }
-  @media (min-width: ${theme.breakpoints.desktop}) {
+  @media (min-width: ${theme.breakpoints.lg}) {
     padding: ${sizes["2.5xl"]} ${sizes["4.5xl"]};
     gap: ${sizes["2xl"]};
   }
