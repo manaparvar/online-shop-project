@@ -1,4 +1,4 @@
-import { Dot, DotsWrapper } from "./productCarousel.styles";
+import { Dot, DotsWrapper } from "./productCard.styles";
 
 const Dots = ({ page, pages, scrollToPage }: any) => {
   return (

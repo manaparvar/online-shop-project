@@ -3,10 +3,10 @@
 import { Children, useRef } from "react";
 import useScrollCarousel from "../../../hooks/useScrollCarousel";
 import { CarouselProps } from "./product.type";
-import ProductCarouselController from "@/components/organisms/carousel/productCarousel/productCarouselController";
-import { Item, Track, Viewport } from "./productCarousel.styles";
+import ProductCardController from "@/components/organisms/carousel/productCard/productCardController";
+import { Item, Track, Viewport } from "./productCard.styles";
 import Dots from "./dots";
-export default function Carousel({
+const ProductCard = ({
   title,
   seeAllHref,
   children,
@@ -18,7 +18,7 @@ export default function Carousel({
   wideDesktopBasis = "18.8%",
   extraWideDesktopBasis = "15.5%",
   gap = "16px",
-}: CarouselProps) {
+}: CarouselProps) => {
   const viewportRef = useRef<HTMLDivElement>(null);
 
   const { page, pages, next, prev, scrollToPage, canGoPrev, canGoNext } =
@@ -29,7 +29,7 @@ export default function Carousel({
   return (
     <>
       {(title || seeAllHref || showArrows) && (
-        <ProductCarouselController
+        <ProductCardController
           canGoNext={canGoNext}
           canGoPrev={canGoPrev}
           next={next}
@@ -63,4 +63,6 @@ export default function Carousel({
       )}
     </>
   );
-}
+};
+
+export default ProductCard;

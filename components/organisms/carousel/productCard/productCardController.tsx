@@ -3,8 +3,9 @@ import SeeAll from "@/components/atoms/link/link";
 import Button from "@/components/atoms/button/button";
 import Row from "@/components/atoms/grid/row";
 import Column from "@/components/atoms/grid/column";
-import { Header, HeaderRight } from "./productCarousel.styles";
-const ProductCarouselController = ({
+import { Header, HeaderRight } from "./productCard.styles";
+
+const ProductCardController = ({
   title,
   seeAllHref,
   pages,
@@ -53,4 +54,4 @@ const ProductCarouselController = ({
   );
 };
 
-export default ProductCarouselController;
+export default ProductCardController;

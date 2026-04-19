@@ -1,6 +1,6 @@
 "use client";
 import { Main } from "./page.style";
-import Carousel from "../components/organisms/carousel/productCarousel/productCarousel";
+import Carousel from "../components/organisms/carousel/productCard/productCard";
 
 import Card from "../components/molecules/card/cart";
 const products = [
