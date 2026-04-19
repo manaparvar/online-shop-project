@@ -25,7 +25,6 @@ const Container = styled.div<Omit<ContainerProps, "children">>`
       padding-left: ${theme.gutterWidth / 2}px;
       padding-right: ${theme.gutterWidth / 2}px;
     `}
-
   ${({ fluid }) =>
     !fluid &&
     css`

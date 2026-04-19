@@ -39,10 +39,10 @@ const Column = ({
   lg,
   xl,
 }: ColumnProps) => {
-  sm = sm !== undefined ? sm : 0;
-  md = md !== undefined ? md : sm;
-  lg = lg !== undefined ? lg : md;
-  xl = xl !== undefined ? xl : lg;
+  sm = sm === undefined ? 0 : sm;
+  md = md === undefined ? sm : md;
+  lg = lg === undefined ? md : lg;
+  xl = xl === undefined ? lg : xl;
 
   offset.sm = offset?.sm !== undefined ? offset.sm : 0;
   offset.md = offset?.md !== undefined ? offset.md : offset?.sm;
@@ -76,8 +76,6 @@ const StyledColumn = styled.div<Omit<ColumnProps, "className">>`
   margin-left: unset;
   min-height: 1px;
   position: relative;
-  padding-left: ${theme.gutterWidth / 2}px;
-  padding-right: ${theme.gutterWidth / 2}px;
   width: 100%;
 
   ${({ flex }) => css`
@@ -92,28 +90,28 @@ const StyledColumn = styled.div<Omit<ColumnProps, "className">>`
     justify-content: ${flex && justify};
   `}
 
-  /* SM Medium devices (tablets, 576px and up) */
+  /* SM Medium devices  */
 @media (min-width: 0) {
     flex: 0 0 ${({ sm }) => getWidth(sm)};
     max-width: ${({ sm }) => getWidth(sm)};
     margin-left: ${({ offset }) => getOffset(offset?.sm)};
   }
 
-  /* MD Medium devices (tablets, 768px and up) */
+  /* MD Medium devices  */
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     flex: 0 0 ${({ md }) => getWidth(md)};
     max-width: ${({ md }) => getWidth(md)};
     margin-left: ${({ offset }) => getOffset(offset?.md)};
   }
 
-  /* LG Large devices (desktops, 992px and up) */
+  /* LG Large devices */
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     flex: 0 0 ${({ lg }) => getWidth(lg)};
     max-width: ${({ lg }) => getWidth(lg)};
     margin-left: ${({ offset }) => getOffset(offset?.lg)};
   }
 
-  /* XL Extra large devices (large desktops, 1200px and up) */
+  /* XL Extra large devices */
   @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
     flex: 0 0 ${({ xl }) => getWidth(xl)};
     max-width: ${({ xl }) => getWidth(xl)};
