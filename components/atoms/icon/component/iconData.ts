@@ -5,6 +5,8 @@ import {
   X,
   SearchIcon,
   ChevronDown,
+  ChevronRight,
+  ChevronLeft,
   Instagram,
   Facebook,
   Youtube,
@@ -18,6 +20,8 @@ export type IconName =
   | "close"
   | "search"
   | "dropDown"
+  | "chevronRight"
+  | "chevronLeft"
   | "instagram"
   | "facebook"
   | "youtube"
@@ -29,6 +33,8 @@ export const iconsMap: Record<IconName, LucideIcon> = {
   close: X,
   search: SearchIcon,
   dropDown: ChevronDown,
+  chevronRight: ChevronRight,
+  chevronLeft: ChevronLeft,
   instagram: Instagram,
   facebook: Facebook,
   youtube: Youtube,
@@ -66,7 +72,16 @@ export const icons: IconItem[] = [
     icon: "dropDown",
     label: "DropDown",
   },
-
+  {
+    fontVariant: "caption",
+    icon: "chevronRight",
+    label: "ChevronRight",
+  },
+  {
+    fontVariant: "caption",
+    icon: "chevronLeft",
+    label: "ChevronLeft",
+  },
   {
     fontVariant: "caption",
     icon: "instagram",
