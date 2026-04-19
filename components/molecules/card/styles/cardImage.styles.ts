@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import NextImage from "next/image";
+import NextImage from "@/components/atoms/image/image";
 import { VariantProps } from "../card.types";
 import { theme } from "@/styles/theme";
 

@@ -1,23 +1,14 @@
 import { useEffect, useState } from "react";
-import styled from "styled-components";
-import {
-  Content,
-  ImageWrapper,
-  OldPrice,
-  Price,
-  PriceRow,
-  Subtitle,
-  Title,
-} from "../styles";
+import { Content, ImageWrapper, PriceRow } from "../styles";
 import ColorSwatches from "./colorSwatches";
 import { CardProps } from "../card.types";
 import Badge from "@/components/atoms/badge/badge";
 import Button from "@/components/atoms/button/button";
-import Icon from "@/components/atoms/icon/icon";
-import { AnimatedImage } from "../styles/productCart.styles";
+import Image from "@/components/atoms/image/image";
 import Row from "@/components/atoms/grid/row";
 import Column from "@/components/atoms/grid/column";
-
+import Heading from "@/components/atoms/heading/heading";
+import Text from "@/components/atoms/text/text";
 const ProductCard = ({
   variant,
   image,
@@ -69,7 +60,7 @@ const ProductCard = ({
 
       {image && (
         <ImageWrapper $variant={variant}>
-          <AnimatedImage
+          <Image
             src={displayedSrc}
             alt={title ?? "product image"}
             fill
@@ -80,25 +71,40 @@ const ProductCard = ({
               objectPosition: "center",
             }}
           />
-          {(price || oldPrice) && (
-            <PriceRow>
-              {price && <Price>{price}</Price>}
-              {oldPrice && <OldPrice>{oldPrice}</OldPrice>}
-            </PriceRow>
-          )}
         </ImageWrapper>
       )}
 
       <Content $variant={variant}>
-        {title && <Title $variant={variant}>{title}</Title>}
-        {subtitle && <Subtitle $variant={variant}>{subtitle}</Subtitle>}
+        {(price || oldPrice) && (
+          <PriceRow>
+            {price && <Heading tag="h2">{price}</Heading>}
+            {oldPrice && (
+              <Heading
+                color="text.disabled"
+                tag="h3"
+                textDecoration="line-through"
+              >
+                {oldPrice}
+              </Heading>
+            )}
+          </PriceRow>
+        )}
+        {title && (
+          <Heading tag="h3" noWrap>
+            {title}
+          </Heading>
+        )}
+        {subtitle && <Text>{subtitle}</Text>}
 
         {buttonLabel && (
           <Row>
-            <Column sm={10}>
+            <Column sm={8} lg={8}>
               <Button
-                type="button"
-                onClick={(e) => {
+                block
+                size="md"
+                color="black"
+                textColor="white"
+                onClick={(e: any) => {
                   e.stopPropagation();
                   onButtonClick?.();
                 }}
@@ -106,20 +112,24 @@ const ProductCard = ({
                 {buttonLabel}
               </Button>
             </Column>
-            <Column sm={2}>
+            <Column sm={3} lg={3} offset={{ sm: 1, lg: 1 }}>
               <Button
-                type="button"
-                $iconButton
-                $isFavorite={selectFavorite}
-                onClick={(e) => {
+                size="md"
+                iconOnly
+                color="black"
+                onClick={(e: any) => {
                   e.stopPropagation();
-
                   setSelectFavorite(!selectFavorite);
                   onSelectFavorite?.(selectFavorite);
                 }}
-              >
-                <Icon icon="heart" />
-              </Button>
+                outline
+                startIcon="heart"
+                startIconProps={{
+                  color: selectFavorite ? "red" : "black",
+                  isFilled: selectFavorite,
+                }}
+                textColor="black"
+              />
             </Column>
           </Row>
         )}
@@ -127,8 +137,5 @@ const ProductCard = ({
     </>
   );
 };
-const ButtonWrapper = styled.div`
-  margin-top: 12px;
-  display: flex;
-`;
+
 export default ProductCard;

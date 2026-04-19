@@ -1,13 +1,15 @@
 import styled, { css } from "styled-components";
 import { VariantProps } from "../card.types";
 import { theme } from "@/styles/theme";
+import Heading from "@/components/atoms/heading/heading";
 
 export const Content = styled.div<VariantProps>`
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
   transition: all 0.2s ease;
-
+  padding: 0px 8px;
+  margin-top: 0px;
   ${({ $variant }) =>
     $variant === "banner" &&
     css`
@@ -18,7 +20,6 @@ export const Content = styled.div<VariantProps>`
   ${({ $variant }) =>
     $variant === "product" &&
     css`
-      padding: 0px 10px 10px 10px;
       font-size: 10px;
     `}
     
@@ -41,10 +42,8 @@ export const Content = styled.div<VariantProps>`
     `}
 `;
 
-export const Title = styled.h3<VariantProps>`
+export const Title = styled(Heading)<VariantProps>`
   margin: 0;
-  font-weight: 700;
-  color: #111;
   transition: all 0.5s ease;
 
   ${({ $variant }) =>
@@ -57,7 +56,6 @@ export const Title = styled.h3<VariantProps>`
       @media (min-width: ${theme.breakpoints.sm}) {
         font-size: 1rem;
         font-weight: bold;
-        margin-top: 10px;
       }
 
       @media (min-width: ${theme.breakpoints.lg}) {
