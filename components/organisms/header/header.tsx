@@ -20,6 +20,7 @@ import {
   HeaderDownerPart,
   DividerWrapper,
 } from "./components/header.style";
+import Container from "@/components/atoms/grid/container";
 
 export default function DesktopHeader() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,32 +34,34 @@ export default function DesktopHeader() {
   );
 
   return (
-    <HeaderWrapper>
-      <HeaderUpperLine>
-        <MobileMenuWrapper>
-          <MyHamburgerButton isOpen={isOpen} onToggle={openMenu} />
-          <CurtainMenu isOpen={isOpen} onToggle={closeMenu} />
-        </MobileMenuWrapper>
-        <Logo />
-        <SearchBarWrapper>
-          <SearchBar />
-        </SearchBarWrapper>
-        <RightSideWrapper>
-          <IconWrapper>
-            {filteredIcons.map((item, index) => (
-              <Icon key={index} icon={item.icon} label={item.label} />
-            ))}
-          </IconWrapper>
+    <Container>
+      <HeaderWrapper>
+        <HeaderUpperLine>
+          <MobileMenuWrapper>
+            <MyHamburgerButton isOpen={isOpen} onToggle={openMenu} />
+            <CurtainMenu isOpen={isOpen} onToggle={closeMenu} />
+          </MobileMenuWrapper>
+          <Logo />
+          <SearchBarWrapper>
+            <SearchBar />
+          </SearchBarWrapper>
+          <RightSideWrapper>
+            <IconWrapper>
+              {filteredIcons.map((item, index) => (
+                <Icon key={index} icon={item.icon} label={item.label} />
+              ))}
+            </IconWrapper>
 
-          <Profile alt="User Profile" src="/profile.jpg" />
-        </RightSideWrapper>
-      </HeaderUpperLine>
-      <HeaderDownerPart>
-        <Navbar />
-      </HeaderDownerPart>
-      <DividerWrapper>
-        <DividerLine lineType="headerDivider" />
-      </DividerWrapper>
-    </HeaderWrapper>
+            <Profile alt="User Profile" src="/profile.jpg" />
+          </RightSideWrapper>
+        </HeaderUpperLine>
+        <HeaderDownerPart>
+          <Navbar />
+        </HeaderDownerPart>
+        <DividerWrapper>
+          <DividerLine lineType="headerDivider" />
+        </DividerWrapper>
+      </HeaderWrapper>
+    </Container>
   );
 }

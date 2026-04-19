@@ -8,7 +8,7 @@ import {
 import NavLink from "@/components/atoms/link/link";
 import Icon from "@/components/atoms/icon/icon";
 import { footerData } from "./footerData";
-import { Text } from "@/components/atoms/text/text";
+import Text from "@/components/atoms/text/text";
 
 export default function Widgets() {
   const widgets = footerData.widgets ? footerData.widgets.items : [];
