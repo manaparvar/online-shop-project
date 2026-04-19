@@ -1,6 +1,6 @@
 "use client";
 import { LogoWrapper, TextWrapper, LogoImage } from "./component/logo.style";
-import { Text } from "../../atoms/text/text";
+import Text from "../../atoms/text/text";
 
 export default function Logo() {
   return (
