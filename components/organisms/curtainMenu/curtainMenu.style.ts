@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { theme } from "@/styles/theme";
-import { Text } from "@/components/atoms/text/text";
+import Text from "@/components/atoms/text/text";
 import { sizes } from "@/styles/sizes";
 import HamburgerButton from "./navbar/mobileNavbar/hamburgerButton/hamburgerButton";
 
