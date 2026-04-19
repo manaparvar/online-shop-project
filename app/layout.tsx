@@ -17,11 +17,6 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-const satoshi = localFont({
-  src: "../public/fonts/Satoshi-Variable.ttf",
-  variable: "--font-satoshi",
-});
-
 const rubik = Rubik({
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
@@ -35,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${satoshi.variable} ${rubik.variable}`}>
+    <html lang="en" className={rubik.variable}>
       <body>
         <Script
           src="https://kit.fontawesome.com/04c14c9989.js"
