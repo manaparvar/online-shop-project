@@ -1,35 +1,48 @@
 "use client";
 
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { theme } from "../../../styles/theme";
 import { textVariants } from "../../../styles/variants";
+import TransientProps from "@/types/transientProps.type";
+import { ReactNode } from "react";
 
 type TextVariant = keyof typeof textVariants;
-type TextWrapProps = "wrap" | "nowrap";
+
 type TextProps = {
+  children: ReactNode;
   variant?: TextVariant;
   color?: keyof typeof theme.colors;
-  as?: React.ElementType;
+  nowrap?: boolean;
+};
+type TextStyledProps = TransientProps<Omit<TextProps, "children">>;
+
+const Text = ({ children, color, nowrap, variant }: TextProps) => {
+  return (
+    <StyledText $color={color} $variant={variant} $nowrap={nowrap}>
+      {children}
+    </StyledText>
+  );
 };
 
-export const Text = styled.p<TextProps>`
-  ${({ variant = "body", theme }) => {
-    const styles = textVariants[variant];
-    return `
-      font-size:${styles.fontSize.mobile}; 
-      font-weight: ${styles.fontWeight};
-      
-    @media (min-width: ${theme.breakpoints.sm}) {
-      font-size: ${styles.fontSize.tablet};
-      font-weight: ${styles.fontWeight};
-    }
-      @media (min-width: ${theme.breakpoints.lg}){
-      font-size: ${styles.fontSize.desktop};
-      font-weight: ${styles.fontWeight};
+const StyledText = styled.p<TextStyledProps>`
+  ${({ $variant = "body", theme, $nowrap }) => {
+    const styles = textVariants[$variant];
 
-      
-    }
+    return css`
+      font-size: ${styles.fontSize.mobile};
+      font-weight: ${styles.fontWeight};
+      white-space: ${$nowrap ? "nowrap" : "normal"};
+
+      @media (min-width: ${theme.breakpoints.sm}) {
+        font-size: ${styles.fontSize.tablet};
+        font-weight: ${styles.fontWeight};
+      }
+      @media (min-width: ${theme.breakpoints.lg}) {
+        font-size: ${styles.fontSize.desktop};
+        font-weight: ${styles.fontWeight};
+      }
     `;
   }}
   color: ${({ theme }) => theme.colors.black};
 `;
+export default Text;
