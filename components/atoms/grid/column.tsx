@@ -13,16 +13,16 @@ export interface ColumnProps {
   className?: string;
   flex?: boolean | string;
   justify?: string;
+  sm?: number;
   md?: number;
   lg?: number;
+  xl?: number;
   offset?: {
     sm?: number;
     md?: number;
     lg?: number;
     xl?: number;
   };
-  sm?: number;
-  xl?: number;
   style?: object;
 }
 

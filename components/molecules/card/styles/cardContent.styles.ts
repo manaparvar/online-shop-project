@@ -8,7 +8,7 @@ export const Content = styled.div<VariantProps>`
   flex-direction: column;
   gap: 4px;
   transition: all 0.2s ease;
-  padding: 0px 8px;
+  padding: 0px ${theme.sizes.xs};
   margin-top: 0px;
   ${({ $variant }) =>
     $variant === "banner" &&

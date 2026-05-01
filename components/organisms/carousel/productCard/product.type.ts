@@ -1,16 +1,16 @@
 export type CarouselProps = {
   children: React.ReactNode;
   className?: string;
+  mobileBasis?: string;
+  tabletBasis?: string;
   desktopBasis?: string;
+  wideDesktopBasis?: string;
   extraWideDesktopBasis?: string;
   gap?: string;
-  mobileBasis?: string;
   seeAllHref?: string;
   showArrows?: boolean;
   showDots?: boolean;
-  tabletBasis?: string;
   title?: string;
-  wideDesktopBasis?: string;
 };
 
 export type ArrowButtonProps = {

@@ -3,7 +3,7 @@ import { Main } from "./page.style";
 import Carousel from "../components/organisms/carousel/productCard/productCard";
 import { useRouter } from "next/navigation";
 
-import Card from "../components/molecules/card/cart";
+import Card from "../components/molecules/card/card";
 const products = [
   { id: 1, name: "Cotton Shoes", price: 120 },
   { id: 2, name: "Leather Shoes", price: 120 },

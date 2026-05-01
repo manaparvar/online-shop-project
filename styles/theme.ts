@@ -1,6 +1,7 @@
 import HEADING from "./heading";
 import SPACING from "@/utils/spacing";
 import BUTTON from "./button";
+import { sizes } from "./sizes";
 export const theme = {
   colors: {
     grey: {
@@ -37,6 +38,7 @@ export const theme = {
   BUTTON,
   HEADING,
   SPACING,
+  sizes,
 } as const;
 
 export type ThemeType = typeof theme;

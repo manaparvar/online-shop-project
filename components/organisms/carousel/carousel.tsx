@@ -1,5 +1,5 @@
 "use client";
-import Card from "../../molecules/card/cart";
+import Card from "../../molecules/card/card";
 import styled from "styled-components";
 const productOptions = {
   options: [
