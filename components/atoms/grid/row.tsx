@@ -40,10 +40,10 @@ const Row = ({
   return (
     <StyledRow
       $align={align}
-      className={className}
-      $justify={justify}
       $gutter={gutter}
+      $justify={justify}
       $noWrap={noWrap}
+      className={className}
       style={style}
     >
       {children}

@@ -1,21 +1,12 @@
 import styled from "styled-components";
 import { DotProps, ItemProps } from "./product.type";
 
-export const Header = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 24px;
-  gap: 16px;
+export const CardControllerWrapper = styled.div`
+  margin-top: 0.5rem;
+  width: 100%;
 `;
 
-export const HeaderRight = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 12px;
-`;
-
-export const Viewport = styled.div`
+export const CarouselWrapper = styled.div`
   overflow-x: auto;
   scroll-behavior: smooth;
 

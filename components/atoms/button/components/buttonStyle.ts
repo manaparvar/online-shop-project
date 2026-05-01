@@ -67,10 +67,15 @@ export const StyledButton = styled.button<ButtonStyledProps>`
       pointer-events: none;
       color: ${({ theme: { BUTTON }, $outline }: ButtonColorTypes) =>
         !$outline && shadeLinearRgb({ p: -0.2, color: BUTTON.disableColor })};
-
       &:hover,
       &:active {
-        all: unset;
+        background-color: ${({
+          theme: { BUTTON },
+          $outline,
+        }: ButtonColorTypes) =>
+          !$outline && shadeLinearRgb({ p: 0.3, color: BUTTON.disableColor })};
+        color: ${({ theme: { BUTTON }, $outline }: ButtonColorTypes) =>
+          !$outline && shadeLinearRgb({ p: -0.2, color: BUTTON.disableColor })};
       }
     `}
 

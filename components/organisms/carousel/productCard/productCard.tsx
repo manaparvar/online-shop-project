@@ -4,7 +4,7 @@ import { Children, useRef } from "react";
 import useScrollCarousel from "../../../hooks/useScrollCarousel";
 import { CarouselProps } from "./product.type";
 import ProductCardController from "@/components/organisms/carousel/productCard/productCardController";
-import { Item, Track, Viewport } from "./productCard.styles";
+import { Item, Track, CarouselWrapper } from "./productCard.styles";
 import Dots from "./dots";
 const ProductCard = ({
   title,
@@ -41,7 +41,7 @@ const ProductCard = ({
         />
       )}
 
-      <Viewport ref={viewportRef}>
+      <CarouselWrapper ref={viewportRef}>
         <Track $gap={gap}>
           {Children.map(children, (child, index) => (
             <Item
@@ -56,7 +56,7 @@ const ProductCard = ({
             </Item>
           ))}
         </Track>
-      </Viewport>
+      </CarouselWrapper>
 
       {showDots && pages > 1 && (
         <Dots page={page} pages={pages} scrollToPage={scrollToPage} />

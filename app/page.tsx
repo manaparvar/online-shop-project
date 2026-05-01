@@ -1,6 +1,7 @@
 "use client";
 import { Main } from "./page.style";
 import Carousel from "../components/organisms/carousel/productCard/productCard";
+import { useRouter } from "next/navigation";
 
 import Card from "../components/molecules/card/cart";
 const products = [
@@ -24,6 +25,8 @@ const productOptions = {
   selectedId: "2",
 };
 export default function Home() {
+  const router = useRouter();
+
   return (
     <Main>
       <Carousel
@@ -45,7 +48,7 @@ export default function Home() {
             oldPrice="$160"
             discount="20%"
             buttonLabel="Add to Cart"
-            onButtonClick={() => console.log("Add to cart")}
+            onButtonClick={() => router.push("/product/23")}
             onSelectFavorite={(isFav) => console.log("Favorite:", isFav)}
             productOptions={productOptions}
           />
