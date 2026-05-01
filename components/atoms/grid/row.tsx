@@ -11,15 +11,23 @@ import styled, { css } from "styled-components";
 // Types
 
 export interface RowProps {
-  align?: string;
+  align?: CSSProperties["alignItems"];
   children: ReactNode;
   className?: string;
-  justify?: string;
-  gutter?: boolean | string;
-  noWrap?: boolean | string;
+  justify?: CSSProperties["justifyContent"];
+  gutter?: boolean;
+  noWrap?: boolean;
   style?: CSSProperties;
 }
-
+type StyledRowProps = Omit<
+  RowProps,
+  "children" | "align" | "justify" | "gutter" | "noWrap"
+> & {
+  $align?: string;
+  $gutter?: boolean;
+  $justify?: string;
+  $noWrap?: boolean;
+};
 const Row = ({
   align = "stretch",
   children,
@@ -31,11 +39,11 @@ const Row = ({
 }: RowProps) => {
   return (
     <StyledRow
-      align={align}
+      $align={align}
       className={className}
-      justify={justify}
-      gutter={gutter.toString()}
-      noWrap={noWrap.toString()}
+      $justify={justify}
+      $gutter={gutter}
+      $noWrap={noWrap}
       style={style}
     >
       {children}
@@ -43,35 +51,18 @@ const Row = ({
   );
 };
 
-const StyledRow = styled.div<
-  Pick<
-    RowProps,
-    "align" | "className" | "justify" | "gutter" | "noWrap" | "style"
-  >
->`
+const StyledRow = styled.div<StyledRowProps>`
   display: flex;
   flex-grow: 0;
   flex-shrink: 0;
-  flex-wrap: ${({ noWrap }): string => (noWrap === "true" ? "nowrap" : "wrap")};
+  flex-wrap: ${({ $noWrap }): string => ($noWrap ? "nowrap" : "wrap")};
 
-  ${({ theme }) => css`
-    margin-left: -${theme.gutterWidth / 2}px;
-    margin-right: -${theme.gutterWidth / 2}px;
+  ${({ $align }) => css`
+    align-items: ${$align};
   `}
 
-  ${({ gutter, theme }) =>
-    gutter === "true" &&
-    css`
-      margin-left: -${theme.gutterWidth}px;
-      margin-right: -${theme.gutterWidth}px;
-    `}
-
-  ${({ align }) => css`
-    align-items: ${align};
-  `}
-
-  ${({ justify }) => css`
-    justify-content: ${justify};
+  ${({ $justify }) => css`
+    justify-content: ${$justify};
   `}
 `;
 

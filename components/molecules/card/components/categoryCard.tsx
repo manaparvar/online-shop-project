@@ -1,12 +1,13 @@
 import { CardProps } from "../card.types";
-import { Overlay, Content, Image, ImageWrapper, Title } from "../styles";
+import { Overlay, Content, ImageWrapper, Title } from "../styles";
+import Image from "@/components/atoms/image/image";
 
 const CategoryCard = ({ variant, image, title }: CardProps) => (
   <>
     {image && (
       <ImageWrapper $variant={variant}>
         <Image
-          $variant={variant}
+          $visible
           alt={title ?? "banner image"}
           fill
           objectFit="cover"
@@ -17,7 +18,11 @@ const CategoryCard = ({ variant, image, title }: CardProps) => (
 
     <Overlay />
     <Content $variant={variant}>
-      {title && <Title $variant={variant}>{title}</Title>}
+      {title && (
+        <Title $variant={variant} tag="h2">
+          {title}
+        </Title>
+      )}
     </Content>
   </>
 );

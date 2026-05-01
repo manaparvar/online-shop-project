@@ -7,7 +7,6 @@ export const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.white};
-  padding: 0 clamp(16px, 6vw, 80px);
   position: sticky;
   top: 0;
   width: 100%;

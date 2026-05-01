@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { Text } from "@/components/atoms/text/text";
+import Text from "@/components/atoms/text/text";
 import { theme } from "@/styles/theme";
 
 export const ItemWrapper = styled.li`

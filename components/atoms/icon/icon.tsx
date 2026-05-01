@@ -1,21 +1,19 @@
 "use client";
-import { textVariants } from "../../../styles/variants";
-import { IconName, iconsMap } from "./component/iconData";
+import { iconsMap } from "./component/iconData";
 import { IconWrapper, StyledIcon, Label } from "./component/icon.style";
+import { IconProps } from "./icon.type";
 
-type TextVariant = keyof typeof textVariants;
-
-type IconProps = {
-  icon: IconName;
-  label?: string;
-};
-
-export default function Icon({ icon, label }: IconProps) {
+export default function Icon({ icon, label, isFilled, color }: IconProps) {
   const SelectedIcon = iconsMap[icon];
-  console.log("counter", icon, label);
+
   return (
-    <IconWrapper>
-      <StyledIcon as={SelectedIcon} strokeWidth={1.25} />
+    <IconWrapper $color={color}>
+      <StyledIcon
+        $color={color}
+        $isFilled={isFilled}
+        as={SelectedIcon}
+        strokeWidth={1.25}
+      />
       {label && (
         <Label variant="caption" color="black">
           {label}

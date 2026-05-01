@@ -1,4 +1,4 @@
-import { Text } from "../../../atoms/text/text";
+import Text from "../../../atoms/text/text";
 import NavLink from "../../../atoms/link/link";
 import { LinksWrapper, StyledNavLink } from "./footerSublinks.style";
 

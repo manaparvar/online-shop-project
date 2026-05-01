@@ -1,11 +1,12 @@
 import { BannerCardProps } from "../card.types";
-import { Content, Image, ImageWrapper, Title } from "../styles";
+import { Content, ImageWrapper, Title } from "../styles";
+import Image from "@/components/atoms/image/image";
 const brandCard = ({ variant, image, title }: BannerCardProps) => (
   <>
     {image && (
       <ImageWrapper $variant={variant}>
         <Image
-          $variant={variant}
+          $visible
           alt={title ?? "brand logo"}
           fill
           objectFit="cover"
@@ -15,7 +16,11 @@ const brandCard = ({ variant, image, title }: BannerCardProps) => (
     )}
 
     <Content $variant={variant}>
-      {title && <Title $variant={variant}>{title}</Title>}
+      {title && (
+        <Title tag="h4" $variant={variant}>
+          {title}
+        </Title>
+      )}
     </Content>
   </>
 );
