@@ -4,11 +4,12 @@ import { useState } from "react";
 import Logo from "../../molecules/logo/logo";
 import SearchBar from "../../forms/searchBar/searchBar";
 import CurtainMenu from "../curtainMenu/curtainMenu";
-import Profile from "../../molecules/avatar/avatar";
 import Icon from "../../atoms/icon/icon";
 import { icons } from "../../atoms/icon/component/iconData";
 import Navbar from "../curtainMenu/navbar/navbar";
 import DividerLine from "../../atoms/divider";
+import Container from "@/components/atoms/grid/container";
+import Avatar from "../../molecules/avatar/avatar";
 import {
   HeaderWrapper,
   HeaderUpperLine,
@@ -20,9 +21,13 @@ import {
   HeaderDownerPart,
   DividerWrapper,
 } from "./components/header.style";
-import Container from "@/components/atoms/grid/container";
 
-export default function DesktopHeader() {
+type User = {
+  name: string;
+  image: string;
+};
+
+export default function DesktopHeader({ user }: { user?: User }) {
   const [isOpen, setIsOpen] = useState(false);
   const openMenu = () => {
     setIsOpen(!isOpen);
@@ -52,7 +57,7 @@ export default function DesktopHeader() {
               ))}
             </IconWrapper>
 
-            <Profile alt="User Profile" src="/profile.jpg" />
+            <Avatar user={user} />
           </RightSideWrapper>
         </HeaderUpperLine>
         <HeaderDownerPart>

@@ -1,9 +1,9 @@
-"use client";
-import Main from "@/components/templates/main";
-import Carousel from "../components/organisms/carousel/productCard/productCard";
+import Carousel from "../organisms/carousel/carousel";
 import { useRouter } from "next/navigation";
-
-import Card from "../components/molecules/card/card";
+import Card from "../molecules/card/card";
+import SliderShow from "../organisms/sliderShow";
+import useScrollCarousel from "../hooks/useScrollCarousel";
+import { useRef } from "react";
 const products = [
   { id: 1, name: "Cotton Shoes", price: 120 },
   { id: 2, name: "Leather Shoes", price: 120 },
@@ -24,12 +24,20 @@ const productOptions = {
   ],
   selectedId: "2",
 };
-export default function Home() {
+export default function Main() {
   const router = useRouter();
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const { page, pages, next, prev, scrollToPage } = useScrollCarousel({
+    containerRef,
+  });
 
   return (
-    <Main>
-      {/* <Carousel
+    <main>
+      <SliderShow />
+      {/*   <Shipping />
+      <MainCategories /> */}
+      <Carousel
         title="Best Sellers"
         seeAllHref="/products"
         mobileBasis="32%"
@@ -53,7 +61,32 @@ export default function Home() {
             productOptions={productOptions}
           />
         ))}
-      </Carousel> */}
-    </Main>
+      </Carousel>
+      <Carousel
+        title="Best Sellers"
+        seeAllHref="/products"
+        mobileBasis="32%"
+        tabletBasis="25%"
+        desktopBasis="20%"
+        wideDesktopBasis="10.8%"
+        extraWideDesktopBasis="16.3%"
+      >
+        {products.map((product) => (
+          <Card
+            variant="product"
+            image="/images/shoe.png"
+            title={product.name}
+            subtitle="Made with best quality materials"
+            price="$120"
+            oldPrice="$160"
+            discount="20%"
+            buttonLabel="Add to Cart"
+            onButtonClick={() => router.push("/product/23")}
+            onSelectFavorite={(isFav) => console.log("Favorite:", isFav)}
+            productOptions={productOptions}
+          />
+        ))}
+      </Carousel>
+    </main>
   );
 }

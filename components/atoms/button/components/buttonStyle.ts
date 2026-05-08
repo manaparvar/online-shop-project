@@ -6,7 +6,7 @@
 import styled, { css } from "styled-components";
 
 // Utils
-import shadeLinearRgb from "@/utils/shadeLinearRgb";
+import disableStyles from "./disableStyles";
 import themeBackground from "../components/themBackgroundColor";
 import getSizes from "./getSizes";
 import getHoverStyles from "./getHoverStyles";
@@ -17,6 +17,8 @@ import { ButtonStyledProps, ButtonColorTypes } from "./buttonType";
 
 export const StyledButton = styled.button<ButtonStyledProps>`
   ${(props) => themeBackground(props)}
+  ${getSizes()}
+  ${(props) => disableStyles(props)}
   &:hover {
     ${(props) => getHoverStyles(props)}
   }
@@ -35,7 +37,6 @@ export const StyledButton = styled.button<ButtonStyledProps>`
     }
   }};
 
-  align-items: center;
   border-radius: ${({ $rounded }) => ($rounded ? "0.25rem" : "0rem")};
   box-sizing: border-box;
   color: ${({ $textColor, theme }: ButtonColorTypes) =>
@@ -53,35 +54,11 @@ export const StyledButton = styled.button<ButtonStyledProps>`
   position: relative;
   text-decoration: none;
   text-transform: none;
+  transition: all 0.1s ease-in-out;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
   width: ${({ $block }) => ($block ? "100%" : "initial")};
-
-  ${({ disabled }) =>
-    disabled &&
-    css`
-      background-color: ${({ theme: { BUTTON }, $outline }: ButtonColorTypes) =>
-        !$outline && shadeLinearRgb({ p: 0.3, color: BUTTON.disableColor })};
-      cursor: not-allowed;
-      pointer-events: none;
-      color: ${({ theme: { BUTTON }, $outline }: ButtonColorTypes) =>
-        !$outline && shadeLinearRgb({ p: -0.2, color: BUTTON.disableColor })};
-      &:hover,
-      &:active {
-        background-color: ${({
-          theme: { BUTTON },
-          $outline,
-        }: ButtonColorTypes) =>
-          !$outline && shadeLinearRgb({ p: 0.3, color: BUTTON.disableColor })};
-        color: ${({ theme: { BUTTON }, $outline }: ButtonColorTypes) =>
-          !$outline && shadeLinearRgb({ p: -0.2, color: BUTTON.disableColor })};
-      }
-    `}
-
-  ${() => getSizes()}
-
-  transition: all 0.1s ease-in-out;
 
   ${({ $noPadding }) =>
     $noPadding &&

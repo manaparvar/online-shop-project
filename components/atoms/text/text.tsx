@@ -24,7 +24,7 @@ const Text = ({ children, color, nowrap, variant }: TextProps) => {
   );
 };
 
-const StyledText = styled.p<TextStyledProps>`
+const StyledText = styled.span<TextStyledProps>`
   ${({ $variant = "body", theme, $nowrap }) => {
     const styles = textVariants[$variant];
 

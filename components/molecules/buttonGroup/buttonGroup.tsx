@@ -34,6 +34,7 @@ const Buttons = ({
       {buttons.map((item: any, index: number) => {
         return (
           <Button
+            key={index}
             {...item}
             responsive={responsive}
             color={color}
