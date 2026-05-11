@@ -18,15 +18,18 @@ export interface RowProps {
   gutter?: boolean;
   noWrap?: boolean;
   style?: CSSProperties;
+  direction?: string;
 }
+
 type StyledRowProps = Omit<
   RowProps,
-  "children" | "align" | "justify" | "gutter" | "noWrap"
+  "children" | "align" | "justify" | "gutter" | "noWrap" | "direction"
 > & {
   $align?: string;
   $gutter?: boolean;
   $justify?: string;
   $noWrap?: boolean;
+  $direction: string;
 };
 const Row = ({
   align = "stretch",
@@ -35,6 +38,7 @@ const Row = ({
   justify = "start",
   gutter = false,
   noWrap = false,
+  direction = "row",
   style,
 }: RowProps) => {
   return (
@@ -44,6 +48,7 @@ const Row = ({
       $justify={justify}
       $noWrap={noWrap}
       className={className}
+      $direction={direction}
       style={style}
     >
       {children}
@@ -56,7 +61,7 @@ const StyledRow = styled.div<StyledRowProps>`
   flex-grow: 0;
   flex-shrink: 0;
   flex-wrap: ${({ $noWrap }): string => ($noWrap ? "nowrap" : "wrap")};
-
+  flex-direction: ${({ $direction }): string => $direction && $direction};
   ${({ $align }) => css`
     align-items: ${$align};
   `}

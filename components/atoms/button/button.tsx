@@ -18,9 +18,11 @@ const responsiveSizes = {
 
 const Button = ({
   block,
+  paddingOverride,
   center,
   children,
   color = "black",
+  className,
   dashed,
   disabled = false,
   endIcon,
@@ -42,6 +44,7 @@ const Button = ({
 }: ButtonType) => {
   return (
     <StyledButton
+      $paddingOverride={paddingOverride}
       $block={block}
       $center={center}
       $color={color}
@@ -54,6 +57,7 @@ const Button = ({
       $rounded={rounded}
       $shadow={shadow}
       $size={size}
+      className={className}
       $textColor={textColor}
       disabled={disabled}
       onClick={onClick}

@@ -6,6 +6,7 @@ export type IconProps = {
   icon: IconName;
   isFilled?: boolean;
   label?: string;
+  strokeWidth?: number;
 };
 
 export type StyledIconProps = TransientProps<Omit<IconProps, "icon" | "label">>;

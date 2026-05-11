@@ -39,6 +39,7 @@ export interface ButtonType {
   style?: any;
   textColor?: string;
   type?: BUTTON_TYPE_VALUES;
+  paddingOverride?: string;
 }
 
 export type ButtonStyledProps = TransientProps<

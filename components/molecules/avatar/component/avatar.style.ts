@@ -3,15 +3,15 @@ import Button from "@/components/atoms/button/button";
 
 export const AvatarWrapper = styled.div`
   ${({ theme }) => css`
-    width: ${({ theme }) => theme.sizes.md};
-    height: ${({ theme }) => theme.sizes.md};
-    @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
-      width: ${({ theme }) => theme.sizes.lg};
-      height: ${({ theme }) => theme.sizes.lg};
+    width: ${theme.sizes.md};
+    height: ${theme.sizes.md};
+    @media (min-width: ${theme.breakpoints.sm}) {
+      width: ${theme.sizes.lg};
+      height: ${theme.sizes.lg};
     }
-    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-      width: ${({ theme }) => theme.sizes.xlg};
-      height: ${({ theme }) => theme.sizes.xlg};
+    @media (min-width: ${theme.breakpoints.md}) {
+      width: ${theme.sizes.xlg};
+      height: ${theme.sizes.xlg};
     }
     align-self: flex-start;
     border-radius: 50%;
@@ -22,7 +22,7 @@ export const AvatarWrapper = styled.div`
 export const AuthButtons = styled.div`
   ${({ theme }) => css`
     display: flex;
-    gap: ${({ theme }) => theme.sizes.xs};
+    gap: ${theme.sizes.xs};
   `}
 `;
 export const LoginButton = styled(Button)`
@@ -31,7 +31,7 @@ export const LoginButton = styled(Button)`
 export const SignupButton = styled(Button)`
   display: none;
   ${({ theme }) => css`
-    @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    @media (min-width: ${theme.breakpoints.lg}) {
       display: inline-flex;
     }
   `}

@@ -1,58 +1,119 @@
-import { URL } from "url";
-import Button from "../atoms/button/button";
-import Column from "../atoms/grid/column";
-import Row from "../atoms/grid/row";
 import Heading from "../atoms/heading/heading";
-import Image from "../atoms/image/image";
+
 import Text from "../atoms/text/text";
+import { useDevice } from "../hooks/useDevice";
 import ColorKey from "@/types/colorKey.type";
 import { StaticImageData } from "next/image";
+import {
+  StyledColumn,
+  SlideWrapper,
+  InnerRow,
+  HeadingContainer,
+  StyledImage,
+  StyledButton,
+} from "./slide.style";
+import Column from "../atoms/grid/column";
+import DividerLine from "../atoms/divider";
+import { LineVariants } from "../atoms/divider/variants";
 
 type SliderProps = {
-  title: string;
+  title: {
+    start: string;
+    end: string;
+    startColor: ColorKey;
+    endColor: ColorKey;
+  };
   description: string;
-  color: string;
+  color: ColorKey;
   buttonLabel: string;
   textColor: ColorKey;
   image: string | StaticImageData;
   imageAlt: string;
+  isLeft?: boolean;
 };
 
 export default function Slide({
-  title,
+  title: { start, end, startColor, endColor },
   description,
   color,
   buttonLabel,
   textColor,
   image,
   imageAlt,
+  isLeft,
 }: SliderProps) {
+  const device = useDevice();
+  const responsiveSizes = {
+    sm: "md",
+    md: "lg",
+    lg: "xl",
+    xl: "xl",
+    "2xl": "2xl",
+  };
   return (
-    <Row>
-      <Image fill src={image} alt={imageAlt} />
-      <Row>
-        <Column sm={6} lg={5} offset={{ sm: 6, lg: 7 }}>
-          <Heading tag="h2" textColor={textColor}>
-            {title}
-          </Heading>
-          <Heading tag="h2" textColor={textColor}>
-            {title}
-          </Heading>
-          <hr />
-          <Text variant="button">{description}</Text>
-          <hr />
-          <Button
-            block
-            center
+    <SlideWrapper align="flex-end">
+      <StyledImage
+        src={image}
+        alt={imageAlt}
+        quality={85}
+        objectFit="contain"
+      />
+      <InnerRow>
+        <StyledColumn flex sm={7} md={7} lg={6}>
+          <HeadingContainer>
+            <Heading
+              tag={
+                device === "desktop" ? "h2" : device === "tablet" ? "h3" : "h4"
+              }
+              textColor={startColor}
+            >
+              {start}
+            </Heading>
+            <Heading
+              tag={
+                device === "desktop" ? "h2" : device === "tablet" ? "h3" : "h4"
+              }
+              textColor={endColor}
+            >
+              {end}
+            </Heading>
+          </HeadingContainer>
+          <DividerLine
+            lineType="sliderDivider"
+            width={LineVariants.mobile.sliderDivider.width}
+            height={LineVariants.mobile.sliderDivider.height}
+            color={color}
+            dash
+          />
+          <Text
+            variant={device === "desktop" ? "button" : "caption"}
+            color={textColor}
+          >
+            {description}
+          </Text>
+          <DividerLine
+            lineType="sliderDivider"
+            width={LineVariants.mobile.sliderDivider.width}
+            height={LineVariants.mobile.sliderDivider.height}
+            color={color}
+            dash
+          />
+          <StyledButton
             color={color}
             rounded
+            size="sm"
             textColor={textColor}
             type="button"
+            responsive={responsiveSizes}
           >
             {buttonLabel}
-          </Button>
+          </StyledButton>
+        </StyledColumn>
+
+        <Column sm={5} md={5} lg={6}>
+          &nbsp;
         </Column>
-      </Row>
-    </Row>
+      </InnerRow>
+    </SlideWrapper>
   );
 }

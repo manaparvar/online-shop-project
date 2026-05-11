@@ -7,6 +7,9 @@ const NavLink = styled(Link)`
   justify-content: space-between;
   width: auto;
   transition: all 0.5s ease;
+  &:hover {
+    opacity: 0.3;
+  }
 `;
 
 export default NavLink;

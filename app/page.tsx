@@ -1,9 +1,7 @@
 "use client";
-import Main from "@/components/templates/main";
-import Carousel from "../components/organisms/carousel/productCard/productCard";
+import HomePage from "@/components/templates/homePage/homePage";
 import { useRouter } from "next/navigation";
 
-import Card from "../components/molecules/card/card";
 const products = [
   { id: 1, name: "Cotton Shoes", price: 120 },
   { id: 2, name: "Leather Shoes", price: 120 },
@@ -28,7 +26,7 @@ export default function Home() {
   const router = useRouter();
 
   return (
-    <Main>
+    <HomePage dataSouce={{ products, productOptions }}>
       {/* <Carousel
         title="Best Sellers"
         seeAllHref="/products"
@@ -54,6 +52,6 @@ export default function Home() {
           />
         ))}
       </Carousel> */}
-    </Main>
+    </HomePage>
   );
 }

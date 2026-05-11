@@ -13,18 +13,19 @@ type TextProps = {
   variant?: TextVariant;
   color?: keyof typeof theme.colors;
   nowrap?: boolean;
+  as?: React.ElementType;
 };
 type TextStyledProps = TransientProps<Omit<TextProps, "children">>;
 
-const Text = ({ children, color, nowrap, variant }: TextProps) => {
+const Text = ({ children, color, nowrap, variant, as = "p" }: TextProps) => {
   return (
-    <StyledText $color={color} $variant={variant} $nowrap={nowrap}>
+    <StyledText as={as} $color={color} $variant={variant} $nowrap={nowrap}>
       {children}
     </StyledText>
   );
 };
 
-const StyledText = styled.span<TextStyledProps>`
+const StyledText = styled.p<TextStyledProps>`
   ${({ $variant = "body", theme, $nowrap }) => {
     const styles = textVariants[$variant];
 

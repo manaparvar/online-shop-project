@@ -1,3 +1,4 @@
+"use client";
 import Text from "@/components/atoms/text/text";
 import NavLink from "@/components/atoms/link/link";
 import { SublistWrapper, LinkFrame } from "./subList.style";

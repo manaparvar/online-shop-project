@@ -1,6 +1,6 @@
 import Text from "../../../atoms/text/text";
 import NavLink from "../../../atoms/link/link";
-import { LinksWrapper, StyledNavLink } from "./footerSublinks.style";
+import { LinksWrapper } from "./footerSublinks.style";
 
 type props = {
   items: any[];
@@ -11,9 +11,7 @@ export default function Sublinks({ items }: props) {
     <LinksWrapper>
       {items.map((innerItem) => (
         <li key={innerItem.label}>
-          <StyledNavLink href={innerItem.to}>
-            <Text variant="caption">{innerItem.label}</Text>
-          </StyledNavLink>
+          <NavLink href={innerItem.to}>{innerItem.label}</NavLink>
         </li>
       ))}
     </LinksWrapper>

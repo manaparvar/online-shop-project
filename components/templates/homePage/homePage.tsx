@@ -1,8 +1,9 @@
-import Carousel from "../organisms/carousel/carousel";
+import Carousel from "../../organisms/carousel/carousel";
 import { useRouter } from "next/navigation";
-import Card from "../molecules/card/card";
-import SliderShow from "../organisms/sliderShow";
-import useScrollCarousel from "../hooks/useScrollCarousel";
+import Card from "../../molecules/card/card";
+import SliderShow from "../../organisms/sliderShow";
+import useScrollCarousel from "../../hooks/useScrollCarousel";
+
 import { useRef } from "react";
 const products = [
   { id: 1, name: "Cotton Shoes", price: 120 },
@@ -24,7 +25,9 @@ const productOptions = {
   ],
   selectedId: "2",
 };
-export default function Main() {
+
+const HomePage = ({ dataSource }: any) => {
+  console.log("dataSource :>> ", dataSource);
   const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -89,4 +92,6 @@ export default function Main() {
       </Carousel>
     </main>
   );
-}
+};
+
+export default HomePage;

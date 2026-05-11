@@ -4,10 +4,10 @@ import { Rubik } from "next/font/google";
 import ThemeWrapper from "@/styles/themeWrapper";
 import Script from "next/script";
 import type { Metadata, Viewport } from "next";
-import Header from "../organisms/header/header";
-import { PageWrapper, StyledFooter } from "../../app/page.style";
+import Header from "../../organisms/header/header";
+import { PageWrapper } from "./baseLayout.style";
 import Container from "@/components/atoms/grid/container";
-
+import Footer from "../../organisms/footer/footer";
 export const metadata: Metadata = {
   title: "My App",
 };
@@ -24,11 +24,11 @@ const rubik = Rubik({
   variable: "--font-rubik",
 });
 
-export default function RootLayout({
+const BaseLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
     <html lang="en" className={rubik.variable}>
       <body>
@@ -41,9 +41,11 @@ export default function RootLayout({
           <Header />
 
           <Container>{children}</Container>
-          <StyledFooter />
+          <Footer />
         </ThemeWrapper>
       </body>
     </html>
   );
-}
+};
+
+export default BaseLayout;

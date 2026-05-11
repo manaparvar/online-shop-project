@@ -1,6 +1,11 @@
 import { css } from "styled-components";
 
-const getSizeStyles = ({ sizeKey, sizes, $iconOnly }: any) => {
+const getSizeStyles = ({
+  sizeKey,
+  sizes,
+  $iconOnly,
+  $paddingOverride,
+}: any) => {
   const base = sizes[sizeKey];
   if (!base) return "";
 

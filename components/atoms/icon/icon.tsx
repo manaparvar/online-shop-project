@@ -3,7 +3,13 @@ import { iconsMap } from "./component/iconData";
 import { IconWrapper, StyledIcon, Label } from "./component/icon.style";
 import { IconProps } from "./icon.type";
 
-export default function Icon({ icon, label, isFilled, color }: IconProps) {
+export default function Icon({
+  icon,
+  label,
+  isFilled,
+  color,
+  strokeWidth = 1.25,
+}: IconProps) {
   const SelectedIcon = iconsMap[icon];
 
   return (
@@ -12,7 +18,7 @@ export default function Icon({ icon, label, isFilled, color }: IconProps) {
         $color={color}
         $isFilled={isFilled}
         as={SelectedIcon}
-        strokeWidth={1.25}
+        strokeWidth={strokeWidth}
       />
       {label && (
         <Label variant="caption" color="black">

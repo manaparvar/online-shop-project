@@ -7,6 +7,7 @@ import {
   ChevronDown,
   ChevronRight,
   ChevronLeft,
+  CircleUserRound,
   Instagram,
   Facebook,
   Youtube,
@@ -25,7 +26,10 @@ export type IconName =
   | "instagram"
   | "facebook"
   | "youtube"
-  | "twitter";
+  | "twitter"
+  | "chevron-right"
+  | "chevron-left"
+  | "circleUserRound";
 
 export const iconsMap: Record<IconName, LucideIcon> = {
   heart: Heart,
@@ -39,6 +43,7 @@ export const iconsMap: Record<IconName, LucideIcon> = {
   facebook: Facebook,
   youtube: Youtube,
   twitter: Twitter,
+  circleUserRound: CircleUserRound,
 } as const;
 
 type IconItem = {
@@ -81,6 +86,11 @@ export const icons: IconItem[] = [
     fontVariant: "caption",
     icon: "chevronLeft",
     label: "ChevronLeft",
+  },
+  {
+    fontVariant: "caption",
+    icon: "circleUserRound",
+    label: "Login",
   },
   {
     fontVariant: "caption",

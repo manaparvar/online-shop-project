@@ -1,5 +1,5 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import {
   AvatarWrapper,
@@ -7,8 +7,6 @@ import {
   SignupButton,
   LoginButton,
 } from "./component/avatar.style";
-import NavLink from "@/components/atoms/link/link";
-import Button from "@/components/atoms/button/button";
 
 type User = {
   name: string;
@@ -16,12 +14,12 @@ type User = {
 };
 
 export default function Avatar({ user }: { user?: User }) {
+  const router = useRouter();
   if (!user) {
     return (
       <AuthButtons>
         <LoginButton
-          as="a"
-          href="/login"
+          onClick={() => router.push("/login")}
           outline
           size="sm"
           color="black"
@@ -31,8 +29,7 @@ export default function Avatar({ user }: { user?: User }) {
         </LoginButton>
 
         <SignupButton
-          as="a"
-          href="/signup"
+          onClick={() => router.push("/signup")}
           outline
           size="sm"
           color="black"

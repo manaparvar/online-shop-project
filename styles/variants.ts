@@ -3,17 +3,17 @@ export const textVariants = {
     fontSize: {
       mobile: "24px",
       tablet: "28px",
-      desktop: "32px",
+      desktop: "36px",
     },
     fontWeight: 600,
   },
   h2: {
     fontSize: {
-      mobile: "20px",
-      tablet: "24px",
-      desktop: "24px",
+      mobile: "22px",
+      tablet: "26px",
+      desktop: "34px",
     },
-    fontWeight: 500,
+    fontWeight: 600,
   },
   h3: {
     fontSize: {
@@ -43,8 +43,8 @@ export const textVariants = {
     fontSize: {
       mobile: "12px",
       tablet: "14px",
-      desktop: "16px",
+      desktop: "18px",
     },
-    fontWeight: 500,
+    fontWeight: 600,
   },
 } as const;

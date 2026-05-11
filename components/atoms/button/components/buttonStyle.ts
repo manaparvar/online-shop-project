@@ -48,7 +48,7 @@ export const StyledButton = styled.button<ButtonStyledProps>`
   gap: 10px;
   justify-content: center;
   line-height: 100%;
-  margin: ${({ $center }) => ($center ? "auto" : 0)};
+  margin: ${({ $center }) => ($center ? "0 auto" : 0)};
   outline: none;
   overflow: visible;
   position: relative;
