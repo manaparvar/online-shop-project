@@ -1,11 +1,10 @@
-import { sizes } from "@/styles/sizes";
 import styled from "styled-components";
 
 export const LinksWrapper = styled.ul`
-  margin-top: ${sizes.xl};
+  margin-top: ${({ theme }) => theme.sizes.xl};
   display: grid;
-  @media (min-width: 700px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     flex-direction: row;
-    gap: ${sizes.md};
+    gap: ${({ theme }) => theme.sizes.md};
   }
 `;

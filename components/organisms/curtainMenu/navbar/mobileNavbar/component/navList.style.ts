@@ -1,18 +1,16 @@
 import styled from "styled-components";
-import { sizes } from "@/styles/sizes";
-import { theme } from "@/styles/theme";
 
 export const NavbarList = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: ${sizes.xs};
+  gap: ${({ theme }) => theme.sizes.xs};
   height: fit-content;
   width: 100%;
-  @media (min-width: ${theme.breakpoints.sm}) {
-    gap: ${sizes.sm};
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    gap: ${({ theme }) => theme.sizes.sm};
   }
-  @media (min-width: ${theme.breakpoints.lg}) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     flex-direction: row;
-    gap: ${sizes.xl};
+    gap: ${({ theme }) => theme.sizes.xl};
   }
 `;

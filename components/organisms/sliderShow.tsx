@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import useScrollCarousel from "@/components/hooks/useScrollCarousel";
 import {
   SliderWrapper,
@@ -13,18 +13,18 @@ import slider1 from "@/public/slider1.png";
 import slider2 from "@/public/slider2.png";
 import slider3 from "@/public/slider3.png";
 
-export const SliderData = [
+export const Slides = [
   {
     title: {
       start: "Spring",
       end: "Collection",
-      startColor: "Yellow",
-      endColor: "White",
+      startColor: "primary",
+      endColor: "background",
     },
     description: "Only smart casual outfits",
-    color: "yellow",
+    color: "primary",
     buttonLabel: "Shop Now",
-    textColor: "white",
+    textColor: "background",
     image: slider1,
     imageAlt: "Men autumn autfits",
   },
@@ -32,13 +32,13 @@ export const SliderData = [
     title: {
       start: "Spring",
       end: "Collection",
-      startColor: "Yellow",
-      endColor: "White",
+      startColor: "primary",
+      endColor: "background",
     },
     description: "Only smart casual outfits",
-    color: "yellow",
+    color: "primary",
     buttonLabel: "Shop Now",
-    textColor: "white",
+    textColor: "background",
     image: slider2,
     imageAlt: "Men autumn autfits",
   },
@@ -46,13 +46,13 @@ export const SliderData = [
     title: {
       start: "Spring",
       end: "Collection",
-      startColor: "Yellow",
-      endColor: "White",
+      startColor: "primary",
+      endColor: "background",
     },
     description: "Only smart casual outfits",
-    color: "yellow",
+    color: "primary",
     buttonLabel: "Shop Now",
-    textColor: "white",
+    textColor: "background",
     image: slider3,
     imageAlt: "Men autumn autfits",
   },
@@ -74,28 +74,24 @@ export default function SliderShow() {
   return (
     <MainWrapper>
       <SliderWrapper ref={containerRef}>
-        {SliderData.length > 0 &&
-          SliderData.map((slide, index) => (
+        {Slides.length &&
+          Slides.map((slide, index) => (
             <Slide
               key={`slider_${index}`}
-              title={{
-                start: "Spring",
-                end: "Collection",
-                startColor: "danger",
-                endColor: "background",
-              }}
-              description="Only smart casual outfits"
-              color="yellow"
-              buttonLabel="Shop Now"
-              textColor="background"
+              title={slide.title}
+              description={slide.description}
+              color={slide.color}
+              buttonLabel={slide.buttonLabel}
+              textColor={slide.textColor}
               image={slide.image}
-              imageAlt="Men autumn outfits"
+              imageAlt={slide.imageAlt}
             />
           ))}
       </SliderWrapper>
       <Controller>
         <PrevButton
-          textColor="white"
+          color="primary"
+          textColor="background"
           startIcon="chevronLeft"
           size="sm"
           responsive={responsiveSizes}
@@ -108,6 +104,7 @@ export default function SliderShow() {
           onClick={prev}
         />
         <NextButton
+          color="primary"
           startIcon="chevronRight"
           iconOnly
           onClick={next}
@@ -120,7 +117,7 @@ export default function SliderShow() {
           style={{ opacity: 0.5 }}
         />
       </Controller>
-      <Dots />
+      <Dots page={page} pages={Slides.length} scrollToPage={scrollToPage} />
     </MainWrapper>
   );
 }

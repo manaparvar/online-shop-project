@@ -34,7 +34,7 @@ const Heading = ({
   align,
   children,
   className,
-  textColor = "black",
+  textColor = "primary",
   noMargin,
   noWrap = false,
   tag = "h1",

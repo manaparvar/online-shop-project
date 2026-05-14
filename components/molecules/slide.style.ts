@@ -36,6 +36,9 @@ export const HeadingContainer = styled.div`
   display: flex;
   flex-direction: row;
   gap: ${({ theme }) => theme.sizes.xs};
+  .heading {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.86);
+  }
 `;
 
 export const StyledImage = styled(Image)`

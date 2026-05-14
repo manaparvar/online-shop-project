@@ -1,8 +1,6 @@
-import { sizes } from "@/styles/sizes";
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
-import { theme } from "@/styles/theme";
 
 export const LogoWrapper = styled(Link)`
   align-items: center;
@@ -15,13 +13,13 @@ export const LogoWrapper = styled(Link)`
   }
 `;
 export const LogoImage = styled(Image)`
-  @media (min-width: ${theme.breakpoints.sm}) {
-    width: ${sizes.xlg};
-    height: ${sizes.xlg};
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    width: ${({ theme }) => theme.sizes.xlg};
+    height: ${({ theme }) => theme.sizes.xlg};
   }
-  @media (min-width: ${theme.breakpoints.lg}) {
-    width: ${sizes.xl};
-    height: ${sizes.xl};
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    width: ${({ theme }) => theme.sizes.xl};
+    height: ${({ theme }) => theme.sizes.xl};
   }
 `;
 export const TextWrapper = styled.div`

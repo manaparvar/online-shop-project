@@ -65,12 +65,12 @@ export default function Input({
 }
 
 export const MyInput = styled.input<StyledProps>`
-  border: 0.5px solid ${({ theme }) => theme.colors.grey[300]};
+  border: 0.5px solid ${({ theme }) => theme.colors.secondary};
   text-align: ${({ $textAlign }) => $textAlign || "left"};
   font-size: ${({ $variant = "caption" }) =>
     textVariants[$variant].fontSize.mobile};
   outline: none;
   &:focus {
-    border: 0.8px solid ${({ theme }) => theme.colors.grey[500]};
+    border: 0.8px solid ${({ theme }) => theme.colors.secondary};
   }
 `;

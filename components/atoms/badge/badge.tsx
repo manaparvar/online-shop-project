@@ -15,8 +15,8 @@ const Badge = styled.span`
   padding: 0 5px;
   border-radius: 2px;
 
-  background: ${({ theme }) => theme.colors?.pink};
-  color: ${({ theme }) => theme.colors?.white};
+  background: ${({ theme }) => theme.colors?.accent};
+  color: ${({ theme }) => theme.colors?.background};
 
   font-size: 9px;
   font-weight: 700;

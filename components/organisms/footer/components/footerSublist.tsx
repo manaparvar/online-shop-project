@@ -1,4 +1,3 @@
-import NavLink from "../../../atoms/link/link";
 import Text from "../../../atoms/text/text";
 import Sublinks from "./footerSublinks";
 
@@ -9,7 +8,7 @@ type props = {
 export default function SubList({ item }: props) {
   return (
     <li>
-      <Text color="black" variant="button">
+      <Text color="primary" variant="button">
         {item.label}
       </Text>
       <Sublinks items={item.items} />

@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 import Button from "../atoms/button/button";
 export const MainWrapper = styled.div`
   position: relative;
+  margin-top: ${({ theme }) => theme.sizes.sm};
 `;
 
 export const Controller = styled.div`
@@ -23,20 +24,20 @@ export const SliderWrapper = styled.div`
     position: relative;
     width: 100%;
     height: 400px;
-    background-color: ${theme.colors.yellow};
+    background-color: ${({ theme }) => theme.colors.yellow};
 
-    @media (min-width: ${theme.breakpoints.sm}) {
+    @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
       height: 440px;
     }
 
-    @media (min-width: ${theme.breakpoints.md}) {
+    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       height: 560px;
     }
 
-    @media (min-width: ${theme.breakpoints.lg}) {
+    @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
       height: 600px;
     }
-    @media (min-width: ${theme.breakpoints.xl}) {
+    @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
       height: 696px;
     }
   `}

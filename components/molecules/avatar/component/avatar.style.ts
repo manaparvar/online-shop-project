@@ -1,38 +1,38 @@
 import styled, { css } from "styled-components";
-import Button from "@/components/atoms/button/button";
+import Icon from "@/components/atoms/icon/icon";
 
 export const AvatarWrapper = styled.div`
-  ${({ theme }) => css`
-    width: ${theme.sizes.md};
-    height: ${theme.sizes.md};
-    @media (min-width: ${theme.breakpoints.sm}) {
-      width: ${theme.sizes.lg};
-      height: ${theme.sizes.lg};
-    }
-    @media (min-width: ${theme.breakpoints.md}) {
-      width: ${theme.sizes.xlg};
-      height: ${theme.sizes.xlg};
-    }
-    align-self: flex-start;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-  `}
+  width: ${({ theme }) => theme.sizes.md};
+  height: ${({ theme }) => theme.sizes.md};
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    width: ${({ theme }) => theme.sizes.lg};
+    height: ${({ theme }) => theme.sizes.lg};
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    width: ${({ theme }) => theme.sizes.xlg};
+    height: ${({ theme }) => theme.sizes.xlg};
+  }
+  align-self: flex-start;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
 `;
 export const AuthButtons = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    gap: ${theme.sizes.xs};
-  `}
+  display: flex;
+  gap: ${({ theme }) => theme.sizes.xs};
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    gap: ${({ theme }) => theme.sizes.xs};
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    gap: ${({ theme }) => theme.sizes.sm};
+  }
 `;
-export const LoginButton = styled(Button)`
+export const LoginIcon = styled(Icon)`
   display: inline-flex;
 `;
-export const SignupButton = styled(Button)`
+export const SignupIcon = styled(Icon)`
   display: none;
-  ${({ theme }) => css`
-    @media (min-width: ${theme.breakpoints.lg}) {
-      display: inline-flex;
-    }
-  `}
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    display: inline-flex;
+  }
 `;

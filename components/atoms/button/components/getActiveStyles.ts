@@ -36,7 +36,7 @@ const getActiveStyles = (props: ButtonProps) => {
     `}
 
     svg {
-      fill: ${isSameColor ? colors.white : activeText};
+      fill: ${isSameColor ? colors.background : activeText};
     }
   `;
 };

@@ -1,11 +1,9 @@
 import "./globals.css";
-import localFont from "next/font/local";
 import { Rubik } from "next/font/google";
 import ThemeWrapper from "@/styles/themeWrapper";
 import Script from "next/script";
 import type { Metadata, Viewport } from "next";
 import Header from "../../organisms/header/header";
-import { PageWrapper } from "./baseLayout.style";
 import Container from "@/components/atoms/grid/container";
 import Footer from "../../organisms/footer/footer";
 export const metadata: Metadata = {

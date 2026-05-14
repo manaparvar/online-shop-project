@@ -5,21 +5,36 @@ import { theme } from "../../../styles/theme";
 import { textVariants } from "../../../styles/variants";
 import TransientProps from "@/types/transientProps.type";
 import { ReactNode } from "react";
+import ColorKey from "@/types/colorKey.type";
 
 type TextVariant = keyof typeof textVariants;
 
 type TextProps = {
   children: ReactNode;
+  className?: string;
   variant?: TextVariant;
-  color?: keyof typeof theme.colors;
+  color?: ColorKey;
   nowrap?: boolean;
   as?: React.ElementType;
 };
 type TextStyledProps = TransientProps<Omit<TextProps, "children">>;
 
-const Text = ({ children, color, nowrap, variant, as = "p" }: TextProps) => {
+const Text = ({
+  children,
+  className,
+  color,
+  nowrap,
+  variant,
+  as = "p",
+}: TextProps) => {
   return (
-    <StyledText as={as} $color={color} $variant={variant} $nowrap={nowrap}>
+    <StyledText
+      as={as}
+      $color={color}
+      $variant={variant}
+      $nowrap={nowrap}
+      className={className}
+    >
       {children}
     </StyledText>
   );
@@ -44,6 +59,6 @@ const StyledText = styled.p<TextStyledProps>`
       }
     `;
   }}
-  color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.primary};
 `;
 export default Text;

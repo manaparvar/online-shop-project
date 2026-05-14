@@ -1,29 +1,28 @@
-import { sizes } from "@/styles/sizes";
 import styled from "styled-components";
 import { theme } from "@/styles/theme";
 
 export const FooterWrapper = styled.div`
-  background-color: ${({ theme }) => theme.colors.brightBlue};
-  gap: ${sizes.lg};
+  background-color: ${({ theme }) => theme.colors.footerBackG};
+  gap: ${({ theme }) => theme.sizes.lg};
 
-  @media (min-width: 700px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     flex-direction: column;
 
-    gap: ${sizes["2xl"]};
+    gap: ${({ theme }) => theme.sizes["2xl"]};
   }
   @media (min-width: ${theme.breakpoints.lg}) {
-    gap: ${sizes["2xl"]};
+    gap: ${({ theme }) => theme.sizes["2xl"]};
   }
 `;
 export const FooterFeatures = styled.nav`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  gap: ${sizes.lg};
+  gap: ${({ theme }) => theme.sizes.lg};
 
-  @media (min-width: 700px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     flex-direction: row;
-    gap: ${sizes["2.5xl"]};
+    gap: ${({ theme }) => theme.sizes["2.5xl"]};
   }
 `;
 

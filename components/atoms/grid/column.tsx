@@ -5,7 +5,6 @@
 // Style
 import { ReactNode } from "react";
 import styled, { css } from "styled-components";
-import { theme } from "@/styles/theme";
 
 export interface ColumnProps {
   align?: string;

@@ -13,7 +13,7 @@ export default function Logo() {
       />
       <TextWrapper>
         <Text variant="button">Shopping</Text>
-        <Text variant="button" color="pink">
+        <Text variant="button" color="accent">
           &nbsp;Website
         </Text>
       </TextWrapper>

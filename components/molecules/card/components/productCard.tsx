@@ -125,7 +125,7 @@ const ProductCard = ({
                 outline
                 startIcon="heart"
                 startIconProps={{
-                  color: selectFavorite ? "red" : "black",
+                  color: selectFavorite ? "favorite" : "primary",
                   isFilled: selectFavorite,
                 }}
                 textColor="black"

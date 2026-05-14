@@ -1,14 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Logo from "../../molecules/logo/logo";
 import SearchBar from "../../forms/searchBar/searchBar";
 import CurtainMenu from "../curtainMenu/curtainMenu";
 import Icon from "../../atoms/icon/icon";
 import { icons } from "../../atoms/icon/component/iconData";
 import Navbar from "../curtainMenu/navbar/navbar";
-import DividerLine from "../../atoms/divider";
-import Container from "@/components/atoms/grid/container";
 import Avatar from "../../molecules/avatar/avatar";
 import {
   HeaderWrapper,
@@ -16,11 +14,13 @@ import {
   MyHamburgerButton,
   MobileMenuWrapper,
   SearchBarWrapper,
-  RightSideWrapper,
+  UserActionsWrapper,
   IconWrapper,
   HeaderDownerPart,
-  DividerWrapper,
+  StyledContainer,
+  StyledDividerLine,
 } from "./components/header.style";
+import styled from "styled-components";
 
 type User = {
   name: string;
@@ -28,6 +28,18 @@ type User = {
 };
 
 export default function DesktopHeader({ user }: { user?: User }) {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const [isOpen, setIsOpen] = useState(false);
   const openMenu = () => {
     setIsOpen(!isOpen);
@@ -39,7 +51,7 @@ export default function DesktopHeader({ user }: { user?: User }) {
   );
 
   return (
-    <Container>
+    <StyledContainer $scrolled={scrolled}>
       <HeaderWrapper>
         <HeaderUpperLine>
           <MobileMenuWrapper>
@@ -50,23 +62,24 @@ export default function DesktopHeader({ user }: { user?: User }) {
           <SearchBarWrapper>
             <SearchBar />
           </SearchBarWrapper>
-          <RightSideWrapper>
+          <UserActionsWrapper>
             <IconWrapper>
               {filteredIcons.map((item, index) => (
                 <Icon key={index} icon={item.icon} label={item.label} />
               ))}
             </IconWrapper>
-
             <Avatar user={user} />
-          </RightSideWrapper>
+          </UserActionsWrapper>
         </HeaderUpperLine>
         <HeaderDownerPart>
           <Navbar />
         </HeaderDownerPart>
-        <DividerWrapper>
-          <DividerLine lineType="headerDivider" />
-        </DividerWrapper>
       </HeaderWrapper>
-    </Container>
+      <StyledDividerLine
+        lineType="headerDivider"
+        color="primary"
+        $scrolled={true}
+      />
+    </StyledContainer>
   );
 }

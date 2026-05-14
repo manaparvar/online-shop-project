@@ -18,7 +18,6 @@ const responsiveSizes = {
 
 const Button = ({
   block,
-  paddingOverride,
   center,
   children,
   color = "black",
@@ -44,7 +43,6 @@ const Button = ({
 }: ButtonType) => {
   return (
     <StyledButton
-      $paddingOverride={paddingOverride}
       $block={block}
       $center={center}
       $color={color}

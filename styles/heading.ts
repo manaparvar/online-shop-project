@@ -42,6 +42,7 @@ const HEADING = {
       desktop: "20px",
     },
     lineHeight: "1.5",
+    fontWeight: 600,
   },
   h6: {
     fontSize: {
@@ -50,6 +51,7 @@ const HEADING = {
       desktop: "20px",
     },
     lineHeight: "1.5",
+    fontWeight: 600,
   },
 };
 

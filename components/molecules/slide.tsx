@@ -62,16 +62,26 @@ export default function Slide({
         <StyledColumn flex sm={7} md={7} lg={6}>
           <HeadingContainer>
             <Heading
+              className="heading"
               tag={
-                device === "desktop" ? "h2" : device === "tablet" ? "h3" : "h4"
+                device === "lg" || device === "xl"
+                  ? "h2"
+                  : device === "md" || device === "sm"
+                    ? "h3"
+                    : "h4"
               }
               textColor={startColor}
             >
               {start}
             </Heading>
             <Heading
+              className="heading"
               tag={
-                device === "desktop" ? "h2" : device === "tablet" ? "h3" : "h4"
+                device === "lg" || device === "xl"
+                  ? "h2"
+                  : device === "md" || device === "sm"
+                    ? "h3"
+                    : "h4"
               }
               textColor={endColor}
             >
@@ -86,7 +96,11 @@ export default function Slide({
             dash
           />
           <Text
-            variant={device === "desktop" ? "button" : "caption"}
+            variant={
+              device === "lg" || device === "xl" || device === "md"
+                ? "button"
+                : "caption"
+            }
             color={textColor}
           >
             {description}

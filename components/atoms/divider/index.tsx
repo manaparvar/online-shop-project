@@ -1,15 +1,17 @@
 import styled from "styled-components";
 import { LineVariants } from "./variants";
 import { useDevice } from "../../hooks/useDevice";
-
 import ColorKey from "@/types/colorKey.type";
+
+type LineType = keyof typeof LineVariants.mobile;
 
 type LineProps = {
   width?: string;
   height?: string;
   color?: ColorKey;
   dash?: boolean;
-  lineType: keyof typeof LineVariants.mobile;
+  lineType: LineType;
+  className?: string;
 };
 
 type StyledLineProps = {
@@ -23,6 +25,7 @@ export default function DividerLine({
   lineType,
   color,
   dash = false,
+  className,
 }: LineProps) {
   const device = useDevice();
   const style = LineVariants[device][lineType];
@@ -33,6 +36,7 @@ export default function DividerLine({
       $height={style.height}
       $color={color}
       $dash={dash}
+      className={className}
     />
   );
 }
@@ -42,5 +46,5 @@ export const Line = styled.div<StyledLineProps>`
   height: ${({ $height }) => $height};
 
   border-bottom: ${({ $dash, $color, theme }) =>
-    $dash ? `1px dashed ${$color ? theme.colors[$color] : "#000"}` : "none"};
+    `1px ${$dash ? "dashed" : "solid"} ${$color ? theme.colors[$color] : "#000"}`};
 `;

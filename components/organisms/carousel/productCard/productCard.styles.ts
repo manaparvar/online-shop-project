@@ -31,18 +31,18 @@ export const Item = styled.li<ItemProps>`
   flex: 0 0 ${({ $mobileBasis }) => $mobileBasis};
   scroll-snap-align: start;
 
-  @media (min-width: 376px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
     flex-basis: ${({ $tabletBasis }) => $tabletBasis};
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     flex-basis: ${({ $desktopBasis }) => $desktopBasis};
   }
 
-  @media (min-width: 1290px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     flex-basis: ${({ $wideDesktopBasis }) => $wideDesktopBasis};
   }
-  @media (min-width: 1440px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
     flex-basis: ${({ $extraWideDesktopBasis }) => $extraWideDesktopBasis};
   }
 `;

@@ -73,7 +73,7 @@ export const StyledButton = styled.button<ButtonStyledProps>`
 
   &:focus-visible {
     border-width: 1px;
-    border-color: ${({ theme }) => theme.colors.white};
+    border-color: ${({ theme }) => theme.colors.background};
     border-style: dashed;
   }
 `;
