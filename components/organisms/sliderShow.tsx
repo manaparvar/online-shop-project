@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import useScrollCarousel from "@/components/hooks/useScrollCarousel";
 import {
   SliderWrapper,
@@ -6,9 +6,10 @@ import {
   NextButton,
   MainWrapper,
   Controller,
+  DotsWrapper,
+  DotsContainer,
 } from "./sliderShow.style";
 import Slide from "./../molecules/slide";
-import Dots from "./carousel/productCard/dots";
 import slider1 from "@/public/slider1.png";
 import slider2 from "@/public/slider2.png";
 import slider3 from "@/public/slider3.png";
@@ -74,19 +75,18 @@ export default function SliderShow() {
   return (
     <MainWrapper>
       <SliderWrapper ref={containerRef}>
-        {Slides.length &&
-          Slides.map((slide, index) => (
-            <Slide
-              key={`slider_${index}`}
-              title={slide.title}
-              description={slide.description}
-              color={slide.color}
-              buttonLabel={slide.buttonLabel}
-              textColor={slide.textColor}
-              image={slide.image}
-              imageAlt={slide.imageAlt}
-            />
-          ))}
+        {Slides.map((slide, index) => (
+          <Slide
+            key={index}
+            title={slide.title}
+            description={slide.description}
+            color={slide.color}
+            buttonLabel={slide.buttonLabel}
+            textColor={slide.textColor}
+            image={slide.image}
+            imageAlt={slide.imageAlt}
+          />
+        ))}
       </SliderWrapper>
       <Controller>
         <PrevButton
@@ -99,12 +99,12 @@ export default function SliderShow() {
             color: "background",
             strokeWidth: 3,
           }}
-          style={{ opacity: 0.5 }}
           iconOnly
           onClick={prev}
         />
         <NextButton
           color="primary"
+          textColor="background"
           startIcon="chevronRight"
           iconOnly
           onClick={next}
@@ -117,7 +117,13 @@ export default function SliderShow() {
           style={{ opacity: 0.5 }}
         />
       </Controller>
-      <Dots page={page} pages={Slides.length} scrollToPage={scrollToPage} />
+      <DotsContainer>
+        <DotsWrapper
+          page={page}
+          pages={Slides.length}
+          scrollToPage={scrollToPage}
+        />
+      </DotsContainer>
     </MainWrapper>
   );
 }

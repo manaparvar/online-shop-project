@@ -1,4 +1,4 @@
-import { Dot, DotsWrapper } from "./productCard.styles";
+import { Dot, DotsWrapper } from "./cardCarousel.styles";
 
 type DotsProps = {
   page: number;

@@ -1,8 +1,9 @@
-import Carousel from "../../organisms/carousel/carousel";
+import Carousel from "../../organisms//cardCarousel/cardCarousel";
 import { useRouter } from "next/navigation";
 import Card from "../../molecules/card/card";
 import SliderShow from "../../organisms/sliderShow";
 import useScrollCarousel from "../../hooks/useScrollCarousel";
+import MainCategories from "@/components/organisms/mainCategories";
 
 import { useRef } from "react";
 const products = [
@@ -38,8 +39,8 @@ const HomePage = ({ dataSource }: any) => {
   return (
     <main>
       <SliderShow />
-      {/*   <Shipping />
-      <MainCategories /> */}
+      <MainCategories />
+
       <Carousel
         title="Best Sellers"
         seeAllHref="/products"

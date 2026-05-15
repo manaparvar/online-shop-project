@@ -3,7 +3,7 @@ import SeeAll from "@/components/atoms/link/link";
 import Button from "@/components/atoms/button/button";
 import Row from "@/components/atoms/grid/row";
 import Column from "@/components/atoms/grid/column";
-import { CardControllerWrapper } from "./productCard.styles";
+import { CardControllerWrapper } from "./cardCarousel.styles";
 import Buttons from "@/components/molecules/buttonGroup/buttonGroup";
 
 const ProductCardController = ({

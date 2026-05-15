@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { DotProps, ItemProps } from "./product.type";
+import { DotProps, ItemProps } from "./cardCarousel.type";
 
 export const CardControllerWrapper = styled.div`
   margin-top: 0.5rem;
@@ -53,9 +53,9 @@ export const DotsWrapper = styled.div`
   gap: 8px;
   margin-top: 16px;
 
-  @media (min-width: 769px) {
+  /*  @media (min-width: 769px) {
     display: none;
-  }
+  } */
 `;
 
 export const Dot = styled.button<DotProps>`
@@ -66,4 +66,13 @@ export const Dot = styled.button<DotProps>`
   cursor: pointer;
   transition: 0.2s ease;
   background: ${({ $active }) => ($active ? "#111" : "rgba(0,0,0,0.2)")};
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    width: 13px;
+    height: 13px;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    width: 16px;
+    height: 16px;
+  }
 `;

@@ -1,4 +1,4 @@
-import ProductGallary from "@/components/organisms/carousel/productGallery/productGallery";
+import ProductGallary from "@/components/organisms/productGallery/productGallery";
 const ProductDetailPage = () => {
   return (
     <div>

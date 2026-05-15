@@ -1,16 +1,17 @@
 import styled, { css } from "styled-components";
 import Button from "../atoms/button/button";
+import Dots from "./cardCarousel/components/dots";
+
 export const MainWrapper = styled.div`
   position: relative;
   margin-top: ${({ theme }) => theme.sizes.sm};
-`;
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    margin-bottom: 64px;
+  }
 
-export const Controller = styled.div`
-  position: absolute;
-  top: 45%;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    margin-bottom: 160px;
+  }
 `;
 
 export const SliderWrapper = styled.div`
@@ -42,10 +43,17 @@ export const SliderWrapper = styled.div`
     }
   `}
 `;
-
+export const Controller = styled.div`
+  position: absolute;
+  top: 45%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`;
 export const PrevButton = styled(Button)`
   height: ${({ theme }) => theme.sizes.xl};
   border-radius: 2px;
+  opacity: 0.5;
   @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
     height: ${({ theme }) => theme.sizes.xl};
   }
@@ -64,6 +72,7 @@ export const PrevButton = styled(Button)`
 export const NextButton = styled(Button)`
   height: ${({ theme }) => theme.sizes.xl};
   border-radius: 2px;
+  opacity: 0.5;
   @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
     height: ${({ theme }) => theme.sizes.xl};
   }
@@ -78,4 +87,19 @@ export const NextButton = styled(Button)`
   @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
     height: ${({ theme }) => theme.sizes["3xl"]};
   }
+`;
+export const DotsWrapper = styled(Dots)`
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+`;
+export const DotsContainer = styled.div`
+  position: absolute;
+  bottom: 1.5rem;
+  display: flex;
+  width: 100%;
+  gap: 8px;
+  justify-content: space-around;
+  z-index: 20;
 `;
