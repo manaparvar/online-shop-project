@@ -8,11 +8,20 @@ import Icon from "@/components/atoms/icon/icon";
 import { ButtonType } from "./components/buttonType";
 import { StyledButton } from "./components/buttonStyle";
 
+const responsiveSizes = {
+  sm: "lg",
+  md: "lg",
+  lg: "xl",
+  xl: "xl",
+  "2xl": "2xl",
+};
+
 const Button = ({
   block,
   center,
   children,
   color = "black",
+  className,
   dashed,
   disabled = false,
   endIcon,
@@ -22,7 +31,7 @@ const Button = ({
   noPadding,
   onClick,
   outline = false,
-  responsive,
+  responsive = { ...responsiveSizes },
   rounded = true,
   shadow = false,
   size = "md",
@@ -32,14 +41,6 @@ const Button = ({
   textColor = "white",
   type = "button",
 }: ButtonType) => {
-  const responsiveSizes = {
-    sm: "lg",
-    md: "lg",
-    lg: "xl",
-    xl: "xl",
-    "2xl": "2xl",
-  };
-
   return (
     <StyledButton
       $block={block}
@@ -50,35 +51,22 @@ const Button = ({
       $noHover={noHover}
       $noPadding={noPadding}
       $outline={outline}
-      $responsive={{ ...responsiveSizes, ...responsive }}
+      $responsive={responsive}
       $rounded={rounded}
       $shadow={shadow}
       $size={size}
+      className={className}
       $textColor={textColor}
       disabled={disabled}
       onClick={onClick}
       style={style}
       type={type}
     >
-      {startIcon && (
-        <Icon
-          icon={startIcon}
-          {...{
-            ...startIconProps,
-          }}
-        />
-      )}
+      {startIcon && <Icon icon={startIcon} {...startIconProps} />}
 
       {children}
 
-      {endIcon && (
-        <Icon
-          icon={endIcon}
-          {...{
-            ...endIconProps,
-          }}
-        />
-      )}
+      {endIcon && <Icon icon={endIcon} {...endIconProps} />}
     </StyledButton>
   );
 };

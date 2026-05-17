@@ -5,12 +5,12 @@ import { sizes } from "@/styles/sizes";
 export const NavbarWrapper = styled.nav`
   display: flex;
   flex-direction: column;
-  gap: ${sizes.sm};
-  @media (min-width: ${theme.breakpoints.sm}) {
-    padding-top: ${sizes.lg};
+  gap: ${({ theme }) => theme.sizes.sm};
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    padding-top: ${({ theme }) => theme.sizes.lg};
   }
-  @media (min-width: ${theme.breakpoints.lg}) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     flex-direction: row;
-    padding-top: ${sizes.xs};
+    padding-top: ${({ theme }) => theme.sizes.xs};
   }
 `;

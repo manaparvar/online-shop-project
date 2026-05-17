@@ -11,7 +11,7 @@ export const HamburgerWrapper = styled.button<{
 export const HamburgerUpperLine = styled.span<{
   $isOpen: boolean;
 }>`
-  background-color: ${({ theme }) => theme.colors.black};
+  background-color: ${({ theme }) => theme.colors.primary};
   border-radius: 3px;
   display: block;
   height: 3px;
@@ -24,7 +24,7 @@ export const HamburgerUpperLine = styled.span<{
 export const HamburgerMiddleLine = styled.span<{
   $isOpen: boolean;
 }>`
-  background-color: ${({ theme }) => theme.colors.black};
+  background-color: ${({ theme }) => theme.colors.primary};
   border-radius: 3px;
   display: block;
   height: 3px;
@@ -35,7 +35,7 @@ export const HamburgerMiddleLine = styled.span<{
 export const HamburgerDownerLine = styled.span<{
   $isOpen: boolean;
 }>`
-  background-color: ${({ theme }) => theme.colors.black};
+  background-color: ${({ theme }) => theme.colors.primary};
   border-radius: 3px;
   display: block;
   height: 3px;

@@ -43,9 +43,9 @@ export const SearchInput = styled.input`
     @media (min-width: ${theme.breakpoints.lg}) {
       font-size: ${textVariants.caption.fontSize.desktop};
     }
-    color: ${({ theme }) => theme.colors.grey[300]};
+    color: ${({ theme }) => theme.colors.secondary};
   }
-  background-color: ${({ theme }) => theme.colors.grey[100]};
+  background-color: ${({ theme }) => theme.colors.secondary};
   border-radius: 0 5px 5px 0;
   border: none;
   flex: 1;
@@ -57,7 +57,7 @@ export const SearchInput = styled.input`
   }
 `;
 export const SearchButton = styled.button`
-  background-color: ${({ theme }) => theme.colors.grey[100]};
+  background-color: ${({ theme }) => theme.colors.secondary};
   border-radius: 5px 0 0 5px;
   height: 100٪;
   padding-left: 4%;
@@ -67,6 +67,6 @@ export const SearchButton = styled.button`
     display: block;
   }
   &:hover {
-    border: ${({ theme }) => theme.colors.grey[300]} solid 0.1px;
+    border: ${({ theme }) => theme.colors.secondary} solid 0.1px;
   }
 `;

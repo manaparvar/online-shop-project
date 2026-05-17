@@ -1,8 +1,7 @@
 "use client";
-import { Main } from "./page.style";
-import Carousel from "../components/organisms/carousel/productCard/productCard";
+import HomePage from "@/components/templates/homePage/homePage";
+import { useRouter } from "next/navigation";
 
-import Card from "../components/molecules/card/cart";
 const products = [
   { id: 1, name: "Cotton Shoes", price: 120 },
   { id: 2, name: "Leather Shoes", price: 120 },
@@ -24,9 +23,11 @@ const productOptions = {
   selectedId: "2",
 };
 export default function Home() {
+  const router = useRouter();
+
   return (
-    <Main>
-      <Carousel
+    <HomePage dataSouce={{ products, productOptions }}>
+      {/* <Carousel
         title="Best Sellers"
         seeAllHref="/products"
         mobileBasis="32%"
@@ -45,12 +46,12 @@ export default function Home() {
             oldPrice="$160"
             discount="20%"
             buttonLabel="Add to Cart"
-            onButtonClick={() => console.log("Add to cart")}
+            onButtonClick={() => router.push("/product/23")}
             onSelectFavorite={(isFav) => console.log("Favorite:", isFav)}
             productOptions={productOptions}
           />
         ))}
-      </Carousel>
-    </Main>
+      </Carousel> */}
+    </HomePage>
   );
 }

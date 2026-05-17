@@ -1,17 +1,58 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { AvatarWrapper } from "./component/avatar.style";
 
-interface AvatarType {
-  alt: string;
-  src: string;
-}
+import {
+  AvatarWrapper,
+  AuthButtons,
+  LoginIcon,
+  SignupIcon,
+} from "./component/avatar.style";
+import Icon from "@/components/atoms/icon/icon";
+import { useDevice } from "@/components/hooks/useDevice";
 
-export default function Avatar({ alt, src }: AvatarType) {
+type User = {
+  name: string;
+  image: string;
+};
+
+export default function Avatar({ user }: { user?: User }) {
+  const router = useRouter();
+  if (!user) {
+    return (
+      <AuthButtons>
+        <LoginIcon
+          href="/login"
+          color="secondary"
+          icon="logIn"
+          strokeWidth={1.5}
+          label="Login"
+        />
+
+        <SignupIcon
+          href="/signup"
+          color="secondary"
+          icon="userPlus"
+          strokeWidth={1.5}
+          label="signup"
+        />
+      </AuthButtons>
+    );
+  }
+  const fallback = user.name?.charAt(0).toUpperCase() || "?";
+
   return (
     <AvatarWrapper>
-      <Image alt={alt} fill src={src} style={{ objectFit: "cover" }} />
+      {user.image ? (
+        <Image
+          alt={user.name}
+          fill
+          src={user.image}
+          style={{ objectFit: "cover" }}
+        />
+      ) : (
+        <AvatarWrapper>{fallback}</AvatarWrapper>
+      )}
     </AvatarWrapper>
   );
 }

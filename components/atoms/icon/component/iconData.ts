@@ -7,6 +7,8 @@ import {
   ChevronDown,
   ChevronRight,
   ChevronLeft,
+  LogIn,
+  UserPlus,
   Instagram,
   Facebook,
   Youtube,
@@ -25,7 +27,11 @@ export type IconName =
   | "instagram"
   | "facebook"
   | "youtube"
-  | "twitter";
+  | "twitter"
+  | "chevron-right"
+  | "chevron-left"
+  | "logIn"
+  | "userPlus";
 
 export const iconsMap: Record<IconName, LucideIcon> = {
   heart: Heart,
@@ -39,23 +45,28 @@ export const iconsMap: Record<IconName, LucideIcon> = {
   facebook: Facebook,
   youtube: Youtube,
   twitter: Twitter,
+  logIn: LogIn,
+  userPlus: UserPlus,
 } as const;
 
 type IconItem = {
   fontVariant?: keyof typeof textVariants;
   icon: IconName;
   label?: string;
+  href?: string;
 };
 export const icons: IconItem[] = [
   {
     fontVariant: "button",
     icon: "shoppingBag",
     label: "Cart",
+    href: "/cart",
   },
   {
     fontVariant: "button",
     icon: "heart",
     label: "Favorites",
+    href: "/favorite",
   },
   {
     fontVariant: "caption",
@@ -84,18 +95,34 @@ export const icons: IconItem[] = [
   },
   {
     fontVariant: "caption",
+    icon: "userPlus",
+    label: "Signup",
+    href: "/signup",
+  },
+  {
+    fontVariant: "caption",
+    icon: "logIn",
+    label: "Login",
+    href: "/login",
+  },
+  {
+    fontVariant: "caption",
     icon: "instagram",
+    href: "/instagram",
   },
   {
     fontVariant: "caption",
     icon: "facebook",
+    href: "/facebook",
   },
   {
     fontVariant: "caption",
     icon: "youtube",
+    href: "/youtube",
   },
   {
     fontVariant: "caption",
     icon: "twitter",
+    href: "/twitter",
   },
 ] as const;

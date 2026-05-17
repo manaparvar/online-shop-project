@@ -1,21 +1,12 @@
 import styled from "styled-components";
-import { DotProps, ItemProps } from "./product.type";
+import { DotProps, ItemProps } from "./cardCarousel.type";
 
-export const Header = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 24px;
-  gap: 16px;
+export const CardControllerWrapper = styled.div`
+  margin-top: 0.5rem;
+  width: 100%;
 `;
 
-export const HeaderRight = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 12px;
-`;
-
-export const Viewport = styled.div`
+export const CarouselWrapper = styled.div`
   overflow-x: auto;
   scroll-behavior: smooth;
 
@@ -40,18 +31,18 @@ export const Item = styled.li<ItemProps>`
   flex: 0 0 ${({ $mobileBasis }) => $mobileBasis};
   scroll-snap-align: start;
 
-  @media (min-width: 376px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
     flex-basis: ${({ $tabletBasis }) => $tabletBasis};
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     flex-basis: ${({ $desktopBasis }) => $desktopBasis};
   }
 
-  @media (min-width: 1290px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     flex-basis: ${({ $wideDesktopBasis }) => $wideDesktopBasis};
   }
-  @media (min-width: 1440px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
     flex-basis: ${({ $extraWideDesktopBasis }) => $extraWideDesktopBasis};
   }
 `;
@@ -62,9 +53,9 @@ export const DotsWrapper = styled.div`
   gap: 8px;
   margin-top: 16px;
 
-  @media (min-width: 769px) {
+  /*  @media (min-width: 769px) {
     display: none;
-  }
+  } */
 `;
 
 export const Dot = styled.button<DotProps>`
@@ -75,4 +66,13 @@ export const Dot = styled.button<DotProps>`
   cursor: pointer;
   transition: 0.2s ease;
   background: ${({ $active }) => ($active ? "#111" : "rgba(0,0,0,0.2)")};
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    width: 13px;
+    height: 13px;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    width: 16px;
+    height: 16px;
+  }
 `;

@@ -2,20 +2,32 @@
 import { iconsMap } from "./component/iconData";
 import { IconWrapper, StyledIcon, Label } from "./component/icon.style";
 import { IconProps } from "./icon.type";
+import { useDevice } from "@/components/hooks/useDevice";
 
-export default function Icon({ icon, label, isFilled, color }: IconProps) {
+export default function Icon({
+  icon,
+  href,
+  label,
+  className,
+  isFilled,
+  color,
+  strokeWidth = 1.25,
+}: IconProps) {
   const SelectedIcon = iconsMap[icon];
+  const device = useDevice();
 
   return (
     <IconWrapper $color={color}>
       <StyledIcon
+        href={href}
+        className={className}
         $color={color}
         $isFilled={isFilled}
         as={SelectedIcon}
-        strokeWidth={1.25}
+        strokeWidth={strokeWidth}
       />
-      {label && (
-        <Label variant="caption" color="black">
+      {label && device !== "mobile" && device !== "sm" && (
+        <Label variant="caption" color="primary">
           {label}
         </Label>
       )}

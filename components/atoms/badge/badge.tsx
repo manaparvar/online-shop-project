@@ -1,37 +1,41 @@
-import styled, { css } from "styled-components";
-import { theme } from "@/styles/theme";
+import styled from "styled-components";
 
 const Badge = styled.span`
   position: absolute;
-  top: 8px;
-  left: 8px;
+  top: ${({ theme }) => theme.sizes?.xs};
+  left: ${({ theme }) => theme.sizes?.xs};
   z-index: 3;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 24px;
-  height: 16px;
+
+  min-width: ${({ theme }) => theme.sizes?.md};
+  height: ${({ theme }) => theme.sizes?.sm};
+
   padding: 0 5px;
   border-radius: 2px;
-  background: ${theme.colors.black};
-  color: ${theme.colors.white};
+
+  background: ${({ theme }) => theme.colors?.accent};
+  color: ${({ theme }) => theme.colors?.background};
+
   font-size: 9px;
   font-weight: 700;
 
-  @media (min-width: ${theme.breakpoints.md}) {
-    width: 32px;
-    min-height: 24px;
+  @media (min-width: ${({ theme }) => theme.breakpoints?.md}) {
+    width: ${({ theme }) => theme.sizes?.lg};
+    min-height: ${({ theme }) => theme.sizes?.md};
     font-size: 12px;
     border-radius: 3px;
-    top: 16px;
-    left: 16px;
+    top: ${({ theme }) => theme.sizes?.sm};
+    left: ${({ theme }) => theme.sizes?.sm};
   }
 
-  @media (min-width: ${theme.breakpoints.lg}) {
-    width: 48px;
-    min-height: 32px;
+  @media (min-width: ${({ theme }) => theme.breakpoints?.lg}) {
+    width: ${({ theme }) => theme.sizes?.xl};
+    min-height: ${({ theme }) => theme.sizes?.lg};
     font-size: 14px;
     top: 10px;
   }
 `;
+
 export default Badge;

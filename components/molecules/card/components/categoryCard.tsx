@@ -8,7 +8,7 @@ const CategoryCard = ({ variant, image, title }: CardProps) => (
       <ImageWrapper $variant={variant}>
         <Image
           $visible
-          alt={title ?? "banner image"}
+          alt={title ?? "Category image"}
           fill
           objectFit="cover"
           src={image}

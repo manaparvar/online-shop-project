@@ -16,7 +16,7 @@ export interface HeadingProps {
   align?: string;
   children?: any;
   className?: string;
-  color?: ColorKey;
+  textColor?: ColorKey;
   noMargin?: boolean;
   noWrap?: boolean;
   textDecoration?: string;
@@ -25,7 +25,7 @@ export interface HeadingProps {
 
 type PickHeadingProps = Pick<
   HeadingProps,
-  "align" | "color" | "noMargin" | "noWrap" | "tag" | "textDecoration"
+  "align" | "textColor" | "noMargin" | "noWrap" | "tag" | "textDecoration"
 >;
 
 export type HeadingStyleProps = TransientProps<PickHeadingProps>;
@@ -34,7 +34,7 @@ const Heading = ({
   align,
   children,
   className,
-  color = "black",
+  textColor = "primary",
   noMargin,
   noWrap = false,
   tag = "h1",
@@ -45,7 +45,7 @@ const Heading = ({
       $align={align}
       as={`${tag}` as "h1"}
       className={className}
-      $color={color}
+      $textColor={textColor}
       $noMargin={noMargin}
       $noWrap={noWrap}
       $tag={tag}
@@ -78,15 +78,15 @@ const fontSizes = ({ screen, $tag }: any) => {
       `;
   }
 };
-const colorMaker = (theme, color) => {
+const colorMaker = ({ theme, color }: any) => {
   const [c, shade] = color.split(".");
   return shade ? theme.colors[c][shade] : theme.colors[c];
 };
 
 const StyledHeading = styled.span<HeadingStyleProps>`
-  color: ${({ theme, $color }) =>
-    theme.colors[$color as keyof typeof theme.colors]};
-  /* color: ${({ $color, theme }) => $color && colorMaker(theme, $color)}; */
+  color: ${({ theme, $textColor }) =>
+    theme.colors[$textColor as keyof typeof theme.colors]};
+
   font-weight: normal;
   position: relative;
   text-align: ${({ $align }) => $align};

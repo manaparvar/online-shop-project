@@ -2,9 +2,9 @@
 import { CardProps } from "../card.types";
 
 // components
-import BannerCard from "./bannerCart";
+import BannerCard from "./bannerCard";
 import CategoryCard from "./categoryCard";
-import ProductCard from "./productCart";
+import ProductCard from "./productCard";
 
 const CardByVariant = ({
   buttonLabel,

@@ -1,28 +1,50 @@
 import styled from "styled-components";
 import { LineVariants } from "./variants";
-import { theme } from "@/styles/theme";
 import { useDevice } from "../../hooks/useDevice";
-type ColorKey = keyof typeof theme.colors;
-type lineProps = {
+import ColorKey from "@/types/colorKey.type";
+
+type LineType = keyof typeof LineVariants.mobile;
+
+type LineProps = {
   width?: string;
   height?: string;
   color?: ColorKey;
-  lineType: keyof typeof LineVariants.mobile;
+  dash?: boolean;
+  lineType: LineType;
+  className?: string;
 };
-export default function DividerLine({ lineType, color }: lineProps) {
+
+type StyledLineProps = {
+  $width?: string;
+  $height?: string;
+  $color?: ColorKey;
+  $dash?: boolean;
+};
+
+export default function DividerLine({
+  lineType,
+  color,
+  dash = false,
+  className,
+}: LineProps) {
   const device = useDevice();
   const style = LineVariants[device][lineType];
 
-  return <Line width={style.width} height={style.height} color={color} />;
+  return (
+    <Line
+      $width={style.width}
+      $height={style.height}
+      $color={color}
+      $dash={dash}
+      className={className}
+    />
+  );
 }
 
-export const Line = styled.div<{
-  width: string;
-  height: string;
-  color?: ColorKey;
-}>`
-  width: ${({ width }) => width};
-  height: ${({ height }) => height};
-  background-color: ${({ color }) =>
-    color ? theme.colors[color] : theme.colors.grey[100]};
+export const Line = styled.div<StyledLineProps>`
+  width: ${({ $width }) => $width};
+  height: ${({ $height }) => $height};
+
+  border-bottom: ${({ $dash, $color, theme }) =>
+    `1px ${$dash ? "dashed" : "solid"} ${$color ? theme.colors[$color] : "#000"}`};
 `;

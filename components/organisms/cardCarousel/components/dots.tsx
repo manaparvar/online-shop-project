@@ -1,6 +1,11 @@
-import { Dot, DotsWrapper } from "./productCard.styles";
+import { Dot, DotsWrapper } from "./cardCarousel.styles";
 
-const Dots = ({ page, pages, scrollToPage }: any) => {
+type DotsProps = {
+  page: number;
+  pages: number;
+  scrollToPage: (index: number) => void;
+};
+const Dots = ({ page, pages, scrollToPage }: DotsProps) => {
   return (
     <DotsWrapper>
       {Array.from({ length: pages }).map((_, i) => (

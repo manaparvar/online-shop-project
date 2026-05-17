@@ -1,8 +1,12 @@
-import { menuData } from "./data";
 import Icon from "@/components/atoms/icon/icon";
-import NavLink from "@/components/atoms/link/link";
 import SubList from "./subList";
-import { SubMenu, ItemWrapper, DropdownButton, TagText } from "./navItem.style";
+import {
+  SubMenu,
+  ItemWrapper,
+  DropdownButton,
+  TagText,
+  StyledNavLink,
+} from "./navItem.style";
 import { useDevice } from "@/components/hooks/useDevice";
 import { useState } from "react";
 
@@ -17,19 +21,19 @@ export default function NavItem({ item }: props) {
   return (
     <ItemWrapper
       onMouseLeave={() => {
-        if (device === "desktop") setIsActive(null);
+        if (device === "lg" || device === "xl") setIsActive(null);
       }}
     >
       {item.to ? (
-        <NavLink href={item.to}>
+        <StyledNavLink href={item.to}>
           <TagText
             variant="h3"
-            color="black"
+            color="primary"
             $isAttention={item.label === "Summer Sale"}
           >
             {item.label}
           </TagText>
-        </NavLink>
+        </StyledNavLink>
       ) : (
         <DropdownButton
           onClick={() => {
@@ -38,12 +42,12 @@ export default function NavItem({ item }: props) {
               : setIsActive(item.label);
           }}
           onMouseEnter={() => {
-            if (device === "desktop") setIsActive(item.label);
+            if (device === "lg" || device === "xl") setIsActive(item.label);
           }}
         >
           <TagText
             variant="h3"
-            color="black"
+            color="primary"
             $isAttention={item.label === "Summer Sale"}
           >
             {item.label}

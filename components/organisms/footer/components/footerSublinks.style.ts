@@ -1,18 +1,10 @@
-import { sizes } from "@/styles/sizes";
 import styled from "styled-components";
-import { theme } from "@/styles/theme";
-import NavLink from "@/components/atoms/link/link";
 
 export const LinksWrapper = styled.ul`
-  margin-top: ${sizes.xl};
+  margin-top: ${({ theme }) => theme.sizes.xl};
   display: grid;
-  @media (min-width: 700px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     flex-direction: row;
-    gap: ${sizes.md};
-  }
-`;
-export const StyledNavLink = styled(NavLink)`
-  &:hover {
-    opacity: 0.3;
+    gap: ${({ theme }) => theme.sizes.md};
   }
 `;

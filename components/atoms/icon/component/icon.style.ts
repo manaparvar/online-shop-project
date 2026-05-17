@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Text from "@/components/atoms/text/text";
 import { theme } from "@/styles/theme";
-import { sizes } from "@/styles/sizes";
 import { StyledIconProps } from "../icon.type";
 import shadeLinearRgb from "@/utils/shadeLinearRgb";
 
@@ -14,28 +13,32 @@ export const IconWrapper = styled.div<Pick<StyledIconProps, "$color">>`
   color: ${({ theme, $color }) =>
     $color &&
     shadeLinearRgb({
-      color: theme.colors[$color],
-      p: 0.3,
+      color: theme.colors.secondary,
+      p: 0.4,
     })};
 
   &:hover {
-    color: ${({ theme }) => theme.colors.grey[200]};
+    color: ${({ theme }) =>
+      shadeLinearRgb({
+        color: theme.colors.secondary,
+        p: 0.7,
+      })};
   }
 `;
 export const StyledIcon = styled.svg<StyledIconProps>`
   fill: ${({ $isFilled, $color }) => ($isFilled ? $color : "none")};
-  height: ${sizes.sm};
+  height: ${({ theme }) => theme.sizes.sm};
   transition: all 0.5s ease;
-  width: ${sizes.sm};
+  width: ${({ theme }) => theme.sizes.sm};
 
   @media (min-width: ${theme.breakpoints.md}) {
-    height: ${sizes.sm};
-    width: ${sizes.sm};
+    height: ${({ theme }) => theme.sizes.sm};
+    width: ${({ theme }) => theme.sizes.sm};
   }
 
   @media (min-width: ${theme.breakpoints.lg}) {
-    height: ${sizes.md};
-    width: ${sizes.md};
+    height: ${({ theme }) => theme.sizes.md};
+    width: ${({ theme }) => theme.sizes.md};
   }
 `;
 
@@ -48,7 +51,11 @@ export const Label = styled(Text)`
     transition: all 0.5s ease;
 
     &:hover {
-      color: ${({ theme }) => theme.colors.grey[200]};
+      color: ${({ theme }) =>
+        shadeLinearRgb({
+          color: theme.colors.secondary,
+          p: 0.7,
+        })};
     }
   }
 `;

@@ -1,5 +1,5 @@
 "use client";
-import Card from "../../molecules/card/cart";
+import Card from "../../molecules/card/card";
 import styled from "styled-components";
 const productOptions = {
   options: [
@@ -14,14 +14,6 @@ const Carousel = () => {
   return (
     <Wrapper>
       <Card
-        variant="category"
-        image="/images/women.png"
-        title="Women"
-        onClick={() => console.log("redirect To category")}
-      />
-      <br />
-      <br />
-      <Card
         variant="product"
         image="/images/shoe.png"
         title="Cotton Shoes"
@@ -34,23 +26,12 @@ const Carousel = () => {
         onSelectFavorite={(isFav) => console.log("Favorite:", isFav)}
         productOptions={productOptions}
       />
-
-      <Card
-        variant="banner"
-        image="/images/purse.png"
-        title="Coat and Jacket"
-        onClick={() => console.log("redirect To category")}
-      />
-
-      <Card
-        variant="banner"
-        image="/images/purse.png"
-        onClick={() => console.log("redirect To category")}
-      />
     </Wrapper>
   );
 };
 const Wrapper = styled.div`
   margin: 20px;
+  display: flex;
+  flex-direction: row;
 `;
 export default Carousel;

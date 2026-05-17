@@ -1,12 +1,12 @@
 "use client";
 
 import { Children, useRef } from "react";
-import useScrollCarousel from "../../../hooks/useScrollCarousel";
-import { CarouselProps } from "./product.type";
-import ProductCardController from "@/components/organisms/carousel/productCard/productCardController";
-import { Item, Track, Viewport } from "./productCard.styles";
-import Dots from "./dots";
-const ProductCard = ({
+import useScrollCarousel from "../../hooks/useScrollCarousel";
+import { CarouselProps } from "./components/cardCarousel.type";
+import CardCarouselController from "./components/cardCarouselController";
+import { Item, Track, CarouselWrapper } from "./components/cardCarousel.styles";
+import Dots from "./components/dots";
+const CardCarousel = ({
   title,
   seeAllHref,
   children,
@@ -29,7 +29,7 @@ const ProductCard = ({
   return (
     <>
       {(title || seeAllHref || showArrows) && (
-        <ProductCardController
+        <CardCarouselController
           canGoNext={canGoNext}
           canGoPrev={canGoPrev}
           next={next}
@@ -41,7 +41,7 @@ const ProductCard = ({
         />
       )}
 
-      <Viewport ref={viewportRef}>
+      <CarouselWrapper ref={viewportRef}>
         <Track $gap={gap}>
           {Children.map(children, (child, index) => (
             <Item
@@ -56,7 +56,7 @@ const ProductCard = ({
             </Item>
           ))}
         </Track>
-      </Viewport>
+      </CarouselWrapper>
 
       {showDots && pages > 1 && (
         <Dots page={page} pages={pages} scrollToPage={scrollToPage} />
@@ -65,4 +65,4 @@ const ProductCard = ({
   );
 };
 
-export default ProductCard;
+export default CardCarousel;

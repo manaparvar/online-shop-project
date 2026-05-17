@@ -48,7 +48,7 @@ export const CardWrapper = styled.div<WrapperProps>`
 
       align-items: center;
       justify-content: center;
-      background: ${({ theme }) => theme.colors.white};
+      background: ${({ theme }) => theme.colors.background};
       border: 1px solid #ececec;
 
       @media (min-width: ${theme.breakpoints.lg}) {

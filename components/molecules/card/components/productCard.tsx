@@ -27,7 +27,7 @@ const ProductCard = ({
   );
   const [selectFavorite, setSelectFavorite] = useState(false);
   const nextSrc =
-    productOptions?.options?.find((opt: any) => opt.id === selectedOption)
+    productOptions?.options?.find((item: any) => item.id === selectedOption)
       ?.img || image;
 
   const [displayedSrc, setDisplayedSrc] = useState(nextSrc);
@@ -125,7 +125,7 @@ const ProductCard = ({
                 outline
                 startIcon="heart"
                 startIconProps={{
-                  color: selectFavorite ? "red" : "black",
+                  color: selectFavorite ? "favorite" : "primary",
                   isFilled: selectFavorite,
                 }}
                 textColor="black"

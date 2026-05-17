@@ -5,6 +5,7 @@ export const sizes = {
   lg: "32px",
   xlg: "40px",
   xl: "48px",
+  "1.5xl": "56px",
   "2xl": "64px",
   "2.5xl": "72px",
   "2xlg": "80px",
