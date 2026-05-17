@@ -2,7 +2,7 @@
 import { useRef, useState } from "react";
 import ImageMagnifier from "@/components/molecules/imageMagnifier/imageMagnifier";
 import useScrollCarousel from "@/components/hooks/useScrollCarousel";
-import ProductCardController from "@/components/organisms/cardCarousel/cardCarouselController";
+import ProductCardController from "../cardCarousel/components/cardCarouselController";
 import Image from "@/components/atoms/image/image";
 import {
   Item,
