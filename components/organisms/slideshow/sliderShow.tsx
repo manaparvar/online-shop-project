@@ -10,8 +10,25 @@ import {
   DotsContainer,
 } from "./sliderShow.style";
 import Slide from "../../molecules/slide";
+import type { StaticImageData } from "next/image";
+import type ColorKey from "@/types/colorKey.type";
 
-export default function SliderShow({ slides }: { slides: any[] }) {
+export type Slide = {
+  title: {
+    end: string;
+    endColor: ColorKey;
+    start: string;
+    startColor: ColorKey;
+  };
+  buttonLabel: string;
+  color: ColorKey;
+  description: string;
+  image: string | StaticImageData;
+  imageAlt: string;
+  textColor: ColorKey;
+};
+
+export default function SliderShow({ slides }: { slides?: Slide[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const { page, pages, next, prev, scrollToPage } = useScrollCarousel({
     containerRef,
@@ -27,7 +44,7 @@ export default function SliderShow({ slides }: { slides: any[] }) {
   return (
     <MainWrapper>
       <SliderWrapper ref={containerRef}>
-        {slides.map((slide, index) => (
+        {slides?.map((slide, index) => (
           <Slide
             key={index}
             title={slide.title}
@@ -72,7 +89,7 @@ export default function SliderShow({ slides }: { slides: any[] }) {
       <DotsContainer>
         <DotsWrapper
           page={page}
-          pages={slides.length}
+          pages={slides?.length ?? 0}
           scrollToPage={scrollToPage}
         />
       </DotsContainer>

@@ -3,8 +3,21 @@ import { useRouter } from "next/navigation";
 import Card from "../../molecules/card/card";
 import SliderShow from "../../organisms/slideshow/sliderShow";
 import MainCategories from "@/components/templates/homePage/components/mainCategories";
+import type { Slide } from "@/components/organisms/slideshow/sliderShow";
+import type { ColorOption } from "@/components/molecules/card/card.types";
 
-const HomePage = ({ dataSource }: any) => {
+type HomePageProduct = {
+  id: string | number;
+  name: string;
+};
+
+type HomePageDataSource = {
+  productOptions?: { options: ColorOption[] };
+  products?: HomePageProduct[];
+  slides?: Slide[];
+};
+
+const HomePage = ({ dataSource }: { dataSource?: HomePageDataSource }) => {
   const router = useRouter();
   const { productOptions, products, slides } = dataSource || {};
   return (
@@ -21,7 +34,7 @@ const HomePage = ({ dataSource }: any) => {
         wideDesktopBasis="10.8%"
         extraWideDesktopBasis="16.3%"
       >
-        {products.map((product: any) => (
+        {products?.map((product) => (
           <Card
             key={product.id}
             variant="product"
@@ -47,7 +60,7 @@ const HomePage = ({ dataSource }: any) => {
         wideDesktopBasis="10.8%"
         extraWideDesktopBasis="16.3%"
       >
-        {products.map((product: any) => (
+        {products?.map((product) => (
           <Card
             key={product.id}
             variant="product"

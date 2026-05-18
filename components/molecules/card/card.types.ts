@@ -1,5 +1,15 @@
 export type CardVariant = "product" | "category" | "banner";
 
+export type ProductOptionItem = {
+  id: string;
+  img?: string;
+  color: string;
+};
+
+export type ProductOptions = {
+  options: ProductOptionItem[];
+};
+
 export interface CardProps {
   variant: CardVariant;
   image?: string;
@@ -12,7 +22,7 @@ export interface CardProps {
   onButtonClick?: () => void;
   onSelectFavorite?: (isFavorite: boolean) => void;
   onClick?: () => void;
-  productOptions?: any;
+  productOptions?: ProductOptions;
 }
 export interface WrapperProps {
   $variant: CardVariant;
@@ -26,7 +36,7 @@ export interface VariantProps {
 export type ColorOption = {
   id: string;
   color: string;
-  img: string;
+  img?: string;
 };
 
 export interface ColorSwatchesProps {

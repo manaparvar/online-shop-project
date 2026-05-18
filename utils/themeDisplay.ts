@@ -2,6 +2,15 @@
  * Utils - Display
  */
 
+type ThemeDisplayProps = {
+  dBlock?: boolean;
+  dFlex?: boolean;
+  dInline?: boolean;
+  dInlineBlock?: boolean;
+  dInlineFlex?: boolean;
+  dNone?: boolean;
+};
+
 const themeDisplay = ({
   dBlock,
   dFlex,
@@ -9,8 +18,8 @@ const themeDisplay = ({
   dInlineBlock,
   dInlineFlex,
   dNone,
-}: any): string => {
-  let display: any = null;
+}: ThemeDisplayProps): string => {
+  let display: string | null = null;
 
   if (dBlock) {
     display = "block";

@@ -16,15 +16,15 @@ type InputProps = {
   defaultValue?: string;
   disabled?: boolean;
   max?: number;
-  mentions?: any;
+  mentions?: string[];
   min?: number;
   name?: string;
   placeholder?: string;
   readOnly?: boolean;
   regExp?: string;
   type: "email" | "number" | "password" | "search" | "text" | "hidden" | "file";
-  validate?: any;
-  value?: any;
+  validate?: (value: string) => boolean | string;
+  value?: string | number;
   variant?: keyof typeof textVariants;
 };
 

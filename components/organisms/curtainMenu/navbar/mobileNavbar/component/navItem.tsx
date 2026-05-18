@@ -9,15 +9,19 @@ import {
 } from "./navItem.style";
 import { useDevice } from "@/components/hooks/useDevice";
 import { useState } from "react";
+import type { NavItem as NavItemType } from "./navItemTypes";
 
 type props = {
-  item: any;
+  item: NavItemType;
 };
 
 export default function NavItem({ item }: props) {
   const device = useDevice();
   const [isActive, setIsActive] = useState<string | null>(null);
-
+  const handleDropdownClick = () => {
+    if (isActive === item.label) setIsActive(null);
+    else setIsActive(item.label);
+  };
   return (
     <ItemWrapper
       onMouseLeave={() => {
@@ -36,11 +40,7 @@ export default function NavItem({ item }: props) {
         </StyledNavLink>
       ) : (
         <DropdownButton
-          onClick={() => {
-            isActive === item.label
-              ? setIsActive(null)
-              : setIsActive(item.label);
-          }}
+          onClick={handleDropdownClick}
           onMouseEnter={() => {
             if (device === "lg" || device === "xl") setIsActive(item.label);
           }}

@@ -7,7 +7,7 @@ const themeBackground = ({
   $outline,
   theme,
 }: ButtonColorTypes): string => {
-  let color: any;
+  let color = "transparent";
 
   if ($outline) {
     color = "transparent";

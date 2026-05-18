@@ -3,17 +3,26 @@
  */
 
 // UI
+import { MouseEvent } from "react";
 import styled from "styled-components";
 import Button from "../../atoms/button/button";
+import type { IconName } from "../../atoms/icon/component/iconData";
+
+type ButtonGroupItem = {
+  "aria-label"?: string;
+  disabled?: boolean;
+  startIcon?: IconName;
+};
+
 type ButtonsType = {
-  buttons: any;
-  color: any;
-  hasGap: any;
-  onClick: any;
-  size: any;
-  textColor: any;
+  buttons: ButtonGroupItem[];
+  color: string;
+  hasGap: boolean;
+  onClick: (e: MouseEvent, index: number) => void;
+  size: string;
+  textColor: string;
   iconOnly: boolean;
-  responsive: any;
+  responsive: Record<string, string>;
 };
 const Buttons = ({
   buttons = [],
@@ -30,8 +39,8 @@ const Buttons = ({
   }
 
   return (
-    <StyledButtonGroup hasGap={hasGap}>
-      {buttons.map((item: any, index: number) => {
+    <StyledButtonGroup $hasGap={hasGap}>
+      {buttons.map((item, index) => {
         return (
           <Button
             key={index}
@@ -39,7 +48,7 @@ const Buttons = ({
             responsive={responsive}
             color={color}
             iconOnly={iconOnly}
-            onClick={(e: any) => onClick(e, index)}
+            onClick={(e: MouseEvent) => onClick(e, index)}
             size={size}
             textColor={textColor}
           />
@@ -49,9 +58,9 @@ const Buttons = ({
   );
 };
 
-const StyledButtonGroup = styled.div<{ hasGap: boolean }>`
+const StyledButtonGroup = styled.div<{ $hasGap: boolean }>`
   display: inline-flex;
-  gap: ${({ hasGap }: any) => hasGap && "10px"};
+  gap: ${({ $hasGap }) => ($hasGap ? "10px" : "0")};
 `;
 
 export default Buttons;

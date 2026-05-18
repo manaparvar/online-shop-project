@@ -27,7 +27,7 @@ export const CardWrapper = styled.div<WrapperProps>`
       }
       @media (min-width: ${theme.breakpoints.lg}) {
         width: 216px;
-        height: 354px;
+        height: 364px;
       }
     `}
 

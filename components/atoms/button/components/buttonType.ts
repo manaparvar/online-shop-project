@@ -4,6 +4,7 @@
 
 // Utils
 
+import { CSSProperties, MouseEvent, ReactNode } from "react";
 import { IconName } from "../../icon/component/iconData";
 import { IconProps } from "../../icon/icon.type";
 import TransientProps from "@/types/transientProps.type";
@@ -16,27 +17,27 @@ type IconPropsType = Omit<IconProps, "icon">;
 export interface ButtonType {
   block?: boolean;
   center?: boolean;
-  children?: any;
+  children?: ReactNode;
   className?: string;
   color?: string;
   dashed?: boolean;
   disabled?: boolean;
   endIcon?: IconName;
   endIconProps?: IconPropsType;
-  form?: string | any;
+  form?: string;
   iconOnly?: boolean;
   isActive?: boolean;
   noPadding?: boolean;
   noHover?: boolean;
-  onClick?: any;
+  onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
   outline?: boolean;
   rounded?: boolean;
-  responsive?: any;
+  responsive?: Record<string, string>;
   shadow?: boolean;
   startIcon?: IconName;
   startIconProps?: IconPropsType;
-  size?: any;
-  style?: any;
+  size?: string;
+  style?: CSSProperties;
   textColor?: string;
   type?: BUTTON_TYPE_VALUES;
   paddingOverride?: string;

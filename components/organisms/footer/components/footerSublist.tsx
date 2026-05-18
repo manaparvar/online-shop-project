@@ -1,8 +1,19 @@
 import Text from "../../../atoms/text/text";
 import Sublinks from "./footerSublinks";
 
+export type FooterSublink = {
+  label: string;
+  to: string;
+};
+
+export type FooterColumnItem = {
+  label: string;
+  titel?: string;
+  items?: FooterSublink[];
+};
+
 type props = {
-  item: any;
+  item: FooterColumnItem;
 };
 
 export default function SubList({ item }: props) {
@@ -11,7 +22,7 @@ export default function SubList({ item }: props) {
       <Text color="primary" variant="button">
         {item.label}
       </Text>
-      <Sublinks items={item.items} />
+      {item.items && <Sublinks items={item.items} />}
     </li>
   );
 }
