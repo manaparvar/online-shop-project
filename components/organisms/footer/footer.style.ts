@@ -3,7 +3,7 @@ import { theme } from "@/styles/theme";
 
 export const FooterWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.footerBackG};
-  gap: ${({ theme }) => theme.sizes.lg};
+  padding: ${({ theme }) => theme.SPACING(8, 0)};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     flex-direction: column;
@@ -18,7 +18,7 @@ export const FooterFeatures = styled.nav`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  gap: ${({ theme }) => theme.sizes.lg};
+  padding: ${({ theme }) => theme.SPACING(8, 2)};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     flex-direction: row;

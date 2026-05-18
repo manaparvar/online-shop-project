@@ -69,9 +69,17 @@ const productOptions = {
   ],
   selectedId: "2",
 };
-
+const categoryOptions = {
+  options: [
+    { id: "1", title: "Men", img: "/images/men.png" },
+    { id: "2", title: "Women", img: "/images/women.png" },
+    { id: "3", title: "Kids", img: "/images/kids.png" },
+  ],
+};
 export default function Home() {
   return (
-    <HomePage dataSource={{ products, productOptions, slides }}></HomePage>
+    <HomePage
+      dataSource={{ products, productOptions, slides, categoryOptions }}
+    ></HomePage>
   );
 }

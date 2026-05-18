@@ -26,7 +26,7 @@ const ProductCardController = ({
   const responsive = {
     sm: "md",
     md: "lg",
-    lg: "xl",
+    lg: "md",
   } as const;
 
   const buttons = [
@@ -52,12 +52,12 @@ const ProductCardController = ({
         <Buttons
           responsive={responsive}
           buttons={buttons}
-          color="black"
+          color="primary"
+          textColor="background"
           hasGap
           size="sm"
           iconOnly={true}
           onClick={handleController}
-          textColor="white"
         />
       )}
     </CardControllerWrapper>
