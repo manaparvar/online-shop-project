@@ -9,6 +9,7 @@ import { IconName } from "../../icon/component/iconData";
 import { IconProps } from "../../icon/icon.type";
 import TransientProps from "@/types/transientProps.type";
 import { ThemeType } from "../../../../styles/theme";
+import ColorKey from "@/types/colorKey.type";
 
 export type BUTTON_TYPE_VALUES = "button" | "submit" | "reset";
 
@@ -19,7 +20,7 @@ export interface ButtonType {
   center?: boolean;
   children?: ReactNode;
   className?: string;
-  color?: string;
+  color?: ColorKey | string;
   dashed?: boolean;
   disabled?: boolean;
   endIcon?: IconName;
@@ -38,7 +39,7 @@ export interface ButtonType {
   startIconProps?: IconPropsType;
   size?: string;
   style?: CSSProperties;
-  textColor?: string;
+  textColor?: ColorKey | string;
   type?: BUTTON_TYPE_VALUES;
   paddingOverride?: string;
 }

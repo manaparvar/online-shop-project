@@ -1,8 +1,8 @@
 import { IconName } from "./component/iconData";
 import TransientProps from "@/types/transientProps.type";
-import { theme } from "@/styles/theme";
+import ColorKey from "@/types/colorKey.type";
 export type IconProps = {
-  color?: keyof typeof theme.colors;
+  color?: ColorKey;
   icon: IconName;
   isFilled?: boolean;
   label?: string;
@@ -11,4 +11,8 @@ export type IconProps = {
   className?: string;
 };
 
-export type StyledIconProps = TransientProps<Omit<IconProps, "icon" | "label">>;
+export type StyledIconProps = TransientProps<
+  Omit<IconProps, "icon" | "label" | "color">
+> & {
+  $color?: string;
+};

@@ -4,22 +4,19 @@
 
 // Style
 import styled, { css } from "styled-components";
-
-// Style
 import { theme } from "@/styles/theme";
 
 // Types
 import TransientProps from "@/types/transientProps.type";
 import type { ReactNode } from "react";
-
-type ColorKey = keyof typeof theme.colors;
+import ColorKey from "@/types/colorKey.type";
 type Tags = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
 export interface HeadingProps {
   align?: string;
   children?: ReactNode;
   className?: string;
-  textColor?: ColorKey;
+  textColor?: ColorKey | string;
   noMargin?: boolean;
   noWrap?: boolean;
   textDecoration?: string;

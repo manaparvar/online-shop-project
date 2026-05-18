@@ -15,17 +15,17 @@ import type ColorKey from "@/types/colorKey.type";
 
 export type Slide = {
   title: {
-    end: string;
-    endColor: ColorKey;
     start: string;
-    startColor: ColorKey;
+    end: string;
+    startColor: ColorKey | string;
+    endColor: ColorKey | string;
   };
-  buttonLabel: string;
-  color: ColorKey;
   description: string;
+  color: ColorKey | string;
+  buttonLabel: string;
+  textColor: ColorKey | string;
   image: string | StaticImageData;
   imageAlt: string;
-  textColor: ColorKey;
 };
 
 export default function SliderShow({ slides }: { slides?: Slide[] }) {

@@ -2,6 +2,7 @@
  * Utils - Background
  */
 import { ButtonColorTypes } from "./buttonType";
+
 const themeBackground = ({
   $color,
   $outline,

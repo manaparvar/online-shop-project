@@ -1,4 +1,5 @@
 "use client";
+import { useTheme } from "styled-components";
 import { iconsMap } from "./component/iconData";
 import { IconWrapper, StyledIcon, Label } from "./component/icon.style";
 import { IconProps } from "./icon.type";
@@ -15,13 +16,18 @@ export default function Icon({
 }: IconProps) {
   const SelectedIcon = iconsMap[icon];
   const device = useDevice();
+  const theme = useTheme();
+
+  const resolvedColor = color
+    ? theme.colors[color as keyof typeof theme.colors]
+    : undefined;
 
   return (
     <IconWrapper $color={color}>
       <StyledIcon
         href={href}
         className={className}
-        $color={color}
+        $color={resolvedColor}
         $isFilled={isFilled}
         as={SelectedIcon}
         strokeWidth={strokeWidth}
