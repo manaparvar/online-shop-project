@@ -6,7 +6,7 @@ import { StrapiCollectionResponse } from "@/types/strapi";
 import strapiFetch from "@/utils/strapiFetch";
 
 export async function loadAll(): Promise<Product[]> {
-  const response = await strapiFetch(
+  const response = await strapiFetch<StrapiCollectionResponse<Product>>(
     "/products?populate=*&filters[isActive][$eq]=true",
     { next: { revalidate: 60 } },
   );
@@ -21,7 +21,4 @@ export async function load(slug: string): Promise<Product | null> {
   );
 
   return response.data[0] ?? null;
-}
-function strapiFetch<T>(arg0: string, arg1: { next: { revalidate: number } }) {
-  throw new Error("Function not implemented.");
 }

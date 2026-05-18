@@ -41,6 +41,8 @@ export const iconsMap: Record<IconName, LucideIcon> = {
   dropDown: ChevronDown,
   chevronRight: ChevronRight,
   chevronLeft: ChevronLeft,
+  "chevron-right": ChevronRight,
+  "chevron-left": ChevronLeft,
   instagram: Instagram,
   facebook: Facebook,
   youtube: Youtube,

@@ -1,6 +1,54 @@
 "use client";
 import HomePage from "@/components/templates/homePage/homePage";
 
+import slider1 from "@/public/slider1.png";
+import slider2 from "@/public/slider2.png";
+import slider3 from "@/public/slider3.png";
+
+export const slides = [
+  {
+    title: {
+      start: "Spring",
+      end: "Collection",
+      startColor: "primary",
+      endColor: "background",
+    },
+    description: "Only smart casual outfits",
+    color: "primary",
+    buttonLabel: "Shop Now",
+    textColor: "background",
+    image: slider1,
+    imageAlt: "Men autumn autfits",
+  },
+  {
+    title: {
+      start: "Spring",
+      end: "Collection",
+      startColor: "primary",
+      endColor: "background",
+    },
+    description: "Only smart casual outfits",
+    color: "primary",
+    buttonLabel: "Shop Now",
+    textColor: "background",
+    image: slider2,
+    imageAlt: "Men autumn autfits",
+  },
+  {
+    title: {
+      start: "Spring",
+      end: "Collection",
+      startColor: "primary",
+      endColor: "background",
+    },
+    description: "Only smart casual outfits",
+    color: "primary",
+    buttonLabel: "Shop Now",
+    textColor: "background",
+    image: slider3,
+    imageAlt: "Men autumn autfits",
+  },
+];
 const products = [
   { id: 1, name: "Cotton Shoes", price: 120 },
   { id: 2, name: "Leather Shoes", price: 120 },
@@ -21,6 +69,9 @@ const productOptions = {
   ],
   selectedId: "2",
 };
+
 export default function Home() {
-  return <HomePage dataSouce={{ products, productOptions }}></HomePage>;
+  return (
+    <HomePage dataSource={{ products, productOptions, slides }}></HomePage>
+  );
 }

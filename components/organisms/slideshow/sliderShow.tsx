@@ -10,56 +10,8 @@ import {
   DotsContainer,
 } from "./sliderShow.style";
 import Slide from "../../molecules/slide";
-import slider1 from "@/public/slider1.png";
-import slider2 from "@/public/slider2.png";
-import slider3 from "@/public/slider3.png";
 
-export const Slides = [
-  {
-    title: {
-      start: "Spring",
-      end: "Collection",
-      startColor: "primary",
-      endColor: "background",
-    },
-    description: "Only smart casual outfits",
-    color: "primary",
-    buttonLabel: "Shop Now",
-    textColor: "background",
-    image: slider1,
-    imageAlt: "Men autumn autfits",
-  },
-  {
-    title: {
-      start: "Spring",
-      end: "Collection",
-      startColor: "primary",
-      endColor: "background",
-    },
-    description: "Only smart casual outfits",
-    color: "primary",
-    buttonLabel: "Shop Now",
-    textColor: "background",
-    image: slider2,
-    imageAlt: "Men autumn autfits",
-  },
-  {
-    title: {
-      start: "Spring",
-      end: "Collection",
-      startColor: "primary",
-      endColor: "background",
-    },
-    description: "Only smart casual outfits",
-    color: "primary",
-    buttonLabel: "Shop Now",
-    textColor: "background",
-    image: slider3,
-    imageAlt: "Men autumn autfits",
-  },
-];
-
-export default function SliderShow() {
+export default function SliderShow({ slides }: { slides: any[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const { page, pages, next, prev, scrollToPage } = useScrollCarousel({
     containerRef,
@@ -75,7 +27,7 @@ export default function SliderShow() {
   return (
     <MainWrapper>
       <SliderWrapper ref={containerRef}>
-        {Slides.map((slide, index) => (
+        {slides.map((slide, index) => (
           <Slide
             key={index}
             title={slide.title}
@@ -120,7 +72,7 @@ export default function SliderShow() {
       <DotsContainer>
         <DotsWrapper
           page={page}
-          pages={Slides.length}
+          pages={slides.length}
           scrollToPage={scrollToPage}
         />
       </DotsContainer>
