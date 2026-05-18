@@ -1,5 +1,4 @@
 "use client";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 import {
@@ -8,8 +7,6 @@ import {
   LoginIcon,
   SignupIcon,
 } from "./component/avatar.style";
-import Icon from "@/components/atoms/icon/icon";
-import { useDevice } from "@/components/hooks/useDevice";
 
 type User = {
   name: string;
@@ -17,7 +14,6 @@ type User = {
 };
 
 export default function Avatar({ user }: { user?: User }) {
-  const router = useRouter();
   if (!user) {
     return (
       <AuthButtons>
