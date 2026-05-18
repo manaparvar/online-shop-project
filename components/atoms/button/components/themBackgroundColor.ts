@@ -14,6 +14,7 @@ const themeBackground = ({
   } else if ($color) {
     color = theme.colors[$color as keyof typeof theme.colors];
   }
+
   return `background-color: ${color};`;
 };
 

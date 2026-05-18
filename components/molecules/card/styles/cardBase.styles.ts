@@ -9,7 +9,7 @@ export const CardWrapper = styled.div<WrapperProps>`
   flex-direction: column;
   overflow: hidden;
   border-radius: 8px;
-
+  margin: 8px 0;
   transition: all 0.5s ease;
 
   cursor: ${({ $clickable }) => ($clickable ? "pointer" : "default")};
@@ -27,7 +27,7 @@ export const CardWrapper = styled.div<WrapperProps>`
       }
       @media (min-width: ${theme.breakpoints.lg}) {
         width: 216px;
-        height: 344px;
+        height: 354px;
       }
     `}
 

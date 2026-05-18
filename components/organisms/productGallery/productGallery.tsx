@@ -56,10 +56,9 @@ const ProductGallary = () => {
     },
   ];
   const [currentPic, setPic] = useState(1);
-  const { page, pages, next, prev, scrollToPage, canGoPrev, canGoNext } =
-    useScrollCarousel({
-      containerRef: viewportRef,
-    });
+  const { pages, next, prev, canGoPrev, canGoNext } = useScrollCarousel({
+    containerRef: viewportRef,
+  });
 
   return (
     <ViewportWrapper>

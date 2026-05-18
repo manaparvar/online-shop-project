@@ -77,11 +77,11 @@ const ProductCard = ({
       <Content $variant={variant}>
         {(price || oldPrice) && (
           <PriceRow>
-            {price && <Heading tag="h2">{price}</Heading>}
+            {price && <Heading tag="h4">{price}</Heading>}
             {oldPrice && (
               <Heading
-                color="text.disabled"
-                tag="h3"
+                textColor="secondary"
+                tag="h5"
                 textDecoration="line-through"
               >
                 {oldPrice}
@@ -90,7 +90,7 @@ const ProductCard = ({
           </PriceRow>
         )}
         {title && (
-          <Heading tag="h3" noWrap>
+          <Heading tag="h5" noWrap>
             {title}
           </Heading>
         )}
@@ -102,8 +102,8 @@ const ProductCard = ({
               <Button
                 block
                 size="md"
-                color="black"
-                textColor="white"
+                color="primary"
+                textColor="background"
                 onClick={(e: any) => {
                   e.stopPropagation();
                   onButtonClick?.();
@@ -116,7 +116,7 @@ const ProductCard = ({
               <Button
                 size="md"
                 iconOnly
-                color="black"
+                color="primary"
                 onClick={(e: any) => {
                   e.stopPropagation();
                   setSelectFavorite(!selectFavorite);

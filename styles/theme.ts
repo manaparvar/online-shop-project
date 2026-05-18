@@ -14,8 +14,6 @@ export const theme = {
     danger: "rgba(239, 68, 68, 1)",
     favorite: "rgb(173, 0, 0)",
     background: "rgba(255, 255, 255, 1)",
-    yellow: "rgb(245, 158, 11)",
-    transparent: "transparent",
   },
   breakpoints: {
     sm: "376px",

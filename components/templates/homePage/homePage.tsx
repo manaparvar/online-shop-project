@@ -1,9 +1,9 @@
 import Carousel from "../../organisms//cardCarousel/cardCarousel";
 import { useRouter } from "next/navigation";
 import Card from "../../molecules/card/card";
-import SliderShow from "../../organisms/sliderShow";
+import SliderShow from "../../organisms/slideshow/sliderShow";
 import useScrollCarousel from "../../hooks/useScrollCarousel";
-import MainCategories from "@/components/organisms/mainCategories";
+import MainCategories from "@/components/templates/homePage/components/mainCategories";
 
 import { useRef } from "react";
 const products = [
@@ -39,7 +39,7 @@ const HomePage = ({ dataSource }: any) => {
   return (
     <main>
       <SliderShow />
-      <MainCategories />
+      <MainCategories title="Main Categories" />
 
       <Carousel
         title="Best Sellers"
@@ -52,6 +52,7 @@ const HomePage = ({ dataSource }: any) => {
       >
         {products.map((product) => (
           <Card
+            key={product.id}
             variant="product"
             image="/images/shoe.png"
             title={product.name}
@@ -77,6 +78,7 @@ const HomePage = ({ dataSource }: any) => {
       >
         {products.map((product) => (
           <Card
+            key={product.id}
             variant="product"
             image="/images/shoe.png"
             title={product.name}

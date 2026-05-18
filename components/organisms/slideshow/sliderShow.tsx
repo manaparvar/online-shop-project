@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import useScrollCarousel from "@/components/hooks/useScrollCarousel";
 import {
   SliderWrapper,
@@ -9,7 +9,7 @@ import {
   DotsWrapper,
   DotsContainer,
 } from "./sliderShow.style";
-import Slide from "./../molecules/slide";
+import Slide from "../../molecules/slide";
 import slider1 from "@/public/slider1.png";
 import slider2 from "@/public/slider2.png";
 import slider3 from "@/public/slider3.png";

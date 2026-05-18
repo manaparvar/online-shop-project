@@ -1,17 +1,8 @@
 "use client";
 import Card from "@/components/molecules/card/card";
 import styled from "styled-components";
-import Heading from "../atoms/heading/heading";
+import Heading from "../../../atoms/heading/heading";
 
-const productOptions = {
-  options: [
-    { id: "1", color: "#e2e2e2", img: "/images/greyShoe.png" },
-    { id: "2", color: "black", img: "/images/shoe.png" },
-    { id: "3", color: "#1ab189", img: "/images/women.png" },
-    { id: "4", color: "#ff05b4", img: "/images/men.png" },
-  ],
-  selectedId: "2",
-};
 const categoryOptions = {
   options: [
     { id: "1", title: "Men", img: "/images/men.png" },
@@ -19,16 +10,19 @@ const categoryOptions = {
     { id: "3", title: "Kids", img: "/images/kids.png" },
   ],
 };
-const MainCategories = () => {
+type MainCategoriesProps = {
+  title: string;
+};
+const MainCategories = ({ title }: MainCategoriesProps) => {
   return (
     <Wrapper>
       <HeadingWrapper>
         <StyledHeading tag="h2" textColor="primary">
-          Main Categories
+          {title}
         </StyledHeading>
       </HeadingWrapper>
       <CardsWrapper>
-        {categoryOptions.options.map((item, index) => (
+        {categoryOptions.options.map((item) => (
           <Card
             key={item.id}
             variant="category"
@@ -49,6 +43,8 @@ const CardsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
+
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     flex-direction: row;
     margin-top: 152px;
@@ -62,6 +58,7 @@ const HeadingWrapper = styled.div`
 `;
 const StyledHeading = styled(Heading)`
   justify-self: center;
+  padding: ${({ theme }) => theme.SPACING(2.5, 3)};
 `;
 
 export default MainCategories;
