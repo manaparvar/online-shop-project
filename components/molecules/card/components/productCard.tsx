@@ -81,7 +81,7 @@ const ProductCard = ({
             {price && <Heading tag="h4">{price}</Heading>}
             {oldPrice && (
               <Heading
-                textColor="secondary"
+                textColor="secondary-50"
                 tag="h5"
                 textDecoration="line-through"
               >
