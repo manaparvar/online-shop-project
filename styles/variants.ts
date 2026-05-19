@@ -1,28 +1,4 @@
 export const textVariants = {
-  h1: {
-    fontSize: {
-      mobile: "24px",
-      tablet: "28px",
-      desktop: "36px",
-    },
-    fontWeight: 600,
-  },
-  h2: {
-    fontSize: {
-      mobile: "22px",
-      tablet: "26px",
-      desktop: "34px",
-    },
-    fontWeight: 600,
-  },
-  h3: {
-    fontSize: {
-      mobile: "16px",
-      tablet: "19px",
-      desktop: "20px",
-    },
-    fontWeight: 500,
-  },
   body: {
     fontSize: {
       mobile: "14px",
@@ -39,6 +15,14 @@ export const textVariants = {
     },
     fontWeight: 400,
   },
+  small: {
+    fontSize: {
+      mobile: "8px",
+      tablet: "12px",
+      desktop: "14px",
+    },
+    fontWeight: 400,
+  },
   button: {
     fontSize: {
       mobile: "12px",
@@ -46,5 +30,13 @@ export const textVariants = {
       desktop: "18px",
     },
     fontWeight: 600,
+  },
+  linkText: {
+    fontSize: {
+      mobile: "9px",
+      tablet: "11px",
+      desktop: "20px",
+    },
+    fontWeight: 500,
   },
 } as const;

@@ -2,12 +2,12 @@ import Carousel from "../../organisms//cardCarousel/cardCarousel";
 import { useRouter } from "next/navigation";
 import Card from "../../molecules/card/card";
 import SliderShow from "../../organisms/slideshow/sliderShow";
-import MainCategories from "@/components/templates/homePage/components/mainCategories";
 import type { Slide } from "@/components/organisms/slideshow/sliderShow";
 import type { ColorOption } from "@/components/molecules/card/card.types";
 import SectionBlock from "@/components/organisms/sectionBlock/sectionBlock";
 import Row from "@/components/atoms/grid/row";
 import Column from "@/components/atoms/grid/column";
+import BenefitsStory from "@/components/organisms/benefitsStory/benefitsStory";
 
 type HomePageProduct = {
   id: string | number;
@@ -24,7 +24,28 @@ type HomePageDataSource = {
   slides?: Slide[];
   categoryOptions: { options: HomePageProductOption[] };
 };
-
+const benefitStories = [
+  {
+    id: 1,
+    title: "Free Shipping",
+    image: "/images/benefitStories/delivery-truck.png",
+  },
+  {
+    id: 2,
+    title: "Secure Payment",
+    image: "/images/benefitStories/credit-card.png",
+  },
+  {
+    id: 3,
+    title: "Best Quality",
+    image: "/images/benefitStories/best-seller.png",
+  },
+  {
+    id: 4,
+    title: "Free Return",
+    image: "/images/benefitStories/return.png",
+  },
+];
 const HomePage = ({ dataSource }: { dataSource?: HomePageDataSource }) => {
   const router = useRouter();
   const { productOptions, products, slides, categoryOptions } =
@@ -32,6 +53,7 @@ const HomePage = ({ dataSource }: { dataSource?: HomePageDataSource }) => {
   return (
     <main>
       <SliderShow slides={slides} />
+      <BenefitsStory benefitStories={benefitStories} />
       <SectionBlock title="Main Categories">
         <Row>
           {(categoryOptions || { options: [] }).options.map(

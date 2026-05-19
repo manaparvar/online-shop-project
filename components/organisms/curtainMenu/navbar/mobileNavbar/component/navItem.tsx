@@ -31,8 +31,8 @@ export default function NavItem({ item }: props) {
       {item.to ? (
         <StyledNavLink href={item.to}>
           <TagText
-            variant="h3"
-            color="primary"
+            tag="h4"
+            textColor="primary"
             $isAttention={item.label === "Summer Sale"}
           >
             {item.label}
@@ -46,8 +46,8 @@ export default function NavItem({ item }: props) {
           }}
         >
           <TagText
-            variant="h3"
-            color="primary"
+            tag="h4"
+            textColor="primary"
             $isAttention={item.label === "Summer Sale"}
           >
             {item.label}

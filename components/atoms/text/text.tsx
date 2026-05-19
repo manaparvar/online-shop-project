@@ -42,23 +42,29 @@ const Text = ({
 const StyledText = styled.p<TextStyledProps>`
   ${({ $variant = "body", theme, $nowrap }) => {
     const styles = textVariants[$variant];
+    console.log("styles :>> ", styles);
 
-    return css`
-      font-size: ${styles.fontSize.mobile};
-      font-weight: ${styles.fontWeight};
-      white-space: ${$nowrap ? "nowrap" : "normal"};
+    return (
+      styles &&
+      css`
+        font-size: ${styles.fontSize.mobile};
+        font-weight: ${styles.fontWeight};
+        white-space: ${$nowrap ? "nowrap" : "normal"};
 
-      @media (min-width: ${theme.breakpoints.sm}) {
-        font-size: ${styles.fontSize.tablet};
-        font-weight: ${styles.fontWeight};
-      }
-      @media (min-width: ${theme.breakpoints.lg}) {
-        font-size: ${styles.fontSize.desktop};
-        font-weight: ${styles.fontWeight};
-      }
-    `;
+        @media (min-width: ${theme.breakpoints.sm}) {
+          font-size: ${styles.fontSize.tablet};
+          font-weight: ${styles.fontWeight};
+        }
+        @media (min-width: ${theme.breakpoints.lg}) {
+          font-size: ${styles.fontSize.desktop};
+          font-weight: ${styles.fontWeight};
+        }
+      `
+    );
   }}
   color: ${({ $color, theme }) =>
-    $color ? theme.colors[$color as keyof typeof theme.colors] : theme.colors.primary};
+    $color
+      ? theme.colors[$color as keyof typeof theme.colors]
+      : theme.colors.primary};
 `;
 export default Text;

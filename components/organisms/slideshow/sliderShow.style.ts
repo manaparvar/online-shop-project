@@ -5,7 +5,11 @@ import Dots from "../cardCarousel/components/dots";
 export const MainWrapper = styled.div`
   position: relative;
   margin-top: ${({ theme }) => theme.sizes.sm};
-  border-radius: ${({ theme }) => theme.sizes.lg};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    border-radius: ${({ theme }) => theme.sizes.lg}
+      ${({ theme }) => theme.sizes.lg} 0 0;
+  }
   overflow: hidden;
 `;
 

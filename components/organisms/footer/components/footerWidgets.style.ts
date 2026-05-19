@@ -7,7 +7,10 @@ export const WidgetsContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   flex-grow: 1;
+  margin-top: ${({ theme }) => theme.sizes.md};
+
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    margin-top: unset;
     flex-direction: column;
     display: grid;
     column-gap: ${({ theme }) => theme.sizes.md};
@@ -42,6 +45,7 @@ export const StyledInput = styled(Input)`
   height: ${({ theme }) => theme.sizes.sm};
   border-radius: 3px 0 0 3px;
   background-color: ${({ theme }) => theme.colors.background};
+
   &::placeholder {
     text-align: center;
     font-size: ${textVariants.caption.fontSize.mobile};

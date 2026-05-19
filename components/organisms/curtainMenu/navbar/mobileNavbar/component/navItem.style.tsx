@@ -1,5 +1,5 @@
-import styled, { css } from "styled-components";
-import Text from "@/components/atoms/text/text";
+import styled from "styled-components";
+import Heading from "@/components/atoms/heading/heading";
 import NavLink from "@/components/atoms/link/link";
 
 export const ItemWrapper = styled.li`
@@ -20,7 +20,7 @@ export const SubMenu = styled.ul`
     position: absolute;
   }
 `;
-export const TagText = styled(Text)<{ $isAttention: boolean }>`
+export const TagText = styled(Heading)<{ $isAttention: boolean }>`
   color: ${({ $isAttention, theme }) =>
     $isAttention ? theme.colors.accent : theme.colors.primary};
 `;
