@@ -42,7 +42,6 @@ const Text = ({
 const StyledText = styled.p<TextStyledProps>`
   ${({ $variant = "body", theme, $nowrap }) => {
     const styles = textVariants[$variant];
-    console.log("styles :>> ", styles);
 
     return (
       styles &&
