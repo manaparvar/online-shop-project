@@ -10,7 +10,7 @@ const ColorSwatches = ({
   onSelect,
 }: ColorSwatchesProps) => {
   const device = useDevice();
-  const isDesktop = device === "desktop";
+  const isDesktop = device === "lg" || device === "xl";
 
   return (
     <SwatchesWrapper>

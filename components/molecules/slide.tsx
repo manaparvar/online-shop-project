@@ -20,13 +20,13 @@ type SliderProps = {
   title: {
     start: string;
     end: string;
-    startColor: ColorKey;
-    endColor: ColorKey;
+    startColor: ColorKey | string;
+    endColor: ColorKey | string;
   };
   description: string;
-  color: ColorKey;
+  color: ColorKey | string;
   buttonLabel: string;
-  textColor: ColorKey;
+  textColor: ColorKey | string;
   image: string | StaticImageData;
   imageAlt: string;
   isLeft?: boolean;

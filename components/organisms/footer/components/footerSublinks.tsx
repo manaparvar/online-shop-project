@@ -1,8 +1,9 @@
 import NavLink from "../../../atoms/link/link";
 import { LinksWrapper } from "./footerSublinks.style";
+import type { FooterSublink } from "./footerSublist";
 
 type props = {
-  items: any[];
+  items: FooterSublink[];
 };
 
 export default function Sublinks({ items }: props) {

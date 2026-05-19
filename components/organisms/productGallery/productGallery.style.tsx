@@ -4,6 +4,7 @@ const ViewportWrapper = styled.div`
   height: 442px;
   width: 320px;
   overflow: hidden;
+
   @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
     width: 432px;
     height: 410px;

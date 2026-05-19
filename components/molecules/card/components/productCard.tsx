@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, MouseEvent } from "react";
 import { Content, ImageWrapper, PriceRow } from "../styles";
 import ColorSwatches from "./colorSwatches";
-import { CardProps } from "../card.types";
+import { CardProps, ProductOptionItem } from "../card.types";
 import Badge from "@/components/atoms/badge/badge";
 import Button from "@/components/atoms/button/button";
 import Image from "@/components/atoms/image/image";
@@ -26,9 +26,10 @@ const ProductCard = ({
     productOptions?.options?.[0]?.id ?? "",
   );
   const [selectFavorite, setSelectFavorite] = useState(false);
-  const nextSrc =
-    productOptions?.options?.find((item: any) => item.id === selectedOption)
-      ?.img || image;
+  const nextSrc: string | undefined =
+    productOptions?.options?.find(
+      (item: ProductOptionItem) => item.id === selectedOption,
+    )?.img || image;
 
   const [displayedSrc, setDisplayedSrc] = useState(nextSrc);
   const [visible, setVisible] = useState(true);
@@ -36,7 +37,7 @@ const ProductCard = ({
   useEffect(() => {
     if (!nextSrc || nextSrc === displayedSrc) return;
 
-    setVisible(false);
+    // setVisible(false);
 
     const timeout = setTimeout(() => {
       setDisplayedSrc(nextSrc);
@@ -61,7 +62,7 @@ const ProductCard = ({
       {image && (
         <ImageWrapper $variant={variant}>
           <Image
-            src={displayedSrc}
+            src={displayedSrc ?? ""}
             alt={title ?? "product image"}
             fill
             sizes="(max-width: 768px) 100vw, 280px"
@@ -77,11 +78,11 @@ const ProductCard = ({
       <Content $variant={variant}>
         {(price || oldPrice) && (
           <PriceRow>
-            {price && <Heading tag="h2">{price}</Heading>}
+            {price && <Heading tag="h4">{price}</Heading>}
             {oldPrice && (
               <Heading
-                color="text.disabled"
-                tag="h3"
+                textColor="secondary-50"
+                tag="h5"
                 textDecoration="line-through"
               >
                 {oldPrice}
@@ -90,7 +91,7 @@ const ProductCard = ({
           </PriceRow>
         )}
         {title && (
-          <Heading tag="h3" noWrap>
+          <Heading tag="h5" noWrap>
             {title}
           </Heading>
         )}
@@ -102,9 +103,9 @@ const ProductCard = ({
               <Button
                 block
                 size="md"
-                color="black"
-                textColor="white"
-                onClick={(e: any) => {
+                color="primary"
+                textColor="background"
+                onClick={(e: MouseEvent) => {
                   e.stopPropagation();
                   onButtonClick?.();
                 }}
@@ -116,8 +117,8 @@ const ProductCard = ({
               <Button
                 size="md"
                 iconOnly
-                color="black"
-                onClick={(e: any) => {
+                color="primary"
+                onClick={(e: MouseEvent) => {
                   e.stopPropagation();
                   setSelectFavorite(!selectFavorite);
                   onSelectFavorite?.(selectFavorite);

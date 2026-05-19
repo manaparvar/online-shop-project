@@ -1,7 +1,6 @@
 "use client";
 
 import styled, { css } from "styled-components";
-import { theme } from "../../../styles/theme";
 import { textVariants } from "../../../styles/variants";
 import TransientProps from "@/types/transientProps.type";
 import { ReactNode } from "react";
@@ -13,7 +12,7 @@ type TextProps = {
   children: ReactNode;
   className?: string;
   variant?: TextVariant;
-  color?: ColorKey;
+  color?: ColorKey | string;
   nowrap?: boolean;
   as?: React.ElementType;
 };
@@ -59,6 +58,7 @@ const StyledText = styled.p<TextStyledProps>`
       }
     `;
   }}
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ $color, theme }) =>
+    $color ? theme.colors[$color as keyof typeof theme.colors] : theme.colors.primary};
 `;
 export default Text;

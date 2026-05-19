@@ -1,17 +1,12 @@
 import styled, { css } from "styled-components";
-import Button from "../atoms/button/button";
-import Dots from "./cardCarousel/components/dots";
+import Button from "../../atoms/button/button";
+import Dots from "../cardCarousel/components/dots";
 
 export const MainWrapper = styled.div`
   position: relative;
   margin-top: ${({ theme }) => theme.sizes.sm};
-  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
-    margin-bottom: 64px;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-    margin-bottom: 160px;
-  }
+  border-radius: ${({ theme }) => theme.sizes.lg};
+  overflow: hidden;
 `;
 
 export const SliderWrapper = styled.div`
@@ -21,27 +16,25 @@ export const SliderWrapper = styled.div`
   -ms-overflow-style: none;
   scrollbar-width: none;
 
-  ${({ theme }) => css`
-    position: relative;
-    width: 100%;
-    height: 400px;
-    background-color: ${({ theme }) => theme.colors.yellow};
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-color: ${({ theme }) => theme.colors.warning};
 
-    @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
-      height: 440px;
-    }
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    height: 440px;
+  }
 
-    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-      height: 560px;
-    }
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    height: 560px;
+  }
 
-    @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-      height: 600px;
-    }
-    @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
-      height: 696px;
-    }
-  `}
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    height: 600px;
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
+    height: 696px;
+  }
 `;
 export const Controller = styled.div`
   position: absolute;

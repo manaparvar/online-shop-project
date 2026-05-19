@@ -1,4 +1,4 @@
-import { theme } from "@/styles/theme";
+import type { BaseColorName, ColorShade } from "@/styles/theme";
 
-type ColorKey = keyof typeof theme.colors;
+type ColorKey = BaseColorName | `${BaseColorName & string}-${ColorShade}`;
 export default ColorKey;

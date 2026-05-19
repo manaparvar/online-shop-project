@@ -6,7 +6,7 @@
 
 interface shadeLinearRgbProps {
   p: number;
-  color: any;
+  color: string;
 }
 
 const shadeLinearRgb = ({ p, color = "" }: shadeLinearRgbProps): string => {

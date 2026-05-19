@@ -1,10 +1,18 @@
-import Heading from "@/components/atoms/heading/heading";
 import SeeAll from "@/components/atoms/link/link";
-import Button from "@/components/atoms/button/button";
-import Row from "@/components/atoms/grid/row";
-import Column from "@/components/atoms/grid/column";
 import { CardControllerWrapper } from "./cardCarousel.styles";
 import Buttons from "@/components/molecules/buttonGroup/buttonGroup";
+
+type CardCarouselControllerProps = {
+  canGoNext: boolean;
+  canGoPrev: boolean;
+  next: () => void;
+  pages: number;
+  prev: () => void;
+  seeAllHref?: string;
+  showArrows?: boolean;
+  title?: string;
+  justify?: string;
+};
 
 const ProductCardController = ({
   canGoNext,
@@ -14,26 +22,26 @@ const ProductCardController = ({
   prev,
   seeAllHref,
   showArrows,
-}: any) => {
+}: CardCarouselControllerProps) => {
   const responsive = {
     sm: "md",
     md: "lg",
-    lg: "xl",
-  };
+    lg: "md",
+  } as const;
 
   const buttons = [
     {
-      "aria-label": "Previous",
+      "aria-label": "Previous" as const,
       disabled: !canGoPrev,
-      startIcon: "chevronLeft",
+      startIcon: "chevronLeft" as const,
     },
     {
-      "aria-label": "Next",
+      "aria-label": "Next" as const,
       disabled: !canGoNext,
-      startIcon: "chevronRight",
+      startIcon: "chevronRight" as const,
     },
   ];
-  const handleController = (_: any, index: number) => {
+  const handleController = (_: unknown, index: number) => {
     return index === 0 ? prev() : next();
   };
   return (
@@ -44,12 +52,12 @@ const ProductCardController = ({
         <Buttons
           responsive={responsive}
           buttons={buttons}
-          color="black"
+          color="primary"
+          textColor="background"
           hasGap
           size="sm"
           iconOnly={true}
           onClick={handleController}
-          textColor="white"
         />
       )}
     </CardControllerWrapper>

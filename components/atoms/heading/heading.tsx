@@ -3,20 +3,20 @@
  */
 
 // Style
-import styled, { css, useTheme } from "styled-components";
+import styled, { css } from "styled-components";
 import { theme } from "@/styles/theme";
 
 // Types
 import TransientProps from "@/types/transientProps.type";
-
-type ColorKey = keyof typeof theme.colors;
+import type { ReactNode } from "react";
+import ColorKey from "@/types/colorKey.type";
 type Tags = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
 export interface HeadingProps {
   align?: string;
-  children?: any;
+  children?: ReactNode;
   className?: string;
-  textColor?: ColorKey;
+  textColor?: ColorKey | string;
   noMargin?: boolean;
   noWrap?: boolean;
   textDecoration?: string;
@@ -55,32 +55,36 @@ const Heading = ({
     </StyledHeading>
   );
 };
-const fontSizes = ({ screen, $tag }: any) => {
-  const theme: any = useTheme();
-  const fontSizes = theme.HEADING[$tag].fontSize;
+const fontSizes = ({
+  screen,
+  $tag,
+  HEADING,
+}: {
+  screen: string;
+  $tag: Tags;
+  HEADING: typeof theme.HEADING;
+}) => {
+  const headingStyle = HEADING[$tag as keyof typeof HEADING];
+  const fontSize = headingStyle.fontSize;
 
   switch (screen) {
     case "sm":
       return css`
-        font-size: ${fontSizes.mobile};
+        font-size: ${fontSize.mobile};
       `;
     case "md":
       return css`
-        font-size: ${fontSizes.tablet};
+        font-size: ${fontSize.tablet};
       `;
     case "lg":
       return css`
-        font-size: ${fontSizes.desktop};
+        font-size: ${fontSize.desktop};
       `;
     default:
       return css`
-        font-size: ${fontSizes.mobile};
+        font-size: ${fontSize.mobile};
       `;
   }
-};
-const colorMaker = ({ theme, color }: any) => {
-  const [c, shade] = color.split(".");
-  return shade ? theme.colors[c][shade] : theme.colors[c];
 };
 
 const StyledHeading = styled.span<HeadingStyleProps>`
@@ -92,15 +96,15 @@ const StyledHeading = styled.span<HeadingStyleProps>`
   text-align: ${({ $align }) => $align};
 
   ${({ $noMargin, $tag, theme: { HEADING }, $textDecoration = "none" }) => css`
-    ${fontSizes({ screen: "sm", $tag })}
+    ${fontSizes({ screen: "sm", $tag, HEADING })}
     @media (min-width: ${theme.breakpoints.sm}) {
-      ${fontSizes({ screen: "sm", $tag })}
+      ${fontSizes({ screen: "sm", $tag, HEADING })}
     }
     @media (min-width: ${theme.breakpoints.md}) {
-      ${fontSizes({ screen: "md", $tag })}
+      ${fontSizes({ screen: "md", $tag, HEADING })}
     }
     @media (min-width: ${theme.breakpoints.lg}) {
-      ${fontSizes({ screen: "lg", $tag })}
+      ${fontSizes({ screen: "lg", $tag, HEADING })}
     }
 
     line-height: ${HEADING[$tag as keyof typeof HEADING]?.lineHeight};

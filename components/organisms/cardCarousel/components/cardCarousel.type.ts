@@ -17,10 +17,6 @@ export type ArrowButtonProps = {
   $disabled?: boolean;
 };
 
-export type DotProps = {
-  $active?: boolean;
-};
-
 export type ItemProps = {
   $desktopBasis: string;
   $extraWideDesktopBasis: string;

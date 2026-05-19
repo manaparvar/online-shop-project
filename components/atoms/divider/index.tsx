@@ -8,7 +8,7 @@ type LineType = keyof typeof LineVariants.mobile;
 type LineProps = {
   width?: string;
   height?: string;
-  color?: ColorKey;
+  color?: ColorKey | string;
   dash?: boolean;
   lineType: LineType;
   className?: string;
@@ -17,7 +17,7 @@ type LineProps = {
 type StyledLineProps = {
   $width?: string;
   $height?: string;
-  $color?: ColorKey;
+  $color?: ColorKey | string;
   $dash?: boolean;
 };
 
@@ -46,5 +46,5 @@ export const Line = styled.div<StyledLineProps>`
   height: ${({ $height }) => $height};
 
   border-bottom: ${({ $dash, $color, theme }) =>
-    `1px ${$dash ? "dashed" : "solid"} ${$color ? theme.colors[$color] : "#000"}`};
+    `1px ${$dash ? "dashed" : "solid"} ${$color ? theme.colors[$color as keyof typeof theme.colors] : "#000"}`};
 `;

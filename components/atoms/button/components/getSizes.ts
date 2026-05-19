@@ -1,6 +1,20 @@
 import { css } from "styled-components";
 
-const getSizeStyles = ({ sizeKey, sizes, $iconOnly }: any) => {
+type ButtonSizeEntry = {
+  height: string;
+  fontSize: string;
+  padding: string;
+};
+
+const getSizeStyles = ({
+  sizeKey,
+  sizes,
+  $iconOnly,
+}: {
+  sizeKey: string;
+  sizes: Record<string, ButtonSizeEntry>;
+  $iconOnly?: boolean;
+}) => {
   const base = sizes[sizeKey];
   if (!base) return "";
 
@@ -21,8 +35,17 @@ const getSizeStyles = ({ sizeKey, sizes, $iconOnly }: any) => {
 
 const getSizes = () => {
   return css`
-    ${({ $size = "sm", $responsive = {}, $iconOnly, theme }: any) => {
+    ${(props) => {
+      const p = props as Record<string, unknown>;
+      const $size = (p.$size as string) || "sm";
+      const $responsive = (p.$responsive as Record<string, string>) || {};
+      const $iconOnly = p.$iconOnly as boolean | undefined;
+      const theme = p.theme as {
+        BUTTON: { sizes: Record<string, ButtonSizeEntry> };
+        breakpoints: Record<string, string>;
+      };
       const sizes = theme.BUTTON.sizes;
+
       return css`
         ${getSizeStyles({ sizeKey: $size, sizes, $iconOnly })}
 
@@ -51,13 +74,6 @@ const getSizes = () => {
         css`
           @media (min-width: ${theme.breakpoints.xl}) {
             ${getSizeStyles({ sizeKey: $responsive.xl, sizes, $iconOnly })}
-          }
-        `}
-
-        ${$responsive["2xl"] &&
-        css`
-          @media (min-width: ${theme.breakpoints["2xl"]}) {
-            ${getSizeStyles({ sizeKey: $responsive["2xl"], sizes, $iconOnly })}
           }
         `}
       `;
