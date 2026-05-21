@@ -19,7 +19,7 @@ export const CardWrapper = styled.div<WrapperProps>`
     css`
       width: 136px;
       min-height: 192px;
-      background: #f2f0ea;
+      background: ${({ theme }) => theme.colors["neutral"]};
       padding: 8px;
       @media (min-width: ${theme.breakpoints.sm}) {
         width: 200px;

@@ -1,39 +1,44 @@
 "use client";
 
-import { icons } from "../../atoms/icon/component/iconData";
-import Icon from "../../atoms/icon/icon";
-import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { SearchWrapper } from "./components/searchBar.style";
-import { SearchInput } from "./components/searchBar.style";
-import { SearchButton } from "./components/searchBar.style";
+import { useForm } from "react-hook-form";
+import {
+  SearchForm,
+  SearchInput,
+  SearchButton,
+} from "./components/searchBar.style";
 
-const filteredIcons = icons.filter((item) => item.icon === "search");
+type SearchFormData = {
+  search: string;
+};
 
 export default function SearchBar() {
-  const [getSearch, setGetSearch] = useState("");
   const router = useRouter();
+  const { register, handleSubmit, reset } = useForm<SearchFormData>();
 
-  const handleSearch = () => {
-    if (!getSearch.trim()) return;
-    router.push(`/search?q=${encodeURIComponent(getSearch)}`);
+  const onSubmit = (data: SearchFormData) => {
+    const query = data.search.trim();
+    if (!query) return;
+    router.push(`/search?q=${encodeURIComponent(query)}`);
+    reset();
   };
+
   return (
-    <SearchWrapper>
-      <SearchButton onClick={handleSearch}>
-        {filteredIcons.map((item) => (
-          <Icon icon={item.icon} key={item.label} />
-        ))}
-      </SearchButton>
+    <SearchForm onSubmit={handleSubmit(onSubmit)}>
+      <SearchButton
+        color="transparent"
+        iconOnly
+        noHover
+        rounded={false}
+        startIcon="search"
+        startIconProps={{ color: "secondary-400" }}
+        type="submit"
+      />
       <SearchInput
-        value={getSearch}
-        onChange={(e) => setGetSearch(e.target.value)}
-        onKeyDown={(e) => {
-          if (e.key === "Enter") handleSearch();
-        }}
         type="search"
         placeholder="Search..."
+        {...register("search")}
       />
-    </SearchWrapper>
+    </SearchForm>
   );
 }
