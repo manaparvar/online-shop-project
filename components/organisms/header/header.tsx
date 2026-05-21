@@ -20,7 +20,6 @@ import {
   StyledContainer,
   StyledDividerLine,
 } from "./components/header.style";
-import styled from "styled-components";
 
 type User = {
   name: string;

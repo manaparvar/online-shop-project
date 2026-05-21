@@ -8,6 +8,7 @@ const baseColors = {
   secondary: "rgb(17, 17, 17)",
   primary: "rgb(1, 1, 1)",
   info: "rgba(59, 130, 246, 1)",
+  neutral: "rgb(250, 248, 240)",
   footerBackG: "rgba(239, 243, 244, 1)",
   success: "rgba(16, 185, 129, 1)",
   warning: "rgb(245, 158, 11)",
@@ -15,6 +16,7 @@ const baseColors = {
   danger: "rgba(239, 68, 68, 1)",
   favorite: "rgb(173, 0, 0)",
   background: "rgba(255, 255, 255, 1)",
+  transparent: "transparent",
 } as const;
 
 export type BaseColorName = keyof typeof baseColors;
