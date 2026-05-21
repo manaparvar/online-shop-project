@@ -17,7 +17,8 @@ export const IconWrapper = styled.div<Pick<StyledIconProps, "$color">>`
       p: 0.4,
     })};
 
-  &:hover {
+  &:hover,
+  &:hover p {
     color: ${({ theme }) =>
       shadeLinearRgb({
         color: theme.colors.secondary,
@@ -49,13 +50,5 @@ export const Label = styled(Text)`
     display: block;
     margin-top: 4px;
     transition: all 0.5s ease;
-
-    &:hover {
-      color: ${({ theme }) =>
-        shadeLinearRgb({
-          color: theme.colors.secondary,
-          p: 0.7,
-        })};
-    }
   }
 `;

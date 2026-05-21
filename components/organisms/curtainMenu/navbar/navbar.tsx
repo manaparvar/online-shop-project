@@ -1,4 +1,3 @@
-import { menuData } from "./mobileNavbar/component/data";
 import { NavbarWrapper } from "./navbar.style";
 import NavList from "./mobileNavbar/component/navList";
 
