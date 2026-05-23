@@ -46,8 +46,21 @@ export default function DesktopHeader({ user }: { user?: User }) {
   const closeMenu = () => setIsOpen(false);
 
   const filteredIcons = icons.filter(
-    (item) => item.icon === "shoppingBag" || item.icon === "heart",
+    (item) =>
+      item.icon === "shoppingBag" ||
+      item.icon === "heart" ||
+      item.icon === "logIn" ||
+      item.icon === "userPlus",
   );
+  const handleClickIcon = (index: number, item: (typeof icons)[0]) => {
+    if (item.icon === "shoppingBag") {
+      // Handle shopping bag icon click
+      console.log("Shopping bag icon clicked");
+    } else if (item.icon === "heart") {
+      // Handle heart icon click
+      console.log("Heart icon clicked");
+    }
+  };
 
   return (
     <StyledContainer $scrolled={scrolled}>
@@ -62,11 +75,15 @@ export default function DesktopHeader({ user }: { user?: User }) {
             <SearchBar />
           </SearchBarWrapper>
           <UserActionsWrapper>
-            <IconWrapper>
-              {filteredIcons.map((item, index) => (
-                <Icon key={index} icon={item.icon} label={item.label} />
-              ))}
-            </IconWrapper>
+            {filteredIcons.map((item, index) => (
+              <IconWrapper
+                key={index}
+                onClick={() => handleClickIcon(index, item)}
+              >
+                <Icon icon={item.icon} label={item.label} />
+              </IconWrapper>
+            ))}
+
             <Avatar user={user} />
           </UserActionsWrapper>
         </HeaderUpperLine>

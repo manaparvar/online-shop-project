@@ -26,7 +26,7 @@ const HeadingWrapper = styled.div`
 `;
 
 const StyledSection = styled.section`
-  margin: ${({ theme }) => theme.SPACING(62, 12)};
+  margin: ${({ theme }) => theme.SPACING(32, 12)};
 `;
 
 const ComponentWrapper = styled.div``;

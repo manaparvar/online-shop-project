@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { theme } from "@/styles/theme";
 import HamburgerButton from "@/components/organisms/curtainMenu/navbar/mobileNavbar/hamburgerButton/hamburgerButton";
 import Container from "@/components/atoms/grid/container";
@@ -89,6 +89,12 @@ export const IconWrapper = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     gap: ${({ theme }) => theme.sizes.sm};
   }
+
+  ${({ onClick }) =>
+    onClick &&
+    css`
+      cursor: pointer;
+    `}
 `;
 
 export const HeaderDownerPart = styled.div`

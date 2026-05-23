@@ -1,12 +1,7 @@
 "use client";
 import Image from "next/image";
 
-import {
-  AvatarWrapper,
-  AuthButtons,
-  LoginIcon,
-  SignupIcon,
-} from "./component/avatar.style";
+import { AvatarWrapper } from "./component/avatar.style";
 
 type User = {
   name: string;
@@ -15,25 +10,7 @@ type User = {
 
 export default function Avatar({ user }: { user?: User }) {
   if (!user) {
-    return (
-      <AuthButtons>
-        <LoginIcon
-          href="/login"
-          color="secondary"
-          icon="logIn"
-          strokeWidth={1.5}
-          label="Login"
-        />
-
-        <SignupIcon
-          href="/signup"
-          color="secondary"
-          icon="userPlus"
-          strokeWidth={1.5}
-          label="signup"
-        />
-      </AuthButtons>
-    );
+    return null;
   }
   const fallback = user.name?.charAt(0).toUpperCase() || "?";
 

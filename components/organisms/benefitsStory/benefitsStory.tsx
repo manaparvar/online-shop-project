@@ -30,7 +30,7 @@ const StyledWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  height: 56px;
+  height: 152px;
   padding: ${({ theme }) => theme.SPACING(3)};
   width: 100%;
 
