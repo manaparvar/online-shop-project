@@ -5,6 +5,7 @@ import Card from "../../molecules/card/card";
 import SliderShow from "../../organisms/slideshow/sliderShow";
 import type { Slide } from "@/components/organisms/slideshow/sliderShow";
 import type { Product } from "@/types/product";
+import type { Brand } from "@/types/brand";
 import SectionBlock from "@/components/organisms/sectionBlock/sectionBlock";
 import Row from "@/components/atoms/grid/row";
 import Column from "@/components/atoms/grid/column";
@@ -17,6 +18,7 @@ type HomePageProductOption = {
 };
 type HomePageDataSource = {
   products?: Product[];
+  brands?: Brand[];
   slides?: Slide[];
   categoryOptions: { options: HomePageProductOption[] };
 };
@@ -44,7 +46,7 @@ const benefitStories = [
 ];
 const HomePage = ({ dataSource }: { dataSource?: HomePageDataSource }) => {
   const router = useRouter();
-  const { products, slides, categoryOptions } = dataSource || {};
+  const { products, brands, slides, categoryOptions } = dataSource || {};
   return (
     <main>
       <SliderShow slides={slides} />
@@ -150,12 +152,13 @@ const HomePage = ({ dataSource }: { dataSource?: HomePageDataSource }) => {
           wideDesktopBasis="10.8%"
           extraWideDesktopBasis="16.3%"
         >
-          {products?.map((product) => (
+          {brands?.map((brand) => (
             <Card
-              key={product.id}
+              key={brand.id}
               variant="banner"
-              image="/images/purse.png"
-              onClick={() => console.log("redirect To category")}
+              image={brand.logoUrl}
+              title={brand.name}
+              onClick={() => console.log("redirect To brand")}
             />
           ))}
         </Carousel>

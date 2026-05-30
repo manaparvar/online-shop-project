@@ -20,6 +20,7 @@ export type StrapiBrand = {
   documentId: string;
   name: string;
   description: string | null;
+  logo?: StrapiMedia | null;
 };
 
 export type StrapiSize = {

@@ -9,7 +9,7 @@ const brandCard = ({ variant, image, title }: BannerCardProps) => (
           $visible
           alt={title ?? "brand logo"}
           fill
-          objectFit="cover"
+          objectFit="contain"
           src={image}
         />
       </ImageWrapper>
