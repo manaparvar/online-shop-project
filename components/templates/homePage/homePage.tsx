@@ -6,21 +6,17 @@ import SliderShow from "../../organisms/slideshow/sliderShow";
 import type { Slide } from "@/components/organisms/slideshow/sliderShow";
 import type { Product } from "@/types/product";
 import type { Brand } from "@/types/brand";
+import type { Category } from "@/types/category";
 import SectionBlock from "@/components/organisms/sectionBlock/sectionBlock";
 import Row from "@/components/atoms/grid/row";
 import Column from "@/components/atoms/grid/column";
 import BenefitsStory from "@/components/organisms/benefitsStory/benefitsStory";
 
-type HomePageProductOption = {
-  id: string;
-  title: string;
-  img: string;
-};
 type HomePageDataSource = {
   products?: Product[];
   brands?: Brand[];
+  categories?: Category[];
   slides?: Slide[];
-  categoryOptions: { options: HomePageProductOption[] };
 };
 const benefitStories = [
   {
@@ -46,25 +42,24 @@ const benefitStories = [
 ];
 const HomePage = ({ dataSource }: { dataSource?: HomePageDataSource }) => {
   const router = useRouter();
-  const { products, brands, slides, categoryOptions } = dataSource || {};
+  const { products, brands, categories, slides } = dataSource || {};
+
   return (
     <main>
       <SliderShow slides={slides} />
       <BenefitsStory benefitStories={benefitStories} />
       <SectionBlock title="Main Categories">
         <Row>
-          {(categoryOptions || { options: [] }).options.map(
-            (item: HomePageProductOption) => (
-              <Column lg={4} key={item.id}>
-                <Card
-                  variant="category"
-                  image={item.img}
-                  title={item.title}
-                  onClick={() => console.log("redirect To category")}
-                />
-              </Column>
-            ),
-          )}
+          {categories?.map((category) => (
+            <Column lg={4} key={category.id}>
+              <Card
+                variant="category"
+                image={category.imageUrl}
+                title={category.name}
+                onClick={() => console.log("redirect To category")}
+              />
+            </Column>
+          ))}
         </Row>
       </SectionBlock>
 

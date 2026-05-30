@@ -15,6 +15,14 @@ export type StrapiMedia = {
   alternativeText: string | null;
 };
 
+export type StrapiCategory = {
+  id: number;
+  documentId: string;
+  name: string;
+  category: StrapiCategory | null;
+  image?: StrapiMedia | null;
+};
+
 export type StrapiBrand = {
   id: number;
   documentId: string;

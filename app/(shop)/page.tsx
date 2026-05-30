@@ -6,8 +6,10 @@ import slider2 from "@/public/slider2.png";
 import slider3 from "@/public/slider3.png";
 import { loadAll } from "@/server/actions/product/product.action";
 import { loadTopBrands } from "@/server/actions/brand/brand.action";
+import { loadMainCategories } from "@/server/actions/category/category.action";
 import type { Product } from "@/types/product";
 import type { Brand } from "@/types/brand";
+import type { Category } from "@/types/category";
 import { useEffect, useState } from "react";
 
 export const slides = [
@@ -55,24 +57,19 @@ export const slides = [
   },
 ];
 
-const categoryOptions = {
-  options: [
-    { id: "1", title: "Men", img: "/images/men.png" },
-    { id: "2", title: "Women", img: "/images/women.png" },
-    { id: "3", title: "Kids", img: "/images/kids.png" },
-  ],
-};
 export default function Home() {
   const [productAll, setProducts] = useState<Product[]>([]);
   const [brands, setBrands] = useState<Brand[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
   useEffect(() => {
     loadAll().then((products) => {
-      console.log("Fetched products:", products);
       setProducts(products);
     });
     loadTopBrands(10).then((brands) => {
-      console.log("Fetched brands:", brands);
       setBrands(brands);
+    });
+    loadMainCategories().then((categories) => {
+      setCategories(categories);
     });
   }, []);
   return (
@@ -80,8 +77,8 @@ export default function Home() {
       dataSource={{
         products: productAll,
         brands,
+        categories,
         slides,
-        categoryOptions,
       }}
     ></HomePage>
   );
