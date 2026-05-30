@@ -1,28 +1,22 @@
+"use client";
 import Carousel from "../../organisms//cardCarousel/cardCarousel";
 import { useRouter } from "next/navigation";
 import Card from "../../molecules/card/card";
 import SliderShow from "../../organisms/slideshow/sliderShow";
 import type { Slide } from "@/components/organisms/slideshow/sliderShow";
-import type { ColorOption } from "@/components/molecules/card/card.types";
+import type { Product } from "@/types/product";
+import type { Brand } from "@/types/brand";
+import type { Category } from "@/types/category";
 import SectionBlock from "@/components/organisms/sectionBlock/sectionBlock";
 import Row from "@/components/atoms/grid/row";
 import Column from "@/components/atoms/grid/column";
 import BenefitsStory from "@/components/organisms/benefitsStory/benefitsStory";
 
-type HomePageProduct = {
-  id: string | number;
-  name: string;
-};
-type HomePageProductOption = {
-  id: string;
-  title: string;
-  img: string;
-};
 type HomePageDataSource = {
-  productOptions?: { options: ColorOption[] };
-  products?: HomePageProduct[];
+  products?: Product[];
+  brands?: Brand[];
+  categories?: Category[];
   slides?: Slide[];
-  categoryOptions: { options: HomePageProductOption[] };
 };
 const benefitStories = [
   {
@@ -48,26 +42,24 @@ const benefitStories = [
 ];
 const HomePage = ({ dataSource }: { dataSource?: HomePageDataSource }) => {
   const router = useRouter();
-  const { productOptions, products, slides, categoryOptions } =
-    dataSource || {};
+  const { products, brands, categories, slides } = dataSource || {};
+
   return (
     <main>
       <SliderShow slides={slides} />
       <BenefitsStory benefitStories={benefitStories} />
       <SectionBlock title="Main Categories">
         <Row>
-          {(categoryOptions || { options: [] }).options.map(
-            (item: HomePageProductOption) => (
-              <Column lg={4} key={item.id}>
-                <Card
-                  variant="category"
-                  image={item.img}
-                  title={item.title}
-                  onClick={() => console.log("redirect To category")}
-                />
-              </Column>
-            ),
-          )}
+          {categories?.map((category) => (
+            <Column lg={4} key={category.id}>
+              <Card
+                variant="category"
+                image={category.imageUrl}
+                title={category.name}
+                onClick={() => console.log("redirect To category")}
+              />
+            </Column>
+          ))}
         </Row>
       </SectionBlock>
 
@@ -80,22 +72,24 @@ const HomePage = ({ dataSource }: { dataSource?: HomePageDataSource }) => {
           wideDesktopBasis="10.8%"
           extraWideDesktopBasis="16.3%"
         >
-          {products?.map((product) => (
-            <Card
-              key={product.id}
-              variant="product"
-              image="/images/shoe.png"
-              title={product.name}
-              subtitle="Made with best quality materials"
-              price="$120"
-              oldPrice="$160"
-              discount="20%"
-              buttonLabel="Add to Cart"
-              onButtonClick={() => router.push("/product/23")}
-              onSelectFavorite={(isFav) => console.log("Favorite:", isFav)}
-              productOptions={productOptions}
-            />
-          ))}
+          {products
+            ?.filter((item) => item.special_offer)
+            .map((product) => (
+              <Card
+                key={product.id}
+                variant="product"
+                image={product.imageUrl}
+                title={product.title}
+                subtitle="Made with best quality materials"
+                price={product.price}
+                oldPrice={product.originalPrice}
+                discount={product.discount}
+                buttonLabel="Add to Cart"
+                onButtonClick={() => router.push(`/product/${product.id}`)}
+                onSelectFavorite={(isFav) => console.log("Favorite:", isFav)}
+                productOptions={product.colorOptions}
+              />
+            ))}
         </Carousel>
       </SectionBlock>
       <SectionBlock title="Best Sellers">
@@ -112,38 +106,20 @@ const HomePage = ({ dataSource }: { dataSource?: HomePageDataSource }) => {
               key={product.id}
               variant="product"
               image="/images/shoe.png"
-              title={product.name}
+              title={product.title}
               subtitle="Made with best quality materials"
-              price="$120"
-              oldPrice="$160"
-              discount="20%"
+              price={product.price}
+              oldPrice={product.originalPrice}
+              discount={product.discount}
               buttonLabel="Add to Cart"
               onButtonClick={() => router.push("/product/23")}
               onSelectFavorite={(isFav) => console.log("Favorite:", isFav)}
-              productOptions={productOptions}
+              productOptions={product.colorOptions}
             />
           ))}
         </Carousel>
       </SectionBlock>
 
-      <Carousel
-        seeAllHref="/products"
-        mobileBasis="32%"
-        tabletBasis="25%"
-        desktopBasis="20%"
-        wideDesktopBasis="10.8%"
-        extraWideDesktopBasis="16.3%"
-      >
-        {products?.map((product) => (
-          <Card
-            key={product.id}
-            variant="banner"
-            image="/images/purse.png"
-            title="Coat and Jacket"
-            onClick={() => console.log("redirect To category")}
-          />
-        ))}
-      </Carousel>
       <SectionBlock title="Popular Brands">
         <Carousel
           seeAllHref="/products"
@@ -153,12 +129,13 @@ const HomePage = ({ dataSource }: { dataSource?: HomePageDataSource }) => {
           wideDesktopBasis="10.8%"
           extraWideDesktopBasis="16.3%"
         >
-          {products?.map((product) => (
+          {brands?.map((brand) => (
             <Card
-              key={product.id}
+              key={brand.id}
               variant="banner"
-              image="/images/purse.png"
-              onClick={() => console.log("redirect To category")}
+              image={brand.logoUrl}
+              title={brand.name}
+              onClick={() => console.log("redirect To brand")}
             />
           ))}
         </Carousel>

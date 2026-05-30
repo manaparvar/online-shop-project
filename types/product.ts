@@ -1,23 +1,25 @@
-export type ProductVariant = {
-  id: number;
-  sku: string;
-  size: string;
-  color: string;
-  price: number;
-  salePrice?: number | null;
-  stock: number;
-  isActive?: boolean;
-};
-
 export type Product = {
   id: number;
   documentId?: string;
   title: string;
   slug: string;
   description?: string;
-  price: number;
-  salePrice?: number | null;
+  price: string | undefined;
+  originalPrice: string | undefined;
+  salePrice?: number;
+  discount?: string;
   imageUrl?: string;
-  variants: ProductVariant[];
   isFavorite?: boolean;
+  colorOptions?: ProductColorOptions;
+  special_offer: boolean;
+};
+
+export type ProductColorOption = {
+  id: string;
+  color: string;
+  img?: string;
+};
+
+export type ProductColorOptions = {
+  options: ProductColorOption[];
 };

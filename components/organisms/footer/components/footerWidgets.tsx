@@ -13,7 +13,6 @@ import Icon from "@/components/atoms/icon/icon";
 import { footerData } from "./footerData";
 import Text from "@/components/atoms/text/text";
 import Button from "@/components/atoms/button/button";
-import strapiFetch from "@/utils/strapiFetch";
 import { StyledInput } from "./footerWidgets.style";
 
 export default function Widgets() {
@@ -22,11 +21,6 @@ export default function Widgets() {
   const handleNewsletterSubmit = (data: FieldValues) => {
     const email = data.email?.trim();
     if (!email) return;
-    strapiFetch("/newsletter", {
-      method: "POST",
-      body: JSON.stringify({ email }),
-      headers: { "Content-Type": "application/json" },
-    }).catch(() => {});
   };
 
   return (
@@ -83,4 +77,3 @@ export default function Widgets() {
     </WidgetsContainer>
   );
 }
-

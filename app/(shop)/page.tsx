@@ -4,6 +4,13 @@ import HomePage from "@/components/templates/homePage/homePage";
 import slider1 from "@/public/slider1.png";
 import slider2 from "@/public/slider2.png";
 import slider3 from "@/public/slider3.png";
+import { loadAll } from "@/server/actions/product/product.action";
+import { loadTopBrands } from "@/server/actions/brand/brand.action";
+import { loadMainCategories } from "@/server/actions/category/category.action";
+import type { Product } from "@/types/product";
+import type { Brand } from "@/types/brand";
+import type { Category } from "@/types/category";
+import { useEffect, useState } from "react";
 
 export const slides = [
   {
@@ -49,37 +56,30 @@ export const slides = [
     imageAlt: "Men autumn autfits",
   },
 ];
-const products = [
-  { id: 1, name: "Cotton Shoes", price: 120 },
-  { id: 2, name: "Leather Shoes", price: 120 },
-  { id: 3, name: "Paper Shoes", price: 120 },
-  { id: 4, name: "Mesh Shoes", price: 120 },
-  { id: 5, name: "Black Shoes", price: 120 },
-  { id: 6, name: "Yellow Shoes", price: 120 },
-  { id: 4, name: "Happy Shoes", price: 120 },
-  { id: 5, name: "Crazy Shoes", price: 120 },
-  { id: 6, name: "Orange Shoes", price: 120 },
-];
-const productOptions = {
-  options: [
-    { id: "1", color: "#e2e2e2", img: "/images/greyShoe.png" },
-    { id: "2", color: "black", img: "/images/shoe.png" },
-    { id: "3", color: "#1ab189", img: "/images/women.png" },
-    { id: "4", color: "#ff05b4", img: "/images/men.png" },
-  ],
-  selectedId: "2",
-};
-const categoryOptions = {
-  options: [
-    { id: "1", title: "Men", img: "/images/men.png" },
-    { id: "2", title: "Women", img: "/images/women.png" },
-    { id: "3", title: "Kids", img: "/images/kids.png" },
-  ],
-};
+
 export default function Home() {
+  const [productAll, setProducts] = useState<Product[]>([]);
+  const [brands, setBrands] = useState<Brand[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
+  useEffect(() => {
+    loadAll().then((products) => {
+      setProducts(products);
+    });
+    loadTopBrands(10).then((brands) => {
+      setBrands(brands);
+    });
+    loadMainCategories().then((categories) => {
+      setCategories(categories);
+    });
+  }, []);
   return (
     <HomePage
-      dataSource={{ products, productOptions, slides, categoryOptions }}
+      dataSource={{
+        products: productAll,
+        brands,
+        categories,
+        slides,
+      }}
     ></HomePage>
   );
 }
