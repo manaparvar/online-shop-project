@@ -125,24 +125,6 @@ const HomePage = ({ dataSource }: { dataSource?: HomePageDataSource }) => {
         </Carousel>
       </SectionBlock>
 
-      <Carousel
-        seeAllHref="/products"
-        mobileBasis="32%"
-        tabletBasis="25%"
-        desktopBasis="20%"
-        wideDesktopBasis="10.8%"
-        extraWideDesktopBasis="16.3%"
-      >
-        {products?.map((product) => (
-          <Card
-            key={product.id}
-            variant="banner"
-            image="/images/purse.png"
-            title="Coat and Jacket"
-            onClick={() => console.log("redirect To category")}
-          />
-        ))}
-      </Carousel>
       <SectionBlock title="Popular Brands">
         <Carousel
           seeAllHref="/products"
