@@ -15,8 +15,8 @@ export interface CardProps {
   image?: string;
   title?: string;
   subtitle?: string;
-  price?: string;
-  oldPrice?: string;
+  price?: string | number;
+  oldPrice?: string | number;
   discount?: string;
   buttonLabel?: string;
   onButtonClick?: () => void;

@@ -26,7 +26,6 @@ function Card({
   variant,
 }: CardProps) {
   const clickable = Boolean(onClick);
-
   return (
     <CardWrapper
       $clickable={clickable}
